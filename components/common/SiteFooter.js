@@ -15,7 +15,7 @@ SiteFooter.getCustomInitialProps = async function ({
   channelName,
 }) {
 
-  let footer;
+  let footer = null;
 
   try {
 
