@@ -1,106 +1,106 @@
 import React from "react";
 import Link from 'next/link';
+import { useState } from "react";
 
 const SiteHeader = ({ globalData, sitemapNode, page }) => {
-  // get header data
-  const { header } = globalData;
+    // get header data
+    const { logo, mainMenu } = globalData.header;
 
-  // set up href for internal links
-  let href = "/pages/[...slug]";
+    // set up href for internal links
+    let href = "/pages/[...slug]";
 
-  if (!header) {
+    const [openSubNav, setOpenSubNav] = useState(0);
+
+    const hiddenSubNav = {
+        display: 'none'
+    }
+
+    const visibleSubNav = {
+        display: 'block'
+    }
+
+    console.log(openSubNav);
+
     return (
-      <header>
-        <p>No Header Available</p>
-      </header>
+        <header>
+            <img
+                src={logo.url}
+                alt={logo.label}
+                title={logo.siteName}
+            />
+            <nav>
+                <ul>
+                    {mainMenu.map((topLevelLink, topIndex) => {
+                        if (!topLevelLink.subNavLinks.totalCount) {
+                            return (
+                                <li key={`top-level-link-${topIndex}`}>
+                                    <Link href={topLevelLink.link.href}>
+                                        <a target={topLevelLink.link.target}>{topLevelLink.title}</a>
+                                    </Link>
+                                </li>)
+                        } else {
+                            return (
+                                <li key={`top-level-link-${topIndex}`}>
+                                    <button className="subMenuButton" onClick={() => setOpenSubNav(topIndex)}>{topLevelLink.title}</button>
+                                    <ul style={openSubNav === topIndex ? visibleSubNav : hiddenSubNav}>
+                                        {topLevelLink.subNavLinks.items.map((subNavLink, subIndex) => {
+                                            return (
+                                                <li key={`sub-nav-link-${topIndex}-${subIndex}`}>{subNavLink.fields.link.text}</li>
+                                            )
+                                        })}
+                                    </ul>
+                                </li>
+                            )
+                        }
+                    })}
+                </ul>
+            </nav>
+        </header>
     );
-  }
-
-  return (
-    <header>
-      <img
-        src={header.logo.url}
-        alt={header.logo.label}
-        title={header.logo.siteName}
-      />
-      <p>
-        {header.siteName}
-      </p>
-      <nav>
-        {header.links.map((navitem, index) => {
-          return (
-            <Link href={href} key={`mobile-${index}`} as={navitem.path}>
-              <a>
-                {navitem.title}
-              </a>
-            </Link>
-          );
-        })}
-      </nav>
-    </header>
-  );
 };
 
 SiteHeader.getCustomInitialProps = async function ({
-  agility,
-  languageCode,
-  channelName,
+    agility,
+    languageCode,
+    channelName,
 }) {
-  // set up api
-  const api = agility;
+    // set up api
+    const api = agility;
 
-  // set up content item
-  let contentItem = null;
+    let logo = null;
+    let mainMenu = null;
 
-  // set up links
-  let links = [];
+    try {
+        // try to fetch our site header
+        let headerContent = await api.getContentList({
+            referenceName: "header",
+            languageCode: languageCode,
+            depth: 10,
+            expandAllContentLinks: true,
+            take: 10
+        });
 
-  try {
-    // try to fetch our site header
-    let header = await api.getContentList({
-      referenceName: "siteheader",
-      languageCode: languageCode,
-    });
-
-    // if we have a header, set as content item
-    if (header && header.length > 0) {
-      contentItem = header[0];
-
-      // else return null
-    } else {
-      return null;
+        // if we have a header, set as content item
+        if (headerContent.items && headerContent.items.length > 0) {
+            let header = headerContent.items[0].fields;
+            logo = header.logo;
+            mainMenu = header.mainMenu.items;
+            mainMenu.sort((a, b) => (a.properties.itemOrder > b.properties.itemOrder) ? 1 : -1);
+            mainMenu = mainMenu.map(link => link.fields);
+            console.log(mainMenu);
+            // mainMenu = mainMenu.map(link => )
+        } else {
+            return null;
+        }
+    } catch (error) {
+        if (console) console.error("Could not load site header item.", error);
+        return null;
     }
-  } catch (error) {
-    if (console) console.error("Could not load site header item.", error);
-    return null;
-  }
 
-  try {
-    // get the nested sitemap
-    let sitemap = await api.getSitemapNested({
-      channelName: channelName,
-      languageCode: languageCode,
-    });
-
-    // grab the top level links that are visible on menu
-    links = sitemap
-      .filter((node) => node.visible.menu)
-      .map((node) => {
-        return {
-          title: node.menuText || node.title,
-          path: node.path,
-        };
-      });
-  } catch (error) {
-    if (console) console.error("Could not load nested sitemap.", error);
-  }
-
-  // return clean object...
-  return {
-    siteName: contentItem.fields.siteName,
-    logo: contentItem.fields.logo,
-    links,
-  };
+    return {
+        logo,
+        mainMenu
+    };
 };
 
 export default SiteHeader;
