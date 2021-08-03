@@ -1,10 +1,41 @@
 import RichTextArea from 'components/RichTextArea';
 import Link from 'next/link';
-import React from 'react';
+import React, { useRef } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import Plx from 'react-plx';
 import styles from '../../styles/components/info-section.module.scss';
 
 const InfoSection = ({ module }) => {
+
     const { cTA, image, infoLeft, infoRight, infoTitle, subtitle, titleOne, titleTwo, titleThree } = module.fields;
+
+    const [imageContainerHeight, setImageContainerHeight] = useState(0);
+    const imageContainerEl = useRef(null);
+
+    const [imageHeight, setImageHeight] = useState(0);
+    const imageEl = useRef(null);
+
+    useEffect(() => {
+        setImageContainerHeight(imageContainerEl.current.clientHeight);
+        setImageHeight(imageEl.current.clientHeight);
+        setParallaxData([
+            {
+                start: 'self',
+                duration: imageContainerHeight,
+                properties: [
+                    {
+                        startValue: 0,
+                        endValue: imageHeight - imageContainerHeight,
+                        property: 'translateY',
+                    },
+                ],
+            },
+        ])
+    }, [imageEl, imageContainerEl]);
+
+    const [parallaxData, setParallaxData] = useState([]);
+
     return (
         <section className={styles.infoSection}>
             <div className="container">
@@ -34,10 +65,13 @@ const InfoSection = ({ module }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.panesRight}>
-                            <div className={styles.panningImage}>
-                                <img src={image.url} alt={image.label} className="w-100" />
-                            </div>
+                        <div className={styles.panesRight} ref={imageContainerEl}>
+                            <Plx
+                                className={styles.panningImage}
+                                parallaxData={parallaxData}
+                            >
+                                <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
+                            </Plx>
                         </div>
                     </div>
                 </div>
