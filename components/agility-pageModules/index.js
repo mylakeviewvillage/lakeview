@@ -1,10 +1,12 @@
 import ImageBanner from "./ImageBanner";
+import InfoSection from "./InfoSection";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
 
 const allModules = [
   { name: "ImageBanner", module: ImageBanner },
+  { name: "InfoSection", module: InfoSection }
 ];
 
 export const getModule = (moduleName) => {

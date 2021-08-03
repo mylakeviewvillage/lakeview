@@ -1,5 +1,61 @@
+@import '../base/variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+$fontSize: 1.125rem;
 
 body {
     font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2 {
+    font-weight: 200;
+    font-size: 7rem;
+    line-height: calc(93/113);
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+h2.stacked-title {
+    span {
+        &:nth-child(1) {
+            color: $lightBlue;
+        }
+
+        &:nth-child(2) {
+            color: $medBlue;
+            padding-left: 40px;
+        }
+
+        &:nth-child(3) {
+            color: $blue;
+        }
+    }
+}
+
+h3 {
+    font-weight: 200;
+    font-size: 2rem;
+    line-height: calc(42/32);
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+p,
+ol,
+ul {
+    font-size: $fontSize;
+    line-height: calc(28/18);
+    font-weight: 200;
+    margin-bottom: 40px;
+}
+
+b,
+strong {
+    font-weight: 400;
+}
+
+ul {
+    list-style: disc;
+    margin-left: $fontSize;
 }
