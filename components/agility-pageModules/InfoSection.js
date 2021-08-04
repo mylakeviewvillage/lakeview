@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Plx from 'react-plx';
+import { useMediaQuery } from 'react-responsive';
 import styles from '../../styles/components/info-section.module.scss';
 
 const InfoSection = ({ module }) => {
@@ -16,28 +17,38 @@ const InfoSection = ({ module }) => {
     const [imageHeight, setImageHeight] = useState(0);
     const imageEl = useRef(null);
 
+    const [parallaxData, setParallaxData] = useState([]);
+
     useEffect(() => {
         setImageContainerHeight(imageContainerEl.current.clientHeight);
         setImageHeight(imageEl.current.clientHeight);
-        setParallaxData([
-            {
-                start: 'self',
-                duration: imageContainerHeight,
-                properties: [
-                    {
-                        startValue: 0,
-                        endValue: imageHeight - imageContainerHeight,
-                        property: 'translateY',
-                    },
-                ],
-            },
-        ])
     }, [imageEl, imageContainerEl]);
 
-    const [parallaxData, setParallaxData] = useState([]);
+    useEffect(() => {
+        if (imageContainerHeight && imageHeight) {
+            setParallaxData([
+                {
+                    start: '#test',
+                    duration: imageContainerHeight,
+                    properties: [
+                        {
+                            startValue: 0,
+                            endValue: imageHeight - imageContainerHeight,
+                            property: 'translateY',
+                        },
+                    ],
+                },
+            ]);
+        }
+    }, [imageContainerHeight, imageHeight])
+
+    const isMobileOrTablet = useMediaQuery({
+        maxWidth: 1024
+    });
+    console.log({ isMobileOrTablet, imageHeight, imageContainerHeight, parallaxData });
 
     return (
-        <section className={styles.infoSection}>
+        <section className={styles.infoSection} id="test">
             <div className="container">
                 <div className="content">
                     <div className={styles.panes}>
@@ -69,6 +80,7 @@ const InfoSection = ({ module }) => {
                             <Plx
                                 className={styles.panningImage}
                                 parallaxData={parallaxData}
+                                disabled={isMobileOrTablet}
                             >
                                 <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
                             </Plx>

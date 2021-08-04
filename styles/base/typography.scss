@@ -9,11 +9,20 @@ body {
 
 h1,
 h2 {
+    font-size: 4.1875rem;
     font-weight: 200;
-    font-size: 7rem;
     line-height: calc(93/113);
     margin-bottom: 50px;
     text-transform: uppercase;
+
+
+    @media screen and (min-width: 1024px) {
+        font-size: 5.5rem;
+    }
+
+    @media screen and (min-width: 1400px) {
+        font-size: 7rem;
+    }
 }
 
 h2.stacked-title {
