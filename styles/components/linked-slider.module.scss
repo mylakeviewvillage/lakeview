@@ -3,7 +3,9 @@ section.linked_slider {
     .slider {
 
         .slide {
-            display: grid;
+            @media screen and (min-width: 1024px) {
+                display: grid;
+            }
 
             &.left {
                 grid-template-columns: 1.1fr 0.9fr;
@@ -24,9 +26,15 @@ section.linked_slider {
             }
 
             &_image {
+                display: flex;
+                align-items: center;
+
                 img {
                     display: block;
-                    padding: 70px 0;
+
+                    @media screen and (min-width: 1024px) {
+                        padding: 70px 0;
+                    }
                 }
             }
 
