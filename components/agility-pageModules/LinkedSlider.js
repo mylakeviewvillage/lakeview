@@ -62,10 +62,15 @@ const LinkedSlider = ({ module, customData }) => {
                     <div ref={sliderRef} className={`keen-slider ${styles.slider}`}>
                         {slides.map((slide, index) => {
                             return (
-                                <div className={`keen-slider__slide ${styles.slide} ${layout === 'left' ? styles.left : styles.right}`} key={`linked-slider-slide-${index}`}>
-                                    <div className={styles.slide_image} style={backgroundColor ? { background: layout === 'left' ? `linear-gradient(to right, transparent 90%, ${backgroundColor} 90%)` : `linear-gradient(to left, transparent 90%, ${backgroundColor} 90%)` } : null}>
+                                <div
+                                    className={`keen-slider__slide ${styles.slide} ${layout === 'left' ? styles.left : styles.right}`}
+                                    style={backgroundColor ? { background: `linear-gradient(to ${layout}, ${backgroundColor} 50%, transparent 50%)` } : null}
+                                    key={`linked-slider-slide-${index}`}>
+
+                                    <div className={styles.slide_image}>
                                         <SEOImage img={slide.image} sizes={[1024, 500]} className="w-100" />
                                     </div>
+
                                     <div className={styles.slide_info} style={backgroundColor ? { backgroundColor, color: 'white' } : null}>
                                         <div className={styles.slide_info_content}>
                                             {slider && (
@@ -88,6 +93,7 @@ const LinkedSlider = ({ module, customData }) => {
                                             </Link>
                                         </div>
                                     </div>
+
                                 </div>
                             )
                         })}
