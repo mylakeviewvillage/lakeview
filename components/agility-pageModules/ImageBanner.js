@@ -1,3 +1,4 @@
+import SEOImage from 'components/SEOImage';
 import React from 'react';
 
 const Banner = ({ module }) => {
@@ -5,7 +6,7 @@ const Banner = ({ module }) => {
         <section className="banner">
             <div className="container full-width">
                 <div className="content">
-                    <img src={module.fields.image.url} alt={module.fields.image.label} className="w-100" />
+                    <SEOImage img={module.fields.image} sizes={[500, 1024, 1920]} className="w-100" />
                 </div>
             </div>
         </section>
