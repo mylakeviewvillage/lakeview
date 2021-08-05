@@ -26,7 +26,7 @@ const LinkedSlider = ({ module, customData }) => {
         return (
             <button
                 className={`${styles.arrow} ${styles.prev}`}
-                ariaLabel="previous slide"
+                aria-label="previous slide"
                 onClick={onClick}
             >
                 <img src="/img/arrow-left.svg" alt="left arrow" className="w-100" />
@@ -38,7 +38,7 @@ const LinkedSlider = ({ module, customData }) => {
         return (
             <button
                 className={`${styles.arrow} ${styles.next}`}
-                ariaLabel="next slide"
+                aria-label="next slide"
                 onClick={onClick}
             >
                 <img src="/img/arrow-right.svg" alt="right arrow" className="w-100" />

@@ -46,6 +46,12 @@ const InfoSection = ({ module }) => {
         maxWidth: 1024
     });
 
+    const [smallWindow, setSmallWindow] = useState(true);
+
+    useEffect(() => {
+        setSmallWindow(isMobileOrTablet);
+    }, [isMobileOrTablet]);
+
     return (
         <section className={styles.infoSection} id="test">
             <div className="container">
@@ -79,7 +85,7 @@ const InfoSection = ({ module }) => {
                             <Plx
                                 className={styles.panningImage}
                                 parallaxData={parallaxData}
-                                disabled={isMobileOrTablet}
+                                disabled={smallWindow}
                             >
                                 <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
                             </Plx>
