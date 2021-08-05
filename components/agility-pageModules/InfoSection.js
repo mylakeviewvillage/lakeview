@@ -45,7 +45,6 @@ const InfoSection = ({ module }) => {
     const isMobileOrTablet = useMediaQuery({
         maxWidth: 1024
     });
-    console.log({ isMobileOrTablet, imageHeight, imageContainerHeight, parallaxData });
 
     return (
         <section className={styles.infoSection} id="test">
