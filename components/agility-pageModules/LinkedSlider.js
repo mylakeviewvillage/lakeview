@@ -22,26 +22,26 @@ const LinkedSlider = ({ module, customData }) => {
         },
     });
 
-    const ArrowLeft = ({ onClick }) => {
+    const ArrowLeft = ({ onClick, dark }) => {
         return (
             <button
                 className={`${styles.arrow} ${styles.prev}`}
                 aria-label="previous slide"
                 onClick={onClick}
             >
-                <img src="/img/arrow-left.svg" alt="left arrow" className="w-100" />
+                <img src={dark ? '/img/arrow-left-dark.svg' : '/img/arrow-left.svg'} alt="left arrow" className="w-100" />
             </button>
         )
     }
 
-    const ArrowRight = ({ onClick }) => {
+    const ArrowRight = ({ onClick, dark }) => {
         return (
             <button
                 className={`${styles.arrow} ${styles.next}`}
                 aria-label="next slide"
                 onClick={onClick}
             >
-                <img src="/img/arrow-right.svg" alt="right arrow" className="w-100" />
+                <img src={dark ? '/img/arrow-right-dark.svg' : '/img/arrow-right.svg'} alt="right arrow" className="w-100" />
             </button>
         )
     }
@@ -71,18 +71,20 @@ const LinkedSlider = ({ module, customData }) => {
                                         <SEOImage img={slide.image} sizes={[1024, 500]} className="w-100" />
                                     </div>
 
-                                    <div className={styles.slide_info} style={backgroundColor ? { backgroundColor, color: 'white' } : null}>
+                                    <div className={`${styles.slide_info} ${backgroundColor ? styles.bg : styles.no_bg}`} style={backgroundColor ? { backgroundColor } : null}>
                                         <div className={styles.slide_info_content}>
                                             {slider && (
                                                 <div className={styles.navigation}>
                                                     <ArrowLeft
                                                         onClick={(e) => e.stopPropagation() || slider.prev()}
                                                         disabled={currentSlide === 0}
+                                                        dark={backgroundColor ? false : true}
                                                     />
                                                     <span>{`${currentSlide + 1}/${slider.details().size}`}</span>
                                                     <ArrowRight
                                                         onClick={(e) => e.stopPropagation() || slider.next()}
                                                         disabled={currentSlide === slider.details().size - 1}
+                                                        dark={backgroundColor ? false : true}
                                                     />
                                                 </div>
                                             )}
