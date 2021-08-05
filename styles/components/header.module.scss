@@ -63,27 +63,32 @@ header.header {
                 }
             }
 
-            .topMenu {
-                list-style: none;
-                padding: 0;
+            ul {
+                margin-left: 0;
                 font-weight: 200;
+                list-style: none;
+            }
+
+            .topMenu {
+                padding: 0;
                 text-transform: uppercase;
                 text-align: left;
                 width: 100%;
                 height: 100%;
                 overflow: auto;
-                font-size: 12vw;
 
-                @media screen and (min-width: 768px) {
-                    font-size: 6vw;
-                }
 
                 .container {
 
                     ul.topMenuList {
+                        font-size: 12vw;
                         padding-top: $menuPaddingTop;
                         padding-bottom: $menuPaddingBot;
                         line-height: 1;
+
+                        @media screen and (min-width: 768px) {
+                            font-size: 6vw;
+                        }
 
                         >li {
                             padding: 8px 0;
@@ -144,7 +149,6 @@ header.header {
                             background-color: $darkBlue;
                             transition: 500ms;
                             z-index: 2;
-                            font-size: 2rem;
                             overflow: auto;
 
                             &.active {
@@ -156,6 +160,7 @@ header.header {
                             }
 
                             ul {
+                                font-size: 2rem;
                                 padding-top: $menuPaddingTop;
                                 padding-bottom: $menuPaddingBot;
 
