@@ -15,6 +15,7 @@ const LinkedSlider = ({ module, customData }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const [sliderRef, slider] = useKeenSlider({
+        loop: true,
         initial: 0,
         slideChanged(s) {
             setCurrentSlide(s.details().relativeSlide)
