@@ -1,4 +1,5 @@
 import RichTextArea from 'components/RichTextArea';
+import SectionTitle from 'components/SectionTitle';
 import Link from 'next/link';
 import React, { useRef } from 'react';
 import { useEffect } from 'react';
@@ -58,11 +59,7 @@ const InfoSection = ({ module }) => {
                 <div className="content">
                     <div className={styles.panes}>
                         <div className={styles.panesLeft}>
-                            <h2 className="stacked-title">
-                                {titleOne && <span>{titleOne}</span>}
-                                {titleTwo && <span><br />{titleTwo}</span>}
-                                {titleThree && <span><br />{titleThree}</span>}
-                            </h2>
+                            <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />
                             {subtitle && <h3>{subtitle}</h3>}
                             <div className="divider" />
                             {infoTitle && <h4>{infoTitle}</h4>}

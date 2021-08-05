@@ -1,0 +1,48 @@
+@import '../base/variables.scss';
+
+.image_info {
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to left, $superLightBlue 75%, transparent 75%);
+    }
+
+    .image {
+        width: 100%;
+
+        @media screen and (min-width: 1024px) {
+            width: 33.33%;
+            padding: 37px 0;
+        }
+    }
+
+    .info {
+        background-color: $lightBlue;
+        padding: 50px 30px;
+
+        @media screen and (min-width: 1024px) {
+            background-color: transparent;
+            flex: 1;
+            padding: 6% 9%;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            max-width: 700px;
+
+            span {
+                font-size: 1.125rem;
+                line-height: calc(28/18);
+            }
+
+            font-size: 2.5rem;
+            line-height: calc(35/40);
+            margin-bottom: 40px;
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

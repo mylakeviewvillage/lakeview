@@ -6,6 +6,7 @@ import RichTextArea from 'components/RichTextArea';
 import Link from 'next/link';
 import SEOImage from 'components/SEOImage';
 import { useState } from 'react';
+import SectionTitle from 'components/SectionTitle';
 
 const LinkedSlider = ({ module, customData }) => {
 
@@ -51,11 +52,7 @@ const LinkedSlider = ({ module, customData }) => {
             <div className="content">
                 <div className="container">
                     {titleOne && (
-                        <h2 className="stacked-title">
-                            <span>{titleOne}</span>
-                            {titleTwo && <span><br />{titleTwo}</span>}
-                            {titleThree && <span><br />{titleThree}</span>}
-                        </h2>
+                        <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />
                     )}
                 </div>
                 <div className="container full-width">

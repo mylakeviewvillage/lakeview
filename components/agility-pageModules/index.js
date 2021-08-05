@@ -1,4 +1,5 @@
 import ImageBanner from "./ImageBanner";
+import ImageInfo from "./ImageInfo";
 import InfoSection from "./InfoSection";
 import LinkedSlider from "./LinkedSlider";
 
@@ -8,7 +9,8 @@ import LinkedSlider from "./LinkedSlider";
 const allModules = [
   { name: "ImageBanner", module: ImageBanner },
   { name: "InfoSection", module: InfoSection },
-  { name: "LinkedSlider", module: LinkedSlider }
+  { name: "LinkedSlider", module: LinkedSlider },
+  { name: "ImageInfo", module: ImageInfo }
 ];
 
 export const getModule = (moduleName) => {
