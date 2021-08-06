@@ -1,0 +1,28 @@
+@import '../base/variables.scss';
+
+.card {
+    width: 100%;
+    border-bottom: 1px solid $lightGray;
+
+    &_image {
+        width: 100%;
+    }
+
+    &_copy {
+        padding: 30px 20px 60px 20px;
+
+        p {
+            text-transform: uppercase;
+            color: $lightBlue;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            line-height: calc(35/40);
+            font-weight: 400;
+            margin-bottom: 100px;
+        }
+    }
+}
