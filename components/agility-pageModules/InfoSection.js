@@ -30,11 +30,11 @@ const InfoSection = ({ module }) => {
             setParallaxData([
                 {
                     start: '#test',
-                    duration: imageContainerHeight,
+                    duration: imageContainerHeight * 2,
                     properties: [
                         {
-                            startValue: 0,
-                            endValue: imageHeight - imageContainerHeight,
+                            startValue: 800,
+                            endValue: imageHeight - imageContainerHeight - 400,
                             property: 'translateY',
                         },
                     ],
@@ -57,11 +57,11 @@ const InfoSection = ({ module }) => {
         <section className={styles.infoSection} id="test">
             <div className="container">
                 <div className="content">
+                    <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />
                     <div className={styles.panes}>
                         <div className={styles.panesLeft}>
-                            <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />
                             {subtitle && <h3>{subtitle}</h3>}
-                            <div className="divider" />
+                            <div className={`divider ${styles.divider}`} />
                             {infoTitle && <h4>{infoTitle}</h4>}
                             <hr />
                             <div className={styles.info}>
