@@ -1,3 +1,4 @@
+import ContactPanel from "./ContactPanel";
 import ImageBanner from "./ImageBanner";
 import ImageInfo from "./ImageInfo";
 import InfoSection from "./InfoSection";
@@ -12,7 +13,8 @@ const allModules = [
   { name: "InfoSection", module: InfoSection },
   { name: "LinkedSlider", module: LinkedSlider },
   { name: "ImageInfo", module: ImageInfo },
-  { name: "MasonryCards", module: MasonryCards }
+  { name: "MasonryCards", module: MasonryCards },
+  { name: "ContactPanel", module: ContactPanel }
 ];
 
 export const getModule = (moduleName) => {

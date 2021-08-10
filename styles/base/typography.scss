@@ -66,6 +66,18 @@ ul {
     margin-bottom: 40px;
 }
 
+p {
+    a {
+        color: $blue;
+        font-weight: 700;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
 b,
 strong {
     font-weight: 400;
