@@ -46,7 +46,7 @@ const ContactPanel = ({ module }) => {
     return (
         <section className={styles.contact_panel}>
             <div className="container">
-                <div className="content">
+                <div className="content fat">
                     <h2>{title}</h2>
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
