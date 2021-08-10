@@ -5,7 +5,7 @@ const Banner = ({ module }) => {
     return (
         <section className="banner">
             <div className="container full-width">
-                <div className="content">
+                <div className="content no-top">
                     <SEOImage img={module.fields.image} sizes={[500, 1024, 1920]} className="w-100" />
                 </div>
             </div>
