@@ -1,0 +1,66 @@
+@import '../base/variables.scss';
+
+section.next_panel {
+    background-color: $darkGray;
+    color: white;
+
+    h2 {
+        margin-bottom: 40px;
+        font-size: 3rem;
+
+        @media screen and (min-width: 768px) {
+            font-size: 3.375rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+            font-size: 7rem;
+        }
+
+        span {
+            display: block;
+
+            &:nth-child(4n+1) {
+                color: $lightBlue
+            }
+
+            &:nth-child(4n+2) {
+                color: $medBlue
+            }
+
+            &:nth-child(4n+3) {
+                color: $blue
+            }
+
+            &:nth-child(4n+4) {
+                color: $darkBlue
+            }
+        }
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin-bottom: 40px;
+        font-weight: 400;
+    }
+
+    ul {
+        list-style: none;
+        margin-left: 0;
+        font-size: 1.6875rem;
+        font-weight: 400;
+        line-height: calc(40/27);
+        text-transform: uppercase;
+        margin-bottom: 0;
+
+        li {
+            span.dash {
+                color: $blue;
+            }
+
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+}

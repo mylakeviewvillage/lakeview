@@ -14,12 +14,15 @@ body {
 
 h1,
 h2 {
-    font-size: 4.1875rem;
+    font-size: 3rem;
     font-weight: 200;
     line-height: calc(93/113);
     margin-bottom: 50px;
     text-transform: uppercase;
 
+    @media screen and (min-width: 768px) {
+        font-size: 4.1875rem;
+    }
 
     @media screen and (min-width: 1024px) {
         font-size: 5.5rem;

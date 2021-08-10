@@ -13,6 +13,10 @@
 
 .content {
     padding: 40px 0;
+
+    &.fat {
+        padding: 80px 0;
+    }
 }
 
 .w-100 {
