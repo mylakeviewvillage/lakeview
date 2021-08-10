@@ -26,8 +26,6 @@ const ContactPanel = ({ module }) => {
         }
     }, [firstName, lastName, phoneNumber, email, agreement]);
 
-    console.log({ firstName, lastName, phoneNumber, email, agreement });
-
     // Check for valid form before submitting
     const validateForm = (e) => {
         console.log('test');
