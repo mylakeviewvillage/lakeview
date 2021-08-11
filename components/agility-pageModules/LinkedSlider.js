@@ -10,7 +10,7 @@ import SectionTitle from 'components/SectionTitle';
 
 const LinkedSlider = ({ module, customData }) => {
 
-    const { titleOne, titleTwo, titleThree, layout, backgroundColor } = module.fields;
+    const { titleOne, titleTwo, titleThree, layout, backgroundColor, copyColor } = module.fields;
     const { slides } = customData;
 
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,26 +23,26 @@ const LinkedSlider = ({ module, customData }) => {
         },
     });
 
-    const ArrowLeft = ({ onClick, dark }) => {
+    const ArrowLeft = ({ onClick }) => {
         return (
             <button
                 className={`${styles.arrow} ${styles.prev}`}
                 aria-label="previous slide"
                 onClick={onClick}
             >
-                <img src={dark ? '/img/arrow-left-dark.svg' : '/img/arrow-left.svg'} alt="left arrow" className="w-100" />
+                <img src={copyColor === 'dark' ? '/img/arrow-left-dark.svg' : '/img/arrow-left.svg'} alt="left arrow" className="w-100" />
             </button>
         )
     }
 
-    const ArrowRight = ({ onClick, dark }) => {
+    const ArrowRight = ({ onClick }) => {
         return (
             <button
                 className={`${styles.arrow} ${styles.next}`}
                 aria-label="next slide"
                 onClick={onClick}
             >
-                <img src={dark ? '/img/arrow-right-dark.svg' : '/img/arrow-right.svg'} alt="right arrow" className="w-100" />
+                <img src={copyColor === 'dark' ? '/img/arrow-right-dark.svg' : '/img/arrow-right.svg'} alt="right arrow" className="w-100" />
             </button>
         )
     }
@@ -68,27 +68,25 @@ const LinkedSlider = ({ module, customData }) => {
                                         <SEOImage img={slide.image} sizes={[1024, 500]} className="w-100" />
                                     </div>
 
-                                    <div className={`${styles.slide_info} ${backgroundColor ? styles.bg : styles.no_bg}`} style={backgroundColor ? { backgroundColor } : null}>
-                                        <div className={styles.slide_info_content}>
+                                    <div className={styles.slide_info} style={backgroundColor ? { backgroundColor } : null}>
+                                        <div className={`${styles.slide_info_content} ${copyColor === 'dark' ? styles.dark : styles.light}`}>
                                             {slider && (
                                                 <div className={styles.navigation}>
                                                     <ArrowLeft
                                                         onClick={(e) => e.stopPropagation() || slider.prev()}
                                                         disabled={currentSlide === 0}
-                                                        dark={backgroundColor ? false : true}
                                                     />
                                                     <span>{`${currentSlide + 1}/${slider.details().size}`}</span>
                                                     <ArrowRight
                                                         onClick={(e) => e.stopPropagation() || slider.next()}
                                                         disabled={currentSlide === slider.details().size - 1}
-                                                        dark={backgroundColor ? false : true}
                                                     />
                                                 </div>
                                             )}
-                                            <h3>{slide.topTitle && <span className={styles.top_title}>{slide.topTitle}<br /></span>}{slide.slideTitle}</h3>
+                                            <h3>{slide.topTitle && <span className={`${styles.top_title} ${copyColor === 'dark' ? styles.dark : styles.light}`}>{slide.topTitle}<br /></span>}{slide.slideTitle}</h3>
                                             <RichTextArea html={slide.slideCopy} />
                                             <Link href={slide.cTA.href}>
-                                                <a target={slide.cTA.target} className={`btn ${backgroundColor ? 'white' : null}`}>{slide.cTA.text}</a>
+                                                <a target={slide.cTA.target} className={`btn solid-white`}>{slide.cTA.text}</a>
                                             </Link>
                                         </div>
                                     </div>

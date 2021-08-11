@@ -85,6 +85,14 @@ button {
                 color: $darkGray;
             }
         }
+
+        &.solid-white {
+            background-color: white;
+
+            &:hover {
+                background-color: $darkGray;
+            }
+        }
     }
 }
 

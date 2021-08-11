@@ -79,16 +79,25 @@ section.linked_slider {
                             line-height: calc(28/18);
                         }
                     }
-                }
 
-                &.bg {
-                    color: white;
-                }
+                    &.light {
+                        color: white;
 
-                &.no_bg {
-                    color: $darkGray;
+                    }
+
+                    &.dark {
+                        color: $darkGray;
+
+                        h3 {
+
+                            .top_title {
+                                color: $blue;
+                            }
+                        }
+                    }
                 }
             }
         }
+
     }
 }
