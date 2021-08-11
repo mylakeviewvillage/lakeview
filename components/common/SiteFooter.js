@@ -1,12 +1,51 @@
+import Link from "next/link";
 import React from "react";
+import styles from '../../styles/components/footer.module.scss';
 
 const SiteFooter = ({ globalData }) => {
 
-    console.log(globalData);
+    const { logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks } = globalData.footer;
 
     return (
         <footer>
-            Footer
+            <div className="container">
+                <div className="content">
+                    <div className={styles.grid}>
+                        <div className={styles.legal_panel}>
+                            <div className={styles.logo}>
+                                <img src={logo.url} alt={logo.label} />
+                            </div>
+                            <div className={styles.copyright}>
+                                <p>{copyright}</p>
+                            </div>
+                            <div className={styles.legal_menu}>
+                                <ul>
+                                    {legalMenu.map((item, index) => <li key={`legal-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                                </ul>
+                            </div>
+                            <div className={styles.social_menu}>
+                                <ul>
+                                    {socialMenu.map((item, index) => <li key={`social-link-${index}`}><Link href={item.link.href}><a target={item.link.target}><img src={item.image.url} alt={item.image.label} className="w-100" /></a></Link></li>)}
+                                </ul>
+                            </div>
+                        </div>
+                        <div className={styles.secondary_links_panel}>
+                            <h2>Secondary Site Links</h2>
+                            <hr />
+                            <ul>
+                                {secondaryLinks.map((item, index) => <li><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                            </ul>
+                        </div>
+                        <div className={styles.tertiary_links_panel}>
+                            <h2>Tertiary Site Links</h2>
+                            <hr />
+                            <ul>
+                                {tertiaryLinks.map((item, index) => <li><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
     );
 };
