@@ -7,10 +7,24 @@ const SiteFooter = ({ globalData }) => {
     const { logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks } = globalData.footer;
 
     return (
-        <footer>
+        <footer className={styles.footer}>
             <div className="container">
-                <div className="content">
+                <div className="content fat">
                     <div className={styles.grid}>
+                        <div className={styles.secondary_links_panel}>
+                            <h2>Secondary<br />Site Links</h2>
+                            <hr />
+                            <ul>
+                                {secondaryLinks.map((item, index) => <li><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                            </ul>
+                        </div>
+                        <div className={styles.tertiary_links_panel}>
+                            <h2>Tertiary<br />Site Links</h2>
+                            <hr />
+                            <ul>
+                                {tertiaryLinks.map((item, index) => <li><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                            </ul>
+                        </div>
                         <div className={styles.legal_panel}>
                             <div className={styles.logo}>
                                 <img src={logo.url} alt={logo.label} />
@@ -25,23 +39,9 @@ const SiteFooter = ({ globalData }) => {
                             </div>
                             <div className={styles.social_menu}>
                                 <ul>
-                                    {socialMenu.map((item, index) => <li key={`social-link-${index}`}><Link href={item.link.href}><a target={item.link.target}><img src={item.image.url} alt={item.image.label} className="w-100" /></a></Link></li>)}
+                                    {socialMenu.map((item, index) => <li key={`social-link-${index}`}><Link href={item.link.href}><a target={item.link.target}><div className={styles.social_menu_icon}><img src={item.image.url} alt={item.image.label} className="w-100" /></div></a></Link></li>)}
                                 </ul>
                             </div>
-                        </div>
-                        <div className={styles.secondary_links_panel}>
-                            <h2>Secondary Site Links</h2>
-                            <hr />
-                            <ul>
-                                {secondaryLinks.map((item, index) => <li><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
-                            </ul>
-                        </div>
-                        <div className={styles.tertiary_links_panel}>
-                            <h2>Tertiary Site Links</h2>
-                            <hr />
-                            <ul>
-                                {tertiaryLinks.map((item, index) => <li><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
-                            </ul>
                         </div>
                     </div>
                 </div>

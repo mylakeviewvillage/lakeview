@@ -1,3 +1,127 @@
-footer {
-    .grid {}
+@import '../base/variables.scss';
+
+footer.footer {
+    background-color: $offBlack;
+    color: white;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        @media screen and (min-width: 1024px) {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: 'left center right';
+        }
+
+        .legal_panel {
+            @media screen and (min-width: 1024px) {
+                grid-area: left;
+            }
+
+            .logo {
+                width: 100%;
+                max-width: 450px;
+                margin-bottom: 45px;
+            }
+
+            .copyright {
+                p {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                    font-size: 0.98rem;
+                }
+            }
+
+            .legal_menu {
+                margin-bottom: 40px;
+
+                ul {
+                    list-style: none;
+                    margin-left: 0;
+
+                    li {
+                        display: inline;
+                        padding: 0 30px;
+                        line-height: 1.5;
+                        border-right: 1px solid $lightGray;
+                        text-transform: uppercase;
+                        font-weight: 700;
+
+                        &:hover {
+                            color: $lightBlue;
+                        }
+
+                        &:first-child {
+                            padding-left: 0;
+                        }
+
+                        &:last-child {
+                            padding-right: 0;
+                            border: 0;
+                        }
+                    }
+                }
+            }
+
+            .social_menu {
+                ul {
+                    list-style: none;
+                    margin: 0;
+
+                    li {
+                        display: inline-block;
+                        margin-right: 30px;
+                        vertical-align: middle;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        .social_menu_icon {
+                            width: 21px;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .secondary_links_panel,
+        .tertiary_links_panel {
+            h2 {
+                font-size: 2rem;
+                line-height: calc(28/32);
+                font-weight: 200;
+                margin-bottom: 30px;
+            }
+
+            hr {
+                margin: 30px 0;
+                background-color: $darkBlue;
+            }
+
+            ul {
+                list-style: none;
+                margin-left: 0;
+
+                li {
+                    color: $lightBlue;
+                    text-transform: uppercase;
+                    font-size: 1.125rem;
+                    line-height: calc(28/18);
+                    font-weight: 700;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
 }
