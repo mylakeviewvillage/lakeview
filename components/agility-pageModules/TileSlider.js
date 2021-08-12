@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import styles from '../../styles/components/tile-slider.module.scss';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

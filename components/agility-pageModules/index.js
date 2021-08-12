@@ -1,4 +1,5 @@
 import ContactPanel from "./ContactPanel";
+import FullWidthSlider from "./FullWidthSlider";
 import ImageBanner from "./ImageBanner";
 import ImageInfo from "./ImageInfo";
 import InfoSection from "./InfoSection";
@@ -18,7 +19,8 @@ const allModules = [
   { name: "MasonryCards", module: MasonryCards },
   { name: "ContactPanel", module: ContactPanel },
   { name: "NextPanel", module: NextPanel },
-  { name: "TileSlider", module: TileSlider }
+  { name: "TileSlider", module: TileSlider },
+  { name: "FullWidthSlider", module: FullWidthSlider }
 ];
 
 export const getModule = (moduleName) => {

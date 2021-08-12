@@ -1,0 +1,41 @@
+@import '../base/variables.scss';
+
+.dots {
+    position: static;
+    margin-top: 20px;
+
+    @media screen and (min-width: 1024px) {
+        margin-top: 40px;
+    }
+
+    li {
+        width: auto;
+        height: auto;
+        vertical-align: middle;
+
+        .dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            background-color: $medBlue;
+        }
+    }
+
+    li:global(.slick-active) {
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: $medGray;
+        }
+    }
+
+    &:global(.slick-dots) {
+        li {
+            button:before {
+                display: none;
+            }
+        }
+    }
+
+}
