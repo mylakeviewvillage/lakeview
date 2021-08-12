@@ -1,16 +1,80 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import styles from '../../styles/components/tile-slider.module.scss';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import SEOImage from 'components/SEOImage';
 
 const TileSlider = ({ customData }) => {
 
     const { tiles } = customData;
 
-    console.log(tiles);
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: 'unslick'
+            }
+        ]
+    };
+
+    const sliderRef = useRef();
+
+    const ArrowLeft = ({ onClick }) => {
+        return (
+            <button
+                className={`${styles.arrow} ${styles.prev}`}
+                aria-label="previous slide"
+                onClick={onClick}
+            >
+                <img src="/img/ts-left.svg" alt="left arrow" className="w-100" />
+            </button>
+        )
+    }
+
+    const ArrowRight = ({ onClick }) => {
+        return (
+            <button
+                className={`${styles.arrow} ${styles.next}`}
+                aria-label="next slide"
+                onClick={onClick}
+            >
+                <img src="/img/ts-right.svg" alt="right arrow" className="w-100" />
+            </button>
+        )
+    }
 
     return (
-        <section>
+        <section className={styles.tile_slider}>
             <div className="container">
                 <div className="content">
-                    TILE SLIDER
+                    <div className={styles.slider_container}>
+                        <Slider {...settings} ref={sliderRef} className={styles.slider}>
+                            {tiles.map((tile, index) => {
+                                return (
+                                    <div className={styles.slide} key={`tile-slide-${index}`}>
+                                        <div className={styles.slide_content}>
+                                            <div className={styles.slide_content_image}>
+                                                <SEOImage img={tile.image} sizes={[200]} className="w-100" />
+                                            </div>
+                                            <div className={styles.slide_content_copy}>
+                                                <h3>{tile.title}</h3>
+                                                <h4>{tile.subtitle}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </Slider>
+                        <div className={styles.navigation}>
+                            <ArrowLeft onClick={() => sliderRef.current.slickPrev()} />
+                            <ArrowRight onClick={() => sliderRef.current.slickNext()} />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
