@@ -15,7 +15,7 @@ const AccordionSection = ({ module, customData }) => {
                 <div className="content">
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
-                            {title && <h2>{title}</h2>}
+                            {title && <h2 className="minor">{title}</h2>}
                             <hr />
                             {description && <RichTextArea html={description} />}
                             {cTA && <Link href={cTA.href}><a className="btn" target={cTA.target}>{cTA.text}</a></Link>}

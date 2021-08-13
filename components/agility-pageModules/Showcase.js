@@ -15,7 +15,7 @@ const Showcase = ({ module }) => {
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
                             <div className={styles.grid_left_content}>
-                                {title && <h2>{topTitle && <span>{topTitle}<br /></span>}{title}</h2>}
+                                {title && <h2 className="minor">{topTitle && <span>{topTitle}<br /></span>}{title}</h2>}
                                 <hr />
                                 {copy && <RichTextArea html={copy} />}
                                 {cTA && <Link href={cTA.href}><a target={cTA.target} className="btn">{cTA.text}</a></Link>}

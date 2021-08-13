@@ -47,7 +47,7 @@ const ContactPanel = ({ module }) => {
         <section className={styles.contact_panel}>
             <div className="container">
                 <div className="content">
-                    <h2>{title}</h2>
+                    <h2 className="minor">{title}</h2>
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
                             <RichTextArea html={description} />
