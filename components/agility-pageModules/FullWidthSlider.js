@@ -23,7 +23,7 @@ const FullWidthSlider = ({ module, customData }) => {
     const sliderRef = useRef();
 
     return (
-        <section>
+        <section className={styles.full_width_slider}>
             <div className="container full-width">
                 <div className="content">
                     <div className="container">
