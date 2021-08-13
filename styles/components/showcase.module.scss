@@ -1,0 +1,49 @@
+@import '../base/variables.scss';
+
+.showcase {
+    .grid {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media screen and (min-width: 1024px) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: calc(100/1400 * 100%);
+        }
+
+        &_left {
+
+            @media screen and (min-width: 1024px) {
+                max-width: 400px;
+            }
+
+            &_content {
+                h2 {
+                    font-size: 40px;
+                    line-height: calc(35/40);
+                    font-weight: 400;
+
+                    span {
+                        color: $blue;
+                        font-size: 18px;
+                        line-height: calc(28/18);
+                    }
+                }
+
+                hr {
+                    margin: 50px 0;
+                }
+            }
+        }
+
+        &_right {
+            flex: 1;
+            margin-bottom: 50px;
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
