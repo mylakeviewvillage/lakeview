@@ -1,3 +1,4 @@
+import Accordion from "./Accordion";
 import ContactPanel from "./ContactPanel";
 import FullWidthSlider from "./FullWidthSlider";
 import ImageBanner from "./ImageBanner";
@@ -20,7 +21,8 @@ const allModules = [
   { name: "ContactPanel", module: ContactPanel },
   { name: "NextPanel", module: NextPanel },
   { name: "TileSlider", module: TileSlider },
-  { name: "FullWidthSlider", module: FullWidthSlider }
+  { name: "FullWidthSlider", module: FullWidthSlider },
+  { name: "Accordion", module: Accordion }
 ];
 
 export const getModule = (moduleName) => {
