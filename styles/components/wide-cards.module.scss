@@ -1,0 +1,39 @@
+@import '../base/variables.scss';
+
+.wide_cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 100px 30px;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .wide_card {
+        &_image {
+            margin-bottom: 40px;
+        }
+
+        &_content {
+            padding: 0 30px;
+
+            p.date {
+                color: $blue;
+                margin-bottom: 0;
+                font-size: 1.125rem;
+                font-weight: 400;
+                line-height: calc(28/18);
+            }
+
+            h2 {
+                margin-bottom: 50px;
+                max-width: 380px;
+                font-size: 2rem;
+
+                @media screen and (min-width: 1024px) {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}

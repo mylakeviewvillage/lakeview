@@ -9,6 +9,7 @@ import MasonryCards from "./MasonryCards";
 import NextPanel from "./NextPanel";
 import Showcase from "./Showcase";
 import TileSlider from "./TileSlider";
+import WideCards from "./WideCards";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
@@ -24,7 +25,8 @@ const allModules = [
   { name: "TileSlider", module: TileSlider },
   { name: "FullWidthSlider", module: FullWidthSlider },
   { name: "Accordion", module: Accordion },
-  { name: "Showcase", module: Showcase }
+  { name: "Showcase", module: Showcase },
+  { name: "WideCards", module: WideCards }
 ];
 
 export const getModule = (moduleName) => {

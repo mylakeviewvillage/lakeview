@@ -33,6 +33,12 @@ h2 {
     }
 }
 
+h2.minor {
+    font-size: 2.5rem;
+    line-height: calc(35/40);
+    font-weight: 400;
+}
+
 h2.stacked-title {
     span {
         display: block;
