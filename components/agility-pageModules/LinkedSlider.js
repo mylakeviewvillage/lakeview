@@ -75,21 +75,17 @@ const LinkedSlider = ({ module, customData }) => {
                     )}
                 </div>
                 <div className="container full-width">
-                    <div className={styles.sliders}>
-                        <div className={styles.image_slider}>
+                    <div className={`${styles.sliders} ${layout === 'left' ? styles.left : styles.right}`}>
+                        <div className={`${styles.image_slider}`}>
                             <div className="w-100">
                                 <Slider {...settingsImageSlider} asNavFor={infoNav} ref={imageSlider}>
                                     {slides.map((slide, index) => {
                                         return (
-                                            <div>
-                                                <div
-                                                    className={`${styles.slide} ${layout === 'left' ? styles.left : styles.right}`}
-                                                    key={`linked-slider-slide-${index}`}>
-
+                                            <div key={`image-slide-${index}`}>
+                                                <div>
                                                     <div className={styles.slide_image}>
                                                         <SEOImage img={slide.image} sizes={[1024, 500]} className="w-100" />
                                                     </div>
-
                                                 </div>
                                             </div>
                                         )
@@ -102,7 +98,7 @@ const LinkedSlider = ({ module, customData }) => {
                                 <Slider {...settingsInfoSlider} asNavFor={imageNav} ref={infoSlider}>
                                     {slides.map((slide, index) => {
                                         return (
-                                            <div>
+                                            <div key={`info-slide-${index}`}>
                                                 <div className={styles.slide_info} style={backgroundColor ? { backgroundColor } : null}>
                                                     <div className={`${styles.slide_info_content} ${copyColor === 'dark' ? styles.dark : styles.light}`}>
                                                         <div className={styles.navigation}>

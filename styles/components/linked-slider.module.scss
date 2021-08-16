@@ -8,6 +8,24 @@ section.linked_slider {
             grid-template-columns: 55% 45%;
         }
 
+        &.left {
+            grid-template-columns: 55% 45%;
+
+            .image_slider {
+                grid-column: 1;
+                grid-row: 1;
+            }
+        }
+
+        &.right {
+            grid-template-columns: 45% 55%;
+
+            .image_slider {
+                grid-column: 2;
+                grid-row: 1;
+            }
+        }
+
         .image_slider {
             position: relative;
             z-index: 2;
