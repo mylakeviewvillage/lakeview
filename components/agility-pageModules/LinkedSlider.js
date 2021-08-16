@@ -1,11 +1,12 @@
-import React from 'react';
-import 'keen-slider/keen-slider.min.css'
-import { useKeenSlider } from 'keen-slider/react'
+import React, { useRef, useState } from 'react';
+import Link from 'next/link';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import styles from '../../styles/components/linked-slider.module.scss';
 import RichTextArea from 'components/RichTextArea';
-import Link from 'next/link';
 import SEOImage from 'components/SEOImage';
-import { useState } from 'react';
 import SectionTitle from 'components/SectionTitle';
 
 const LinkedSlider = ({ module, customData }) => {
@@ -13,15 +14,14 @@ const LinkedSlider = ({ module, customData }) => {
     const { titleOne, titleTwo, titleThree, layout, backgroundColor, copyColor } = module.fields;
     const { slides } = customData;
 
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        arrows: false,
+    };
 
-    const [sliderRef, slider] = useKeenSlider({
-        loop: true,
-        initial: 0,
-        slideChanged(s) {
-            setCurrentSlide(s.details().relativeSlide)
-        },
-    });
+    const sliderRef = useRef();
 
     const ArrowLeft = ({ onClick }) => {
         return (
@@ -56,45 +56,39 @@ const LinkedSlider = ({ module, customData }) => {
                     )}
                 </div>
                 <div className="container full-width">
-                    <div ref={sliderRef} className={`keen-slider ${styles.slider}`}>
+                    <Slider {...settings} ref={sliderRef} className={styles.slider}>
                         {slides.map((slide, index) => {
                             return (
-                                <div
-                                    className={`keen-slider__slide ${styles.slide} ${layout === 'left' ? styles.left : styles.right}`}
-                                    style={backgroundColor ? { background: `linear-gradient(to ${layout}, ${backgroundColor} 50%, transparent 50%)` } : null}
-                                    key={`linked-slider-slide-${index}`}>
+                                <div>
+                                    <div
+                                        className={`${styles.slide} ${layout === 'left' ? styles.left : styles.right}`}
+                                        style={backgroundColor ? { background: `linear-gradient(to ${layout}, ${backgroundColor} 50%, transparent 50%)` } : null}
+                                        key={`linked-slider-slide-${index}`}>
 
-                                    <div className={styles.slide_image}>
-                                        <SEOImage img={slide.image} sizes={[1024, 500]} className="w-100" />
-                                    </div>
-
-                                    <div className={styles.slide_info} style={backgroundColor ? { backgroundColor } : null}>
-                                        <div className={`${styles.slide_info_content} ${copyColor === 'dark' ? styles.dark : styles.light}`}>
-                                            {slider && (
-                                                <div className={styles.navigation}>
-                                                    <ArrowLeft
-                                                        onClick={(e) => e.stopPropagation() || slider.prev()}
-                                                        disabled={currentSlide === 0}
-                                                    />
-                                                    <span>{`${currentSlide + 1}/${slider.details().size}`}</span>
-                                                    <ArrowRight
-                                                        onClick={(e) => e.stopPropagation() || slider.next()}
-                                                        disabled={currentSlide === slider.details().size - 1}
-                                                    />
-                                                </div>
-                                            )}
-                                            <h3>{slide.topTitle && <span className={`${styles.top_title} ${copyColor === 'dark' ? styles.dark : styles.light}`}>{slide.topTitle}<br /></span>}{slide.slideTitle}</h3>
-                                            <RichTextArea html={slide.slideCopy} />
-                                            <Link href={slide.cTA.href}>
-                                                <a target={slide.cTA.target} className={`btn solid-white`}>{slide.cTA.text}</a>
-                                            </Link>
+                                        <div className={styles.slide_image}>
+                                            <SEOImage img={slide.image} sizes={[1024, 500]} className="w-100" />
                                         </div>
-                                    </div>
 
+                                        <div className={styles.slide_info} style={backgroundColor ? { backgroundColor } : null}>
+                                            <div className={`${styles.slide_info_content} ${copyColor === 'dark' ? styles.dark : styles.light}`}>
+                                                <div className={styles.navigation}>
+                                                    <ArrowLeft onClick={() => sliderRef.current.slickPrev()} />
+                                                    <span>{`${index + 1}/${slides.length}`}</span>
+                                                    <ArrowRight onClick={() => sliderRef.current.slickNext()} />
+                                                </div>
+                                                <h3>{slide.topTitle && <span className={`${styles.top_title} ${copyColor === 'dark' ? styles.dark : styles.light}`}>{slide.topTitle}<br /></span>}{slide.slideTitle}</h3>
+                                                <RichTextArea html={slide.slideCopy} />
+                                                <Link href={slide.cTA.href}>
+                                                    <a target={slide.cTA.target} className={`btn solid-white`}>{slide.cTA.text}</a>
+                                                </Link>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
                             )
                         })}
-                    </div>
+                    </Slider>
                 </div>
             </div>
         </section>
