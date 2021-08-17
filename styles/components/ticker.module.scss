@@ -1,0 +1,62 @@
+@import '../base/variables.scss';
+
+.ticker_module {
+
+    h2 {
+        max-width: 300px;
+    }
+
+    .cta {
+        margin-bottom: 50px;
+    }
+
+    :global(.slick-track) {
+        display: flex;
+        align-items: center;
+    }
+
+    .ticker {
+        position: relative;
+        padding: 50px 0;
+
+        &:after {
+            content: '';
+            width: 92%;
+            max-width: 1480px;
+            margin: 0 auto;
+            height: 1px;
+            background-color: $lightGray;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &:first-child {
+            &:before {
+                content: '';
+                width: 92%;
+                max-width: 1480px;
+                margin: 0 auto;
+                height: 1px;
+                background-color: $lightGray;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &_text {
+            width: auto;
+
+            span {
+                font-size: 7.0625rem;
+                font-weight: 200;
+                color: $lightGray;
+                padding: 0 70px;
+            }
+        }
+    }
+
+}
