@@ -8,6 +8,7 @@ import LinkedSlider from "./LinkedSlider";
 import MasonryCards from "./MasonryCards";
 import NextPanel from "./NextPanel";
 import Showcase from "./Showcase";
+import ShowcaseText from "./ShowcaseText";
 import Ticker from "./Ticker";
 import TileSlider from "./TileSlider";
 import WideCards from "./WideCards";
@@ -28,7 +29,8 @@ const allModules = [
   { name: "Accordion", module: Accordion },
   { name: "Showcase", module: Showcase },
   { name: "WideCards", module: WideCards },
-  { name: "Ticker", module: Ticker }
+  { name: "Ticker", module: Ticker },
+  { name: "ShowcaseText", module: ShowcaseText },
 ];
 
 export const getModule = (moduleName) => {
