@@ -19,7 +19,6 @@ const LinkedSlider = ({ module, customData }) => {
         infinite: true,
         speed: 500,
         arrows: false,
-        // vertical: true
     };
 
     const settingsInfoSlider = {
@@ -27,8 +26,6 @@ const LinkedSlider = ({ module, customData }) => {
         infinite: true,
         speed: 700,
         arrows: false,
-        adaptiveHeight: true,
-        cssEase: 'cubic-bezier(.63,-0.22,.44,1.21)'
     };
 
     const [imageNav, setImageNav] = useState(null);
