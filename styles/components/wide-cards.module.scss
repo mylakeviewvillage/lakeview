@@ -17,12 +17,14 @@
         &_content {
             padding: 0 30px;
 
-            p.date {
+            p.date,
+            p.category {
                 color: $blue;
                 margin-bottom: 0;
                 font-size: 1.125rem;
                 font-weight: 400;
                 line-height: calc(28/18);
+                text-transform: uppercase;
             }
 
             h2 {

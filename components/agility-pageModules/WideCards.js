@@ -14,7 +14,10 @@ const WideCards = ({ module, customData }) => {
                 <div className="content">
                     <div className={styles.wide_cards}>
                         {cards.map((card, index) => {
-                            const legibleDate = format(new Date(card.date), 'dd.MM.Y')
+                            let legibleDate;
+                            if (card.date) {
+                                legibleDate = format(new Date(card.date), 'dd.MM.Y')
+                            }
                             return (
                                 <div className={styles.wide_card} key={`wide-card-${index}`}>
                                     <div className={styles.wide_card_image}>
@@ -25,7 +28,8 @@ const WideCards = ({ module, customData }) => {
                                         </Link>
                                     </div>
                                     <div className={styles.wide_card_content}>
-                                        <p className={styles.date}>{legibleDate}</p>
+                                        {legibleDate && <p className={styles.date}>{legibleDate}</p>}
+                                        {card.category && <p className={styles.category}>{card.category}</p>}
                                         <Link href={card.cTA.href}>
                                             <a target={card.cTA.target}>
                                                 <h2 className="minor">{card.title}</h2>
