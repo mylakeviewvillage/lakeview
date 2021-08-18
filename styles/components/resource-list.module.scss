@@ -29,21 +29,26 @@
         }
 
         .right {
-            .resource {
-                h3 {
-                    color: $darkBlue;
-                    font-size: 1.3125rem;
-                    margin-bottom: 0;
-                    line-height: calc(28/21);
-                    font-weight: 700;
-                }
+            .resource_list {
+                list-style: none;
+                margin: 0;
 
-                .resource_description {
-                    margin-bottom: 30px;
-                }
+                .resource {
+                    h3 {
+                        color: $darkBlue;
+                        font-size: 1.3125rem;
+                        margin-bottom: 0;
+                        line-height: calc(28/21);
+                        font-weight: 700;
+                    }
 
-                &:not(:last-child) {
-                    margin-bottom: 60px;
+                    .resource_description {
+                        margin-bottom: 30px;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 60px;
+                    }
                 }
             }
         }

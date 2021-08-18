@@ -24,17 +24,21 @@ const ResourceList = ({ module, customData }) => {
                             {cTA && <Link href={cTA.href}><a target={cTA.target} className="btn">{cTA.text}</a></Link>}
                         </div>
                         <div className={styles.right}>
-                            {resourceList.map((resource, index) => {
-                                return (
-                                    <div className={styles.resource} key={`resource-item-${index}`}>
-                                        {resource.title && <h3>{resource.title}</h3>}
-                                        <div className={styles.resource_description}>
-                                            {resource.description && <RichTextArea html={resource.description} />}
-                                        </div>
-                                        {resource.resourceDocument && <Link href={resource.resourceDocument.url}><a target="_blank" className="btn">View Document</a></Link>}
-                                    </div>
-                                )
-                            })}
+                            {resourceList && (
+                                <ul className={styles.resource_list}>
+                                    {resourceList.map((resource, index) => {
+                                        return (
+                                            <li className={styles.resource} key={`resource-item-${index}`}>
+                                                {resource.title && <h3>{resource.title}</h3>}
+                                                <div className={styles.resource_description}>
+                                                    {resource.description && <RichTextArea html={resource.description} />}
+                                                </div>
+                                                {resource.resourceDocument && <Link href={resource.resourceDocument.url}><a target="_blank" className="btn">View Document</a></Link>}
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            )}
                         </div>
                     </div>
                 </div>
