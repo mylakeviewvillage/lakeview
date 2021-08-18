@@ -34,7 +34,7 @@ const MasonryCards = ({ module, customData }) => {
 
     const card = ({ index, data: { image, category, heading, cTA } }) => {
         return (
-            <div className={styles.card}>
+            <div className={styles.card} key={`masonry-card-${index}`}>
                 <div className={styles.card_image}>
                     <SEOImage img={image} sizes={[500, 400]} className="w-100" />
                 </div>
