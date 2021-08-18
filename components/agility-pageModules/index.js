@@ -7,6 +7,7 @@ import InfoSection from "./InfoSection";
 import LinkedSlider from "./LinkedSlider";
 import MasonryCards from "./MasonryCards";
 import NextPanel from "./NextPanel";
+import ResourceList from "./ResourceList";
 import Showcase from "./Showcase";
 import ShowcaseText from "./ShowcaseText";
 import Ticker from "./Ticker";
@@ -31,6 +32,7 @@ const allModules = [
   { name: "WideCards", module: WideCards },
   { name: "Ticker", module: Ticker },
   { name: "ShowcaseText", module: ShowcaseText },
+  { name: "ResourceList", module: ResourceList },
 ];
 
 export const getModule = (moduleName) => {

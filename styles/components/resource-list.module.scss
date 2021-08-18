@@ -1,0 +1,51 @@
+@import '../base/variables.scss';
+
+.resource_list {
+    h2 {
+        max-width: 300px;
+    }
+
+    .grid {
+        @media screen and (min-width: 1024px) {
+            display: grid;
+            grid-template-columns: 400px auto;
+            gap: 12%;
+        }
+
+        .left {
+            margin-bottom: 60px;
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 0;
+            }
+
+            hr {
+                margin-top: 0;
+            }
+
+            .description {
+                margin-bottom: 50px;
+            }
+        }
+
+        .right {
+            .resource {
+                h3 {
+                    color: $darkBlue;
+                    font-size: 1.3125rem;
+                    margin-bottom: 0;
+                    line-height: calc(28/21);
+                    font-weight: 700;
+                }
+
+                .resource_description {
+                    margin-bottom: 30px;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 60px;
+                }
+            }
+        }
+    }
+}
