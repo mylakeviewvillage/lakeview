@@ -1,4 +1,5 @@
 import Accordion from "./Accordion";
+import ArticleList from "./ArticleList";
 import ContactPanel from "./ContactPanel";
 import FullWidthSlider from "./FullWidthSlider";
 import ImageBanner from "./ImageBanner";
@@ -33,6 +34,7 @@ const allModules = [
   { name: "Ticker", module: Ticker },
   { name: "ShowcaseText", module: ShowcaseText },
   { name: "ResourceList", module: ResourceList },
+  { name: "ArticleList", module: ArticleList },
 ];
 
 export const getModule = (moduleName) => {
