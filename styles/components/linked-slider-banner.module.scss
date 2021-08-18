@@ -1,61 +1,27 @@
 @import '../base/variables.scss';
 
-section.linked_slider {
+.slider {
 
-    .sliders {
-        @media screen and (min-width: 1024px) {
+    .slide {
+        &_content {
             display: grid;
-            grid-template-columns: 55% 45%;
-        }
 
-        &.left {
-            grid-template-columns: 55% 45%;
+            &.left {
+                grid-template-columns: 55% 45%;
 
-            .image_slider {
-                grid-column: 1;
-                grid-row: 1;
-            }
-        }
-
-        &.right {
-            grid-template-columns: 45% 55%;
-
-            .image_slider {
-                grid-column: 2;
-                grid-row: 1;
-            }
-        }
-
-        .image_slider {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-
-            .slide_image {
-                display: flex;
-                align-items: center;
-
-                img {
-                    display: block;
-
-                    @media screen and (min-width: 1024px) {
-                        padding: 70px 0;
-                    }
+                .slide_image {
+                    grid-column: 1;
+                    grid-row: 1;
                 }
             }
-        }
 
+            &.right {
+                grid-template-columns: 45% 55%;
 
-        .info_slider {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-
-            @media screen and (min-width: 1024px) {
-                margin-left: -100px;
+                .slide_image {
+                    grid-column: 2;
+                    grid-row: 1;
+                }
             }
 
             .slide_info {
@@ -67,7 +33,6 @@ section.linked_slider {
 
                     @media screen and (min-width: 1024px) {
                         padding: 90px;
-                        padding-left: 190px;
                     }
 
                     .navigation {

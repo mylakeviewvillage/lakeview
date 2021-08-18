@@ -1,0 +1,118 @@
+@import '../base/variables.scss';
+
+.sliders {
+    @media screen and (min-width: 1024px) {
+        display: grid;
+        grid-template-columns: 55% 45%;
+    }
+
+    &.left {
+        grid-template-columns: 55% 45%;
+
+        .image_slider {
+            grid-column: 1;
+            grid-row: 1;
+        }
+    }
+
+    &.right {
+        grid-template-columns: 45% 55%;
+
+        .image_slider {
+            grid-column: 2;
+            grid-row: 1;
+        }
+    }
+
+    .image_slider {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+
+        .slide_image {
+            display: flex;
+            align-items: center;
+
+            img {
+                display: block;
+
+                @media screen and (min-width: 1024px) {
+                    padding: 70px 0;
+                }
+            }
+        }
+    }
+
+
+    .info_slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+
+        @media screen and (min-width: 1024px) {
+            margin-left: -100px;
+        }
+
+        .slide_info {
+            display: flex;
+            align-items: center;
+
+            &_content {
+                padding: 40px 20px;
+
+                @media screen and (min-width: 1024px) {
+                    padding: 90px;
+                    padding-left: 190px;
+                }
+
+                .navigation {
+                    margin-bottom: 30px;
+
+                    .arrow {
+                        background-color: transparent;
+                        width: 16px;
+                    }
+
+                    span {
+                        margin: 0 16px;
+                        letter-spacing: 0.25em;
+                        position: relative;
+                        top: -2px;
+                        left: 2px;
+                    }
+                }
+
+                h3 {
+                    font-size: 2.5rem;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    line-height: calc(35/40);
+
+                    .top_title {
+                        font-size: 1.125rem;
+                        line-height: calc(28/18);
+                    }
+                }
+
+                &.light {
+                    color: white;
+
+                }
+
+                &.dark {
+                    color: $darkGray;
+
+                    h3 {
+
+                        .top_title {
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
