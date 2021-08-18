@@ -4,8 +4,11 @@ import styles from '../../styles/components/masonary-cards.module.scss';
 import SEOImage from 'components/SEOImage';
 import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
+import SectionTitle from 'components/SectionTitle';
 
-const MasonryCards = ({ customData }) => {
+const MasonryCards = ({ module, customData }) => {
+
+    const { titleOne, titleTwo, titleThree } = module.fields;
 
     const isMobile = useMediaQuery({
         maxWidth: 768
@@ -50,6 +53,7 @@ const MasonryCards = ({ customData }) => {
         <section>
             <div className="container">
                 <div className="content">
+                    {titleOne && <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />}
                     <Masonry items={cards} render={card} columnCount={masonryColumns} columnGutter={30} />
                 </div>
             </div>
