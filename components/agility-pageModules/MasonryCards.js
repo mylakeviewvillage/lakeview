@@ -10,25 +10,25 @@ const MasonryCards = ({ module, customData }) => {
 
     const { titleOne, titleTwo, titleThree } = module.fields;
 
-    const isMobile = useMediaQuery({
+    const smallScreen = useMediaQuery({
         maxWidth: 768
     });
 
-    const isTablet = useMediaQuery({
-        maxWidth: 1024
+    const mediumScreen = useMediaQuery({
+        maxWidth: 1200
     });
 
     const [masonryColumns, setMasonryColumns] = useState(1);
 
     useEffect(() => {
-        if (isMobile) {
+        if (smallScreen) {
             setMasonryColumns(1)
-        } else if (isTablet) {
+        } else if (mediumScreen) {
             setMasonryColumns(2)
         } else {
             setMasonryColumns(3);
         }
-    }, [isMobile, isTablet]);
+    }, [smallScreen, mediumScreen]);
 
     const { cards } = customData;
 
