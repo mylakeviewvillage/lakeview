@@ -1,0 +1,19 @@
+@import '../base/variables.scss';
+
+.filters {
+    margin-bottom: 50px;
+
+    button {
+        background: none;
+        text-transform: uppercase;
+        margin-right: 30px;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: $darkBlue;
+
+        &:hover,
+        &.active {
+            color: $darkGray;
+        }
+    }
+}
