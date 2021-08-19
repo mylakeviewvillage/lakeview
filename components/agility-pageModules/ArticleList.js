@@ -1,12 +1,19 @@
 import { getContentList } from 'helpers/getContentList';
-import React, { useState, useEffect } from 'react';
-import { Masonry } from 'masonic';
-import Link from 'next/link';
+import React, { useState, useEffect, useRef } from 'react';
+import useWindowScroll from "@react-hook/window-scroll";
+import { useWindowSize } from "@react-hook/window-size";
+import { usePositioner, useResizeObserver, useContainerPosition, MasonryScroller } from 'masonic';
 import { useMediaQuery } from 'react-responsive';
+import MasonryCard from 'components/MasonryCard';
+import MasonrySort from 'components/MasonrySort';
 
 const ArticleList = ({ module, customData }) => {
 
-    console.log(customData);
+    const [cards, setCards] = useState([]);
+
+    useEffect(() => {
+        setCards(customData.contentList);
+    }, [customData])
 
     const smallScreen = useMediaQuery({
         maxWidth: 768
@@ -28,11 +35,45 @@ const ArticleList = ({ module, customData }) => {
         }
     }, [smallScreen, mediumScreen]);
 
+    const filterCards = (filter) => {
+        if (filter === 'All') {
+            setCards(customData.contentList);
+        } else {
+            const filteredCards = customData.contentList.filter(card => card.category === filter);
+            setCards(filteredCards);
+        }
+    }
+
+    const containerRef = useRef(null);
+    const [windowWidth, windowHeight] = useWindowSize();
+    const { offset, width } = useContainerPosition(containerRef, [
+        windowWidth,
+        windowHeight
+    ]);
+
+    const positioner = usePositioner(
+        { width, columnCount: masonryColumns, columnGutter: 30 },
+        [cards]
+    );
+
+    const resizeObserver = useResizeObserver(positioner);
+
     return (
         <section>
             <div className="container">
                 <div className="content">
-                    Article List
+                    <MasonrySort filterCards={filterCards} />
+                    {/* <Masonry items={cards} render={MasonryCard} columnCount={masonryColumns} columnGutter={30} /> */}
+                    <MasonryScroller
+                        positioner={positioner}
+                        resizeObserver={resizeObserver}
+                        containerRef={containerRef}
+                        items={cards}
+                        height={1080}
+                        offset={offset}
+                        overscanBy={6}
+                        render={MasonryCard}
+                    />
                 </div>
             </div>
         </section>

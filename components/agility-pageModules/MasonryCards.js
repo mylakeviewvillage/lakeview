@@ -6,6 +6,9 @@ import MasonryCard from 'components/MasonryCard';
 
 const MasonryCards = ({ module, customData }) => {
 
+    console.log(customData);
+
+
     const { titleOne, titleTwo, titleThree } = module.fields;
 
     const smallScreen = useMediaQuery({
