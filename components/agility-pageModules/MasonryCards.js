@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Masonry } from 'masonic';
-import styles from '../../styles/components/masonary-cards.module.scss';
-import SEOImage from 'components/SEOImage';
-import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
 import SectionTitle from 'components/SectionTitle';
+import MasonryCard from 'components/MasonryCard';
 
 const MasonryCards = ({ module, customData }) => {
 
@@ -32,29 +30,12 @@ const MasonryCards = ({ module, customData }) => {
 
     const { cards } = customData;
 
-    const card = ({ index, data: { image, category, heading, cTA } }) => {
-        return (
-            <div className={styles.card} key={`masonry-card-${index}`}>
-                <div className={styles.card_image}>
-                    <SEOImage img={image} sizes={[500, 400]} className="w-100" />
-                </div>
-                <div className={styles.card_copy}>
-                    <p>{category}</p>
-                    <h3>{heading}</h3>
-                    <Link href={cTA.href}>
-                        <a target={cTA.target} className="btn">{cTA.text}</a>
-                    </Link>
-                </div>
-            </div>
-        )
-    }
-
     return (
         <section>
             <div className="container">
                 <div className="content">
                     {titleOne && <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />}
-                    <Masonry items={cards} render={card} columnCount={masonryColumns} columnGutter={30} />
+                    <Masonry items={cards} render={MasonryCard} columnCount={masonryColumns} columnGutter={30} />
                 </div>
             </div>
         </section>
