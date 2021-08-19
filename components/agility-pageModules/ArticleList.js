@@ -1,19 +1,26 @@
 import { getContentList } from 'helpers/getContentList';
 import React, { useState, useEffect, useRef } from 'react';
-import useWindowScroll from "@react-hook/window-scroll";
 import { useWindowSize } from "@react-hook/window-size";
 import { usePositioner, useResizeObserver, useContainerPosition, MasonryScroller } from 'masonic';
 import { useMediaQuery } from 'react-responsive';
 import MasonryCard from 'components/MasonryCard';
 import MasonrySort from 'components/MasonrySort';
 
+import styles from 'styles/components/article-list.module.scss';
+
 const ArticleList = ({ module, customData }) => {
 
     const [cards, setCards] = useState([]);
+    const [renderedCards, setRenderedCards] = useState([]);
+    const [loadedInt, setLoadedInt] = useState(6);
 
     useEffect(() => {
-        setCards(customData.contentList);
+        setCards(customData.contentList)
     }, [customData])
+
+    useEffect(() => {
+        setRenderedCards(cards.slice(0, loadedInt));
+    }, [cards, loadedInt]);
 
     const smallScreen = useMediaQuery({
         maxWidth: 768
@@ -36,6 +43,7 @@ const ArticleList = ({ module, customData }) => {
     }, [smallScreen, mediumScreen]);
 
     const filterCards = (filter) => {
+        setLoadedInt(6)
         if (filter === 'All') {
             setCards(customData.contentList);
         } else {
@@ -53,10 +61,14 @@ const ArticleList = ({ module, customData }) => {
 
     const positioner = usePositioner(
         { width, columnCount: masonryColumns, columnGutter: 30 },
-        [cards]
+        [renderedCards]
     );
 
     const resizeObserver = useResizeObserver(positioner);
+
+    const loadMore = () => {
+        setLoadedInt(loadedInt + 6);
+    }
 
     return (
         <section>
@@ -68,12 +80,19 @@ const ArticleList = ({ module, customData }) => {
                         positioner={positioner}
                         resizeObserver={resizeObserver}
                         containerRef={containerRef}
-                        items={cards}
+                        items={renderedCards}
                         height={1080}
                         offset={offset}
                         overscanBy={6}
                         render={MasonryCard}
                     />
+                    {cards.length > loadedInt && (
+                        <div className={styles.load_more}>
+                            <hr />
+                            <button onClick={loadMore}>Load More</button>
+                            <hr />
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
