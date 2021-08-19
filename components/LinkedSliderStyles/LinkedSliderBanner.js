@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import styles from '../../../styles/components/linked-slider-banner.module.scss';
+import styles from 'styles/components/linked-slider-banner.module.scss';
 import RichTextArea from 'components/RichTextArea';
 import SEOImage from 'components/SEOImage';
 import { useRef } from 'react';

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import SectionTitle from 'components/SectionTitle';
-import LinkedSliderOverlapping from './LinkedSliderStyles/LinkedSliderOverlapping';
-import LinkedSliderBanner from './LinkedSliderStyles/LinkedSliderBanner';
+import LinkedSliderOverlapping from '../LinkedSliderStyles/LinkedSliderOverlapping';
+import LinkedSliderBanner from '../LinkedSliderStyles/LinkedSliderBanner';
 
 const LinkedSlider = ({ module, customData }) => {
 
@@ -23,7 +23,6 @@ const LinkedSlider = ({ module, customData }) => {
                 </div>
                 <div className="container full-width">
                     {style === 'overlapping' ? <LinkedSliderOverlapping {...settings} /> : <LinkedSliderBanner {...settings} />}
-
                 </div>
             </div>
         </section>
