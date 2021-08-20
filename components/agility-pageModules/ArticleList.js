@@ -10,6 +10,8 @@ import styles from 'styles/components/article-list.module.scss';
 
 const ArticleList = ({ module, customData }) => {
 
+    console.log(customData);
+
     const [cards, setCards] = useState([]);
     const [renderedCards, setRenderedCards] = useState([]);
     const [loadedInt, setLoadedInt] = useState(6);
@@ -75,7 +77,6 @@ const ArticleList = ({ module, customData }) => {
             <div className="container">
                 <div className="content">
                     <MasonrySort filterCards={filterCards} />
-                    {/* <Masonry items={cards} render={MasonryCard} columnCount={masonryColumns} columnGutter={30} /> */}
                     <MasonryScroller
                         positioner={positioner}
                         resizeObserver={resizeObserver}
