@@ -1,4 +1,5 @@
 import Accordion from "./Accordion";
+import AlternatingInfoTiles from "./AlternatingInfoTiles";
 import ArticleList from "./ArticleList";
 import ContactPanel from "./ContactPanel";
 import FullWidthSlider from "./FullWidthSlider";
@@ -35,6 +36,7 @@ const allModules = [
   { name: "ShowcaseText", module: ShowcaseText },
   { name: "ResourceList", module: ResourceList },
   { name: "ArticleList", module: ArticleList },
+  { name: "AlternatingInfoTiles", module: AlternatingInfoTiles }
 ];
 
 export const getModule = (moduleName) => {
