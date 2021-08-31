@@ -29,7 +29,7 @@ const InfoSection = ({ module }) => {
         if (imageContainerHeight && imageHeight) {
             setParallaxData([
                 {
-                    start: '#test',
+                    start: '#info-section',
                     duration: imageContainerHeight * 2,
                     properties: [
                         {
@@ -54,7 +54,7 @@ const InfoSection = ({ module }) => {
     }, [isMobileOrTablet]);
 
     return (
-        <section className={styles.infoSection} id="test">
+        <section className={styles.infoSection} id="info-section">
             <div className="container">
                 <div className="content">
                     <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />
