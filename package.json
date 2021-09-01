@@ -17,6 +17,7 @@
     "@agility/content-sync": "^1.0.3",
     "@formspree/react": "^2.2.3",
     "@react-hook/window-size": "^3.0.7",
+    "axios": "^0.21.1",
     "date-fns": "^2.23.0",
     "fs-extra": "^10.0.0",
     "keen-slider": "^5.5.1",

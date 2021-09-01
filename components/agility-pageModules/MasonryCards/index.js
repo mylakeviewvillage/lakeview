@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Masonry } from 'masonic';
 import { useMediaQuery } from 'react-responsive';
 import SectionTitle from 'components/SectionTitle';
-import MasonryCard from 'components/MasonryCard';
+import MasonryCard from 'components/agility-pageModules/MasonryCards/MasonryCard';
 
 const MasonryCards = ({ module, customData }) => {
-
-    console.log(customData);
-
 
     const { titleOne, titleTwo, titleThree } = module.fields;
 

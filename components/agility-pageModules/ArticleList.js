@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useWindowSize } from "@react-hook/window-size";
 import { usePositioner, useResizeObserver, useContainerPosition, MasonryScroller } from 'masonic';
 import { useMediaQuery } from 'react-responsive';
-import MasonryCard from 'components/MasonryCard';
+import MasonryCard from 'components/agility-pageModules/MasonryCards/MasonryCard';
 import MasonrySort from 'components/MasonrySort';
 
 import styles from 'styles/components/article-list.module.scss';
