@@ -6,6 +6,7 @@ import FullWidthSlider from "./FullWidthSlider";
 import ImageBanner from "./ImageBanner";
 import ImageInfo from "./ImageInfo";
 import InfoSection from "./InfoSection";
+import LargeImage from "./LargeImage";
 import LinkedSlider from "./LinkedSlider";
 import MasonryCards from "./MasonryCards";
 import NextPanel from "./NextPanel";
@@ -36,7 +37,8 @@ const allModules = [
   { name: "ShowcaseText", module: ShowcaseText },
   { name: "ResourceList", module: ResourceList },
   { name: "ArticleList", module: ArticleList },
-  { name: "AlternatingInfoTiles", module: AlternatingInfoTiles }
+  { name: "AlternatingInfoTiles", module: AlternatingInfoTiles },
+  { name: "LargeImage", module: LargeImage }
 ];
 
 export const getModule = (moduleName) => {
