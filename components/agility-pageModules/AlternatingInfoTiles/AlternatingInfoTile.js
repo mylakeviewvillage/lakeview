@@ -5,7 +5,6 @@ import React from 'react';
 import styles from 'styles/components/alternating-info-tiles.module.scss';
 
 const AlternatingInfoTile = ({ tile }) => {
-    console.log(tile)
 
     return (
         <div className={styles.tile}>
