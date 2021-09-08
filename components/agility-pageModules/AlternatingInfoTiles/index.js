@@ -4,14 +4,15 @@ import React from 'react';
 import styles from 'styles/components/alternating-info-tiles.module.scss';
 import AlternatingInfoTile from './AlternatingInfoTile';
 
-const AlternatingInfoTiles = ({ customData }) => {
-
+const AlternatingInfoTiles = ({ module, customData }) => {
+    const { titleOne, titleTwo, titleThree } = module.fields;
     const infoTiles = customData.contentList;
 
     return (
         <section>
             <div className="container">
                 <div className="content">
+                    <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />
                     <div className={styles.tiles}>
                         {infoTiles.map((tile, index) => <AlternatingInfoTile key={`alternating-info-tile-${index}`} tile={tile} />)}
                     </div>
