@@ -8,12 +8,14 @@ import ImageInfo from "./ImageInfo";
 import ImageMasonry from "./ImageMasonry";
 import InfoSection from "./InfoSection";
 import LargeImage from "./LargeImage";
+import LargeImageVideoModal from "./LargeImageVideoModal";
 import LinkedSlider from "./LinkedSlider";
 import MasonryCards from "./MasonryCards";
 import NextPanel from "./NextPanel";
 import ResourceList from "./ResourceList";
 import Showcase from "./Showcase";
 import ShowcaseText from "./ShowcaseText";
+import Testimonial from "./Testimonial";
 import Ticker from "./Ticker";
 import TileSlider from "./TileSlider";
 import WideCards from "./WideCards";
@@ -35,11 +37,13 @@ const allModules = [
   { name: "Showcase", module: Showcase },
   { name: "WideCards", module: WideCards },
   { name: "Ticker", module: Ticker },
+  { name: "Testimonial", module: Testimonial },
   { name: "ShowcaseText", module: ShowcaseText },
   { name: "ResourceList", module: ResourceList },
   { name: "ArticleList", module: ArticleList },
   { name: "AlternatingInfoTiles", module: AlternatingInfoTiles },
   { name: "LargeImage", module: LargeImage },
+  { name: "LargeImageVideoModal", module: LargeImageVideoModal },
   { name: "ImageMasonry", module: ImageMasonry }
 ];
 

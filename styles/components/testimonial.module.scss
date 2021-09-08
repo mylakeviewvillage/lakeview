@@ -1,0 +1,15 @@
+@import '../base/variables.scss';
+
+.testimonial {
+
+    h3 {
+        color: $blue;
+        font-style: italic;
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+
+    h4 {
+        text-align: right;
+    }
+}
