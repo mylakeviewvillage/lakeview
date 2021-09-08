@@ -95,9 +95,11 @@ const LinkedSliderOverlapping = ({ slides, backgroundColor, copyColor, layout })
                                             </div>
                                             <h3>{slide.topTitle && <span className={`${styles.top_title} ${copyColor === 'dark' ? styles.dark : styles.light}`}>{slide.topTitle}<br /></span>}{slide.slideTitle}</h3>
                                             <RichTextArea html={slide.slideCopy} />
-                                            <Link href={slide.cTA.href}>
-                                                <a target={slide.cTA.target} className={`btn solid-white`}>{slide.cTA.text}</a>
-                                            </Link>
+                                            {slide.cTA && (
+                                                <Link href={slide.cTA.href}>
+                                                    <a target={slide.cTA.target} className={`btn solid-white`}>{slide.cTA.text}</a>
+                                                </Link>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

@@ -17,12 +17,21 @@ const AlternatingInfoTile = ({ tile }) => {
                 <hr />
                 <ul>
                     {tile.iconList.items.map((item, index) => (
-                        <li key={`info-tile-list-item=${index}`} style={{ backgroundImage: `url('${item.fields.icon.url}')` }}>
+                        <li key={`info-tile-list-item=${index}`}
+                            style={item.fields.icon && (
+                                {
+                                    paddingLeft: '70px',
+                                    backgroundImage: `url('${item.fields.icon.url}')`
+                                }
+                            )}>
                             <RichTextArea html={item.fields.copy} />
                         </li>
                     ))}
                 </ul>
-                <Link href={tile.cTA.href}><a className="btn" target={tile.cTA.target}>{tile.cTA.text}</a></Link>
+
+                {tile.cTA && (
+                    <Link href={tile.cTA.href}><a className="btn" target={tile.cTA.target}>{tile.cTA.text}</a></Link>
+                )}
             </div>
         </div>
     );
