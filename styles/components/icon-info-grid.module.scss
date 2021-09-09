@@ -1,0 +1,73 @@
+@import '../base/variables.scss';
+
+section.icon_grid {
+
+    .panes {
+
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 767px) {
+            flex-wrap: wrap;
+        }
+
+        .paneLeft {
+            width: calc(100% - 30px);
+            padding-right: 30px;
+
+            @media screen and (min-width: 767px) {
+                max-width: 420px;
+            }
+
+            .title {
+                max-width: 300px;
+                color: $offBlack;
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+        }
+
+        .paneRight {
+
+            width: calc(100% - 30px);
+            padding-left: 30px;
+            max-width: 920px;
+
+            .tiles {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                @media screen and (min-width: 1300px) {
+                    justify-content: flex-start;
+                }
+
+                .tile {
+                    display: flex;
+                    width: 100%;
+                    max-width: 460px;
+
+                    padding-bottom: 40px;
+
+                    @media screen and (min-width: 1300px) {
+                        width: 50%;
+                        justify-content: flex-end;
+                    }
+
+                    h4 {
+                        color: $blue;
+                        font-size: 1.9rem;
+                        line-height: 1.1;
+                    }
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        margin-right: 20px;
+                    }
+
+                }
+            }
+        }
+    }
+}
