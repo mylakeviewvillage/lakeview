@@ -3,6 +3,7 @@ import AlternatingInfoTiles from "./AlternatingInfoTiles";
 import ArticleList from "./ArticleList";
 import ContactPanel from "./ContactPanel";
 import FullWidthSlider from "./FullWidthSlider";
+import IconInfoGrid from "./IconInfoGrid";
 import ImageBanner from "./ImageBanner";
 import ImageInfo from "./ImageInfo";
 import ImageMasonry from "./ImageMasonry";
@@ -44,7 +45,8 @@ const allModules = [
   { name: "AlternatingInfoTiles", module: AlternatingInfoTiles },
   { name: "LargeImage", module: LargeImage },
   { name: "LargeImageVideoModal", module: LargeImageVideoModal },
-  { name: "ImageMasonry", module: ImageMasonry }
+  { name: "ImageMasonry", module: ImageMasonry },
+  { name: "IconInfoGrid", module: IconInfoGrid }
 ];
 
 export const getModule = (moduleName) => {
