@@ -24,7 +24,9 @@ const SiteHeader = ({ globalData, sitemapNode, page }) => {
             <div className="container">
                 <div className={styles.content}>
                     <div className={styles.logo}>
-                        <img src={logo.url} alt={logo.label} className="w-100" />
+                        <Link href={'/'}>
+                            <a><img src={logo.url} alt={logo.label} className="w-100" /></a>
+                        </Link>
                     </div>
                     <button className="hamburger" onClick={() => setOpenNav(true)}>
                         <div className="ham-bar top-bar"></div>
@@ -57,8 +59,8 @@ const SiteHeader = ({ globalData, sitemapNode, page }) => {
                                                                 {topLevelLink.subNavLinks.items.map((subNavLink, subIndex) => {
                                                                     return (
                                                                         <li key={`sub-nav-link-${topIndex}-${subIndex}`}>
-                                                                            <Link href={'/'}>
-                                                                                <a>
+                                                                            <Link href={subNavLink.fields.link.href}>
+                                                                                <a target={subNavLink.fields.link.target}>
                                                                                     {subNavLink.fields.link.text}
                                                                                 </a>
                                                                             </Link>
