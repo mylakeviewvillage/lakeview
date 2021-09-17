@@ -27,7 +27,7 @@ const SiteFooter = ({ globalData }) => {
                         </div>
                         <div className={styles.legal_panel}>
                             <div className={styles.logo}>
-                                <img src={logo.url} alt={logo.label} />
+                                <img src={logo.url} alt={logo.label} className="w-100" />
                             </div>
                             <div className={styles.copyright}>
                                 <p>{copyright}</p>

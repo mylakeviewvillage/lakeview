@@ -10,8 +10,6 @@ import styles from 'styles/components/article-list.module.scss';
 
 const ArticleList = ({ module, customData }) => {
 
-    console.log(customData);
-
     const [cards, setCards] = useState([]);
     const [renderedCards, setRenderedCards] = useState([]);
     const [loadedInt, setLoadedInt] = useState(6);
