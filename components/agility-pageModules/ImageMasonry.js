@@ -1,11 +1,11 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import axios from 'axios';
-import { Masonry } from 'masonic';
-import { useMediaQuery } from 'react-responsive';
 import SEOImage from 'components/SEOImage';
 import styles from 'styles/components/image-masonry.module.scss';
+
+import axios from 'axios';
+import Masonry from 'react-masonry-css'
 
 const ImageMasonry = ({ module }) => {
 
@@ -26,38 +26,27 @@ const ImageMasonry = ({ module }) => {
         }
     }
 
-    const smallScreen = useMediaQuery({
-        maxWidth: 768
-    });
-
-    const mediumScreen = useMediaQuery({
-        maxWidth: 1200
-    });
-
-    const [masonryColumns, setMasonryColumns] = useState(1);
-
-    useEffect(() => {
-        if (smallScreen) {
-            setMasonryColumns(1)
-        } else if (mediumScreen) {
-            setMasonryColumns(2)
-        } else {
-            setMasonryColumns(3);
-        }
-    }, [smallScreen, mediumScreen]);
-
-    const imageTile = ({ index, data }) => (
-        <div key={`image-masonry-tile-${index}`} className="w-100">
-            <SEOImage img={data} sizes={[500, 300]} className="w-100" />
-        </div>
-    )
+    const breakpointColumnsObj = {
+        default: 3,
+        1200: 2,
+        768: 1
+    };
 
     return (
         <section>
             <div className="container">
                 <div className="content">
                     {title && <h2 className={`minor ${styles.title}`}>{title}</h2>}
-                    <Masonry items={gallery} render={imageTile} columnCount={masonryColumns} columnGutter={30} />
+                    <Masonry
+                        breakpointCols={breakpointColumnsObj}
+                        className="my-masonry-grid"
+                        columnClassName="my-masonry-grid_column">
+                        {gallery.map((galleryItem, index) => (
+                            <div key={`image-masonry-tile-${index}`} className="w-100">
+                                <SEOImage img={galleryItem} sizes={[500, 300]} className="w-100" />
+                            </div>
+                        ))}
+                    </Masonry>
                 </div>
             </div>
         </section>

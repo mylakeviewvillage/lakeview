@@ -3,7 +3,10 @@ import SEOImage from 'components/SEOImage';
 import Link from 'next/link';
 import styles from 'styles/components/masonry-cards.module.scss';
 
-const MasonryCard = ({ index, data: { image, category, title, slug } }) => {
+const MasonryCard = ({ index, data: { image, category, title, cTA } }) => {
+
+    console.log(cTA);
+
 
     let href = "/articles/[...slug]";
 
@@ -17,9 +20,9 @@ const MasonryCard = ({ index, data: { image, category, title, slug } }) => {
             <div className={styles.card_copy}>
                 {category && <p>{category}</p>}
                 {title && <h3>{title}</h3>}
-                {slug && (
-                    <Link href={href} as={`/articles/${slug}`}>
-                        <a className="btn">Read More</a>
+                {cTA && (
+                    <Link href={cTA.href}>
+                        <a className="btn">{cTA.text}</a>
                     </Link>
                 )}
             </div>
