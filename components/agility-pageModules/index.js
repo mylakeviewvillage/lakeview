@@ -1,8 +1,10 @@
 import Accordion from "./Accordion";
 import AlternatingInfoTiles from "./AlternatingInfoTiles";
+import ArtistPage from "./ArtistPage";
 import ArticleList from "./ArticleList";
 import ContactPanel from "./ContactPanel";
 import FullWidthSlider from "./FullWidthSlider";
+import InfoSectionVideoModal from "./InfoSectionVideoModal";
 import IconInfoGrid from "./IconInfoGrid";
 import ImageBanner from "./ImageBanner";
 import ImageInfo from "./ImageInfo";
@@ -27,6 +29,7 @@ import WideCards from "./WideCards";
 const allModules = [
   { name: "ImageBanner", module: ImageBanner },
   { name: "InfoSection", module: InfoSection },
+  { name: "InfoSectionVideoModal", module: InfoSectionVideoModal },
   { name: "LinkedSlider", module: LinkedSlider },
   { name: "ImageInfo", module: ImageInfo },
   { name: "MasonryCards", module: MasonryCards },
@@ -42,6 +45,7 @@ const allModules = [
   { name: "ShowcaseText", module: ShowcaseText },
   { name: "ResourceList", module: ResourceList },
   { name: "ArticleList", module: ArticleList },
+  { name: "ArtistPage", module: ArtistPage },
   { name: "AlternatingInfoTiles", module: AlternatingInfoTiles },
   { name: "LargeImage", module: LargeImage },
   { name: "LargeImageVideoModal", module: LargeImageVideoModal },
