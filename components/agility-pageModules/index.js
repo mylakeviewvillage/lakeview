@@ -22,6 +22,7 @@ import Testimonial from "./Testimonial";
 import Ticker from "./Ticker";
 import TileSlider from "./TileSlider";
 import WideCards from "./WideCards";
+import DiscoverTheArtists from "./DiscoverTheArtists";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
@@ -50,7 +51,8 @@ const allModules = [
   { name: "LargeImage", module: LargeImage },
   { name: "LargeImageVideoModal", module: LargeImageVideoModal },
   { name: "ImageMasonry", module: ImageMasonry },
-  { name: "IconInfoGrid", module: IconInfoGrid }
+  { name: "IconInfoGrid", module: IconInfoGrid },
+  { name: "DiscovertheArtists", module: DiscoverTheArtists }
 ];
 
 export const getModule = (moduleName) => {
