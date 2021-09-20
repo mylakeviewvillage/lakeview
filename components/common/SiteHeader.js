@@ -43,7 +43,7 @@ const SiteHeader = ({ globalData, sitemapNode, page }) => {
                                             return (
                                                 <li key={`top-level-link-${topIndex}`}>
                                                     <Link href={topLevelLink.link.href}>
-                                                        <a target={topLevelLink.link.target}>{topLevelLink.title}</a>
+                                                        <a target={topLevelLink.link.target} onClick={closeMenu} >{topLevelLink.title}</a>
                                                     </Link>
                                                 </li>)
                                         } else {
@@ -60,7 +60,7 @@ const SiteHeader = ({ globalData, sitemapNode, page }) => {
                                                                     return (
                                                                         <li key={`sub-nav-link-${topIndex}-${subIndex}`}>
                                                                             <Link href={subNavLink.fields.link.href}>
-                                                                                <a target={subNavLink.fields.link.target}>
+                                                                                <a target={subNavLink.fields.link.target} onClick={closeMenu} >
                                                                                     {subNavLink.fields.link.text}
                                                                                 </a>
                                                                             </Link>
