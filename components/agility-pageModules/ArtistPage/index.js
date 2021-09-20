@@ -11,8 +11,6 @@ import stylesInfoTiles from 'styles/components/alternating-info-tiles.module.scs
 
 const ArtistPage = ({ dynamicPageItem }) => {
 
-    console.log(dynamicPageItem.fields);
-
     const { title, bio, headshot, quote, website, instagram, artwork, artworkTitle, artworkDescription, youtubeThumbnail, youtubeVideoID } = dynamicPageItem.fields;
     const [openModal, setOpenModal] = useState(false);
 
@@ -72,7 +70,8 @@ const ArtistPage = ({ dynamicPageItem }) => {
                                     {/* <h2 className="minor">{title}</h2> */}
                                     <h3>{title}</h3>
                                     <hr />
-                                    <ul><li><RichTextArea html={bio} /></li>
+                                    <ul>
+                                        <li><RichTextArea html={bio} /></li>
                                         <li>{website.href}</li>
                                         <li>{instagram.href}</li>
                                     </ul>
