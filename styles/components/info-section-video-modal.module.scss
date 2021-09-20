@@ -20,12 +20,23 @@
         }
 
         .left {
-            width: 50%;
+            width: 100%;
 
         }
 
         .right {
-            width: 40%;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .left {
+                width: 50%;
+
+            }
+
+            .right {
+                width: 40%;
+            }
         }
     }
 }
