@@ -5,11 +5,6 @@ import styles from 'styles/components/masonry-cards.module.scss';
 
 const MasonryCard = ({ index, data: { image, category, title, cTA } }) => {
 
-    console.log(cTA);
-
-
-    let href = "/articles/[...slug]";
-
     return (
         <div className={styles.card} key={`masonry-card-${index}`}>
             {image && (

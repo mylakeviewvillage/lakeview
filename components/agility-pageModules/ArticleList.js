@@ -86,7 +86,7 @@ const ArticleList = ({ module, customData }) => {
                         render={MasonryCard}
                     />
                     {cards.length > loadedInt && (
-                        <div className={styles.load_more}>
+                        <div className="load-more">
                             <hr />
                             <button onClick={loadMore}>Load More</button>
                             <hr />
