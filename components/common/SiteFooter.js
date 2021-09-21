@@ -8,9 +8,9 @@ const SiteFooter = ({ globalData }) => {
     const { nextUpLinks, logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks } = globalData.footer;
 
     return (
-        <>
+        <footer className={styles.footer}>
             <NextPanel menu={nextUpLinks} />
-            <footer className={styles.footer}>
+            <div className={styles.bottom}>
                 <div className="container">
                     <div className="content fat">
                         <div className={styles.grid}>
@@ -49,8 +49,8 @@ const SiteFooter = ({ globalData }) => {
                         </div>
                     </div>
                 </div>
-            </footer>
-        </>
+            </div>
+        </footer>
     );
 };
 

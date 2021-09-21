@@ -5,7 +5,7 @@ import styles from 'styles/components/next-panel.module.scss';
 const NextPanel = ({ menu }) => {
 
     return (
-        <section className={styles.next_panel}>
+        <div className={styles.next_panel}>
             <div className="container">
                 <div className="content fat">
                     <h2>
@@ -26,7 +26,7 @@ const NextPanel = ({ menu }) => {
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 
