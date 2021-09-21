@@ -9,8 +9,10 @@ const Testimonial = ({ module }) => {
         <section className={styles.testimonial}>
             <div className="container">
                 <div className="content">
-                    <h3>{quote}</h3>
-                    <h4>{author}</h4>
+                    <div className={styles.testimonial_copy}>
+                        <h3>{quote}</h3>
+                        <h4>{author}</h4>
+                    </div>
                 </div>
             </div>
         </section>
