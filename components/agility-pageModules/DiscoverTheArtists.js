@@ -29,9 +29,6 @@ const DiscoverTheArtists = ({ module, customData }) => {
         setLoadedArtists(loadedArtists + loadInt);
     }
 
-    console.log(visibleArtists);
-
-
     return (
         <section className={styles.discover_the_artist}>
             <div className="container">
