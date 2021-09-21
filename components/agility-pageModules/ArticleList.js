@@ -38,7 +38,7 @@ const ArticleList = ({ module, customData }) => {
         768: 1
     };
 
-    const cardsRender = renderedCards.map((card, index) => <MasonryCard index={index} data={card} />)
+    const cardsRender = renderedCards.map((card, index) => <MasonryCard index={index} data={card} key={`article-card-${index}`} />)
 
     return (
         <section>

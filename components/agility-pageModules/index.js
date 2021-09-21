@@ -14,7 +14,6 @@ import LargeImage from "./LargeImage";
 import LargeImageVideoModal from "./LargeImageVideoModal";
 import LinkedSlider from "./LinkedSlider";
 import MasonryCards from "./MasonryCards";
-import NextPanel from "./NextPanel";
 import ResourceList from "./ResourceList";
 import Showcase from "./Showcase";
 import ShowcaseText from "./ShowcaseText";
@@ -35,7 +34,6 @@ const allModules = [
   { name: "ImageInfo", module: ImageInfo },
   { name: "MasonryCards", module: MasonryCards },
   { name: "ContactPanel", module: ContactPanel },
-  { name: "NextPanel", module: NextPanel },
   { name: "TileSlider", module: TileSlider },
   { name: "FullWidthSlider", module: FullWidthSlider },
   { name: "Accordion", module: Accordion },

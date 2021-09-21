@@ -1,52 +1,56 @@
+import NextPanel from "components/NextPanel";
 import Link from "next/link";
 import React from "react";
 import styles from '../../styles/components/footer.module.scss';
 
 const SiteFooter = ({ globalData }) => {
 
-    const { logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks } = globalData.footer;
+    const { nextUpLinks, logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks } = globalData.footer;
 
     return (
-        <footer className={styles.footer}>
-            <div className="container">
-                <div className="content fat">
-                    <div className={styles.grid}>
-                        <div className={styles.secondary_links_panel}>
-                            <h2>Secondary<br />Site Links</h2>
-                            <hr />
-                            <ul>
-                                {secondaryLinks.map((item, index) => <li key={`secondary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
-                            </ul>
-                        </div>
-                        <div className={styles.tertiary_links_panel}>
-                            <h2>Tertiary<br />Site Links</h2>
-                            <hr />
-                            <ul>
-                                {tertiaryLinks.map((item, index) => <li key={`tertiary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
-                            </ul>
-                        </div>
-                        <div className={styles.legal_panel}>
-                            <div className={styles.logo}>
-                                <img src={logo.url} alt={logo.label} className="w-100" />
-                            </div>
-                            <div className={styles.copyright}>
-                                <p>{copyright}</p>
-                            </div>
-                            <div className={styles.legal_menu}>
+        <>
+            <NextPanel menu={nextUpLinks} />
+            <footer className={styles.footer}>
+                <div className="container">
+                    <div className="content fat">
+                        <div className={styles.grid}>
+                            <div className={styles.secondary_links_panel}>
+                                <h2>Secondary<br />Site Links</h2>
+                                <hr />
                                 <ul>
-                                    {legalMenu.map((item, index) => <li key={`legal-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                                    {secondaryLinks.map((item, index) => <li key={`secondary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
                                 </ul>
                             </div>
-                            <div className={styles.social_menu}>
+                            <div className={styles.tertiary_links_panel}>
+                                <h2>Tertiary<br />Site Links</h2>
+                                <hr />
                                 <ul>
-                                    {socialMenu.map((item, index) => <li key={`social-link-${index}`}><Link href={item.link.href}><a target={item.link.target}><div className={styles.social_menu_icon}><img src={item.image.url} alt={item.image.label} className="w-100" /></div></a></Link></li>)}
+                                    {tertiaryLinks.map((item, index) => <li key={`tertiary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
                                 </ul>
+                            </div>
+                            <div className={styles.legal_panel}>
+                                <div className={styles.logo}>
+                                    <img src={logo.url} alt={logo.label} className="w-100" />
+                                </div>
+                                <div className={styles.copyright}>
+                                    <p>{copyright}</p>
+                                </div>
+                                <div className={styles.legal_menu}>
+                                    <ul>
+                                        {legalMenu.map((item, index) => <li key={`legal-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                                    </ul>
+                                </div>
+                                <div className={styles.social_menu}>
+                                    <ul>
+                                        {socialMenu.map((item, index) => <li key={`social-link-${index}`}><Link href={item.link.href}><a target={item.link.target}><div className={styles.social_menu_icon}><img src={item.image.url} alt={item.image.label} className="w-100" /></div></a></Link></li>)}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
+        </>
     );
 };
 
@@ -56,6 +60,7 @@ SiteFooter.getCustomInitialProps = async function ({
     channelName,
 }) {
 
+    let nextUpLinks;
     let logo;
     let copyright;
     let legalMenu;
@@ -75,6 +80,9 @@ SiteFooter.getCustomInitialProps = async function ({
 
         if (footerContent.items && footerContent.items.length > 0) {
             let footer = footerContent.items[0].fields;
+            nextUpLinks = footer.nextUpLinks.items;
+            nextUpLinks.sort((a, b) => (a.properties.itemOrder > b.properties.itemOrder) ? 1 : -1);
+            nextUpLinks = nextUpLinks.map(link => link.fields);
             logo = footer.logo;
             copyright = footer.copyright;
             legalMenu = footer.legalMenu.items;
@@ -96,7 +104,7 @@ SiteFooter.getCustomInitialProps = async function ({
 
     }
 
-    return { logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks }
+    return { nextUpLinks, logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks }
 
 }
 

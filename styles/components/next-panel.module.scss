@@ -58,8 +58,10 @@ section.next_panel {
                 color: $blue;
             }
 
-            &:hover {
-                color: $blue;
+            a {
+                &:hover {
+                    color: $blue;
+                }
             }
         }
     }
