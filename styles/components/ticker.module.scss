@@ -50,11 +50,13 @@
         &_text {
             width: auto;
 
-            span {
+            p {
                 font-size: 7.0625rem;
                 font-weight: 200;
                 color: $lightGray;
                 padding: 0 70px;
+                margin-bottom: 0;
+                line-height: 0.8;
             }
         }
     }
