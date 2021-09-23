@@ -1,3 +1,4 @@
+import ContactPanel from "components/ContactPanel";
 import NextPanel from "components/NextPanel";
 import Link from "next/link";
 import React from "react";
@@ -9,6 +10,7 @@ const SiteFooter = ({ globalData }) => {
 
     return (
         <footer className={styles.footer}>
+            <ContactPanel />
             <NextPanel menu={nextUpLinks} />
             <div className={styles.bottom}>
                 <div className="container">

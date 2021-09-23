@@ -2,7 +2,6 @@ import Accordion from "./Accordion";
 import AlternatingInfoTiles from "./AlternatingInfoTiles";
 import ArtistPage from "./ArtistPage";
 import ArticleList from "./ArticleList";
-import ContactPanel from "./ContactPanel";
 import FullWidthSlider from "./FullWidthSlider";
 import InfoSectionVideoModal from "./InfoSectionVideoModal";
 import IconInfoGrid from "./IconInfoGrid";
@@ -33,7 +32,6 @@ const allModules = [
   { name: "LinkedSlider", module: LinkedSlider },
   { name: "ImageInfo", module: ImageInfo },
   { name: "MasonryCards", module: MasonryCards },
-  { name: "ContactPanel", module: ContactPanel },
   { name: "TileSlider", module: TileSlider },
   { name: "FullWidthSlider", module: FullWidthSlider },
   { name: "Accordion", module: Accordion },

@@ -1,14 +1,13 @@
-import RichTextArea from 'components/RichTextArea';
 import React, { useState, useEffect } from 'react';
 import { useForm } from '@formspree/react';
-import styles from '../../styles/components/contact-panel.module.scss';
+import styles from 'styles/components/contact-panel.module.scss';
 import Link from 'next/link';
 
-const ContactPanel = ({ module }) => {
+const ContactPanel = () => {
 
-    const { title, description, formID } = module.fields;
+    // const { title, description, formID } = module.fields;
 
-    const [state, handleSubmit] = useForm(formID);
+    const [state, handleSubmit] = useForm('aaa');
 
     const [formValid, setFormValid] = useState(false);
     const [firstName, setFirstName] = useState('');
@@ -44,13 +43,13 @@ const ContactPanel = ({ module }) => {
     }
 
     return (
-        <section className={styles.contact_panel}>
+        <div className={styles.contact_panel}>
             <div className="container">
                 <div className="content">
-                    <h2 className="minor">{title}</h2>
+                    <h2 className="minor">Stay in the know on all things Lakview Village</h2>
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
-                            <RichTextArea html={description} />
+                            <p>Subscribe to our newsletter and get the latest on importtant project updates, community events and more.</p>
                         </div>
                         <div className={styles.grid_right}>
                             <form onSubmit={validateForm} data-aos="fade-up">
@@ -86,7 +85,7 @@ const ContactPanel = ({ module }) => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 
