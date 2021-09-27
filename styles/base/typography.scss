@@ -72,6 +72,12 @@ h5 {
     line-height: calc(28/16);
 }
 
+.small-blue-title {
+    text-transform: uppercase;
+    color: $blue;
+    font-size: 1.125rem;
+}
+
 p,
 ol,
 ul {

@@ -22,6 +22,11 @@ import TileSlider from "./TileSlider";
 import WideCards from "./WideCards";
 import DiscoverTheArtists from "./DiscoverTheArtists";
 import NewsList from "./NewsList";
+import FeaturedArticleHero from "./FeaturedArticleHero";
+import SplitGridText from "./SplitGridText";
+import ImageInfoVideo from "./ImageInfoVideo";
+import TestimonialSlider from "./TestimonialSlider";
+import MasonryCardsVideo from "./MasonryCardsVideo";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
@@ -32,7 +37,9 @@ const allModules = [
   { name: "InfoSectionVideoModal", module: InfoSectionVideoModal },
   { name: "LinkedSlider", module: LinkedSlider },
   { name: "ImageInfo", module: ImageInfo },
+  { name: "ImageInfoVideo", module: ImageInfoVideo },
   { name: "MasonryCards", module: MasonryCards },
+  { name: "MasonryCardsVideo", module: MasonryCardsVideo },
   { name: "TileSlider", module: TileSlider },
   { name: "FullWidthSlider", module: FullWidthSlider },
   { name: "Accordion", module: Accordion },
@@ -50,7 +57,10 @@ const allModules = [
   { name: "ImageMasonry", module: ImageMasonry },
   { name: "IconInfoGrid", module: IconInfoGrid },
   { name: "DiscovertheArtists", module: DiscoverTheArtists },
-  { name: "NewsList", module: NewsList }
+  { name: "NewsList", module: NewsList },
+  { name: "FeaturedArticleHero", module: FeaturedArticleHero },
+  { name: "SplitGridText", module: SplitGridText },
+  { name: "TestimonialSlider", module: TestimonialSlider }
 ];
 
 export const getModule = (moduleName) => {
