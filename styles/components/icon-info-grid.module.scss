@@ -34,25 +34,18 @@ section.icon_grid {
             max-width: 920px;
 
             .tiles {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 30px;
 
                 @media screen and (min-width: 1300px) {
-                    justify-content: flex-start;
+                    grid-template-columns: 1fr 1fr;
                 }
 
                 .tile {
                     display: flex;
+                    align-items: center;
                     width: 100%;
-                    max-width: 460px;
-
-                    padding-bottom: 40px;
-
-                    @media screen and (min-width: 1300px) {
-                        width: 50%;
-                        justify-content: flex-end;
-                    }
 
                     h4 {
                         color: $blue;
@@ -64,6 +57,10 @@ section.icon_grid {
                         width: 100px;
                         height: 100px;
                         margin-right: 20px;
+                    }
+
+                    p:last-child {
+                        margin-bottom: 0;
                     }
 
                 }
