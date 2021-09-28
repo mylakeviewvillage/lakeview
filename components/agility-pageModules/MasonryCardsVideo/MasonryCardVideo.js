@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SEOImage from 'components/SEOImage';
-import Link from 'next/link';
 import styles from 'styles/components/masonry-cards.module.scss';
+
 import { format } from 'date-fns';
+import ModalVideo from 'react-modal-video';
 
 const MasonryCardVideo = ({ index, data: { image, category, title, videoID, date } }) => {
+
+    const [openModal, setOpenModal] = useState(false);
 
     return (
         <div className={styles.card} key={`masonry-card-${index}`}>
@@ -17,7 +20,12 @@ const MasonryCardVideo = ({ index, data: { image, category, title, videoID, date
                 {category && <p>{category}</p>}
                 {date && <p>{format(new Date(date), 'MMMM d, yyyy')}</p>}
                 {title && <h3>{title}</h3>}
-                {videoID && <button className="btn">Watch Video</button>}
+                {videoID && (
+                    <div>
+                        <button className="btn" onClick={() => setOpenModal(true)}>Watch Video</button>
+                        <ModalVideo channel='youtube' autoplay={true} isOpen={openModal} videoId={videoID} onClose={() => setOpenModal(false)} />
+                    </div>
+                )}
             </div>
         </div>
     )

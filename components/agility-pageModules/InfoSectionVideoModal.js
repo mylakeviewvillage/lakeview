@@ -23,7 +23,8 @@ const InfoSectionVideoModal = (props) => {
                         <div className={styles.right}>
                             {youtubeVideoThumbnail && (
                                 <div className={styles.image} onClick={() => setOpenModal(true)} >
-                                    <SEOImage img={youtubeVideoThumbnail} sizes={[500, 1024, 1920]} className="w-100" />                        </div>
+                                    <SEOImage img={youtubeVideoThumbnail} sizes={[500, 1024, 1920]} className="w-100" />
+                                </div>
                             )}
                         </div>
                     </div>

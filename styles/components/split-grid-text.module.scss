@@ -1,0 +1,35 @@
+@import '../base/variables.scss';
+
+.split_grid_text {
+    h2 {
+        max-width: 420px;
+    }
+
+    .grid {
+        @media screen and (min-width: 900px) {
+            display: grid;
+            grid-template-columns: 420px auto;
+            gap: 10%;
+        }
+
+        &_left {
+
+            p,
+            ol,
+            ul {
+                font-size: 1rem;
+                font-weight: 200;
+            }
+        }
+
+        &_right {
+
+            p,
+            ol,
+            ul {
+                font-size: 1.125rem;
+                font-weight: 400;
+            }
+        }
+    }
+}

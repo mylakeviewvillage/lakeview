@@ -10,12 +10,13 @@ const SplitGridText = ({ module }) => {
         <section className={styles.split_grid_text}>
             <div className="container">
                 <div className="content">
-                    {title && <h2>{title}</h2>}
+                    {title && <h2 className="minor">{title}</h2>}
+                    <hr />
                     <div className={styles.grid}>
-                        <div className={styles.grid_panel}>
+                        <div className={styles.grid_left}>
                             {leftCopy && <RichTextArea html={leftCopy} />}
                         </div>
-                        <div className={styles.grid_panel}>
+                        <div className={styles.grid_right}>
                             {rightCopy && <RichTextArea html={rightCopy} />}
                         </div>
                     </div>
