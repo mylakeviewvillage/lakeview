@@ -57,11 +57,11 @@ const InfoSection = ({ module }) => {
         <section className={styles.infoSection} id="info-section">
             <div className="container">
                 <div className="content">
-                    <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />
+                    {titleOne && <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />}
                     <div className={styles.panes}>
                         <div className={styles.panesLeft}>
                             {subtitle && <h3>{subtitle}</h3>}
-                            <div className={`divider ${styles.divider}`} />
+                            {titleOne && <div className={`divider ${styles.divider}`} />}
                             {infoTitle && <h4>{infoTitle}</h4>}
                             <hr />
                             <div className={styles.info}>
@@ -79,13 +79,16 @@ const InfoSection = ({ module }) => {
                             </div>
                         </div>
                         <div className={styles.panesRight} ref={imageContainerEl}>
-                            <Plx
+                            {/* <Plx
                                 className={styles.panningImage}
                                 parallaxData={parallaxData}
                                 disabled={smallWindow}
                             >
                                 <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
-                            </Plx>
+                            </Plx> */}
+                            <div className={styles.panningImage}>
+                                <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
+                            </div>
                         </div>
                     </div>
                 </div>
