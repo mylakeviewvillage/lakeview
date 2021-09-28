@@ -7,13 +7,13 @@ const FeaturedArticleHero = ({ module }) => {
 
     return (
         <section>
-            <div className="content">
+            <div className="content override-top">
                 <div className="container">
                     <p className="small-blue-title">{category}</p>
                     <h1>{title}</h1>
                 </div>
                 <div className="container full-width">
-                    <SEOImage img={image} className="w-100" />
+                    <SEOImage img={image} sizes={[1920, 1000, 700, 400]} className="w-100" />
                 </div>
             </div>
         </section>

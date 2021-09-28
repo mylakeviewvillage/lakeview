@@ -21,6 +21,10 @@
     &.no-top {
         padding-top: 0;
     }
+
+    &.override-top {
+        padding: 60px 0 !important;
+    }
 }
 
 section:first-child {
@@ -117,10 +121,6 @@ hr {
     background-color: $lightGray;
     border: 0;
     margin: 50px 0;
-}
-
-.slick-list {
-    transition: all 700ms ease-in-out;
 }
 
 .load-more {
