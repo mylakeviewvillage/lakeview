@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import SEOImage from 'components/SEOImage';
 import styles from 'styles/components/masonry-cards.module.scss';
 
-import { format } from 'date-fns';
 import ModalVideo from 'react-modal-video';
 
 const MasonryCardVideo = ({ index, data: { image, category, title, videoID, date } }) => {
@@ -18,7 +17,6 @@ const MasonryCardVideo = ({ index, data: { image, category, title, videoID, date
             )}
             <div className={styles.card_copy}>
                 {category && <p>{category}</p>}
-                {date && <p>{format(new Date(date), 'MMMM d, yyyy')}</p>}
                 {title && <h3>{title}</h3>}
                 {videoID && (
                     <div>

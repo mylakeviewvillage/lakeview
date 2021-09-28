@@ -14,21 +14,18 @@ const WideCards = ({ module, customData }) => {
                 <div className="content">
                     <div className={styles.wide_cards}>
                         {cards.map((card, index) => {
-                            let legibleDate;
-                            if (card.date) {
-                                legibleDate = format(new Date(card.date), 'dd.MM.Y')
-                            }
                             return (
                                 <div className={styles.wide_card} key={`wide-card-${index}`}>
-                                    <div className={styles.wide_card_image}>
-                                        <Link href={card.cTA.href}>
-                                            <a target={card.cTA.target}>
-                                                <SEOImage img={card.image} className="w-100" sizes={[700, 400]} />
-                                            </a>
-                                        </Link>
-                                    </div>
+                                    {card.image && (
+                                        <div className={styles.wide_card_image}>
+                                            <Link href={card.cTA.href}>
+                                                <a target={card.cTA.target}>
+                                                    <SEOImage img={card.image} className="w-100" sizes={[700, 400]} />
+                                                </a>
+                                            </Link>
+                                        </div>
+                                    )}
                                     <div className={styles.wide_card_content}>
-                                        {legibleDate && <p className={styles.date}>{legibleDate}</p>}
                                         {card.category && <p className={styles.category}>{card.category}</p>}
                                         <Link href={card.cTA.href}>
                                             <a target={card.cTA.target}>
