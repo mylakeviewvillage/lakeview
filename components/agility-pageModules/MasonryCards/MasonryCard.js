@@ -22,11 +22,6 @@ const MasonryCard = ({ index, data: { image, category, title, cTA, link, date } 
                         <a className="btn" target={cTA.target}>{cTA.text}</a>
                     </Link>
                 )}
-                {link && (
-                    <Link href={link.href}>
-                        <a className="btn" target={link.target}>{link.text}</a>
-                    </Link>
-                )}
             </div>
         </div>
     )
