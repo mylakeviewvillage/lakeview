@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from 'styles/components/masonry-cards.module.scss';
 import { format } from 'date-fns';
 
-const MasonryCard = ({ index, data: { image, category, title, cTA, date } }) => {
+const MasonryCard = ({ index, data: { image, category, title, cTA, link, date } }) => {
 
     return (
         <div className={styles.card} key={`masonry-card-${index}`}>
@@ -20,6 +20,11 @@ const MasonryCard = ({ index, data: { image, category, title, cTA, date } }) => 
                 {cTA && (
                     <Link href={cTA.href}>
                         <a className="btn" target={cTA.target}>{cTA.text}</a>
+                    </Link>
+                )}
+                {link && (
+                    <Link href={link.href}>
+                        <a className="btn" target={link.target}>{link.text}</a>
                     </Link>
                 )}
             </div>
