@@ -14,7 +14,7 @@ const MasonryCards = ({ module, customData }) => {
         768: 1
     };
 
-    const cards = customData.cards.map((card, index) => <MasonryCard index={index} data={card} />)
+    const cards = customData.cards.map((card, index) => <MasonryCard index={index} key={`masonry-card-${index}`} data={card} />)
 
     return (
         <section>

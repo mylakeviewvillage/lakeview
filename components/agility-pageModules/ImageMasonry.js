@@ -13,6 +13,7 @@ const ImageMasonry = ({ module }) => {
 
     const [gallery, setGallery] = useState([]);
 
+
     useEffect(() => {
         getGallery(images.galleryid);
     }, [images.galleryid]);
@@ -32,6 +33,16 @@ const ImageMasonry = ({ module }) => {
         768: 1
     };
 
+    const [currentImage, setcurrentImage] = useState(null);
+    const [modal, setModal] = useState(false);
+
+    const openModal = (image) => {
+        setModal(true);
+        setcurrentImage(image);
+    }
+
+    const closeModal = () => setModal(false);
+
     return (
         <section>
             <div className="container">
@@ -42,11 +53,21 @@ const ImageMasonry = ({ module }) => {
                         className="my-masonry-grid"
                         columnClassName="my-masonry-grid_column">
                         {gallery.map((galleryItem, index) => (
-                            <div key={`image-masonry-tile-${index}`} className="w-100">
+                            <div key={`image-masonry-tile-${index}`} className={`w-100 ${styles.masonry_tile}`} onClick={() => openModal(galleryItem)}>
                                 <SEOImage img={galleryItem} sizes={[500, 300]} className="w-100" />
                             </div>
                         ))}
                     </Masonry>
+                    {modal && (
+                        <div className={styles.modal}>
+                            <div className={styles.modal_box}>
+                                <button className={styles.close_modal} onClick={closeModal}>
+                                    <img src="/img/close.svg" alt="Close modal" />
+                                </button>
+                                <SEOImage img={currentImage} sizes={[1000, 700, 400]} className="w-100" />
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
