@@ -21,9 +21,11 @@ const ImageInfo = ({ module }) => {
                         <div className={`${styles.info} ${textColor === 'Light' ? styles.light : styles.dark}`}>
                             <h3>{topTitle && <span>{topTitle}<br /></span>}{mainTitle}</h3>
                             <RichTextArea html={copy} />
-                            <Link href={cTA.href}>
-                                <a target={cTA.target} className={`btn ${textColor === 'Light' ? 'white' : ''}`}>{cTA.text}</a>
-                            </Link>
+                            {cTA && (
+                                <Link href={cTA.href}>
+                                    <a target={cTA.target} className={`btn ${textColor === 'Light' ? 'white' : ''}`}>{cTA.text}</a>
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>
