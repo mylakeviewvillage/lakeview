@@ -22,10 +22,16 @@
             line-height: calc(35/40);
             font-weight: 400;
             margin-bottom: 0;
+        }
 
-            &:not(:last-child) {
-                margin-bottom: 100px;
+        a {
+            h3:hover {
+                color: $darkBlue;
             }
+        }
+
+        .cta {
+            margin-top: 50px;
         }
     }
 }

@@ -5,6 +5,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from 'styles/components/discover-the-artist.module.scss';
 
+import ModalVideo from 'react-modal-video';
+
 const DiscoverTheArtists = ({ module, customData }) => {
 
     const { titleOne, titleTwo, titleThree } = module.fields;
@@ -12,6 +14,14 @@ const DiscoverTheArtists = ({ module, customData }) => {
     const [artists, setArtists] = useState([]);
     const [visibleArtists, setVisibleArtists] = useState([]);
     const [loadedArtists, setLoadedArtists] = useState(6);
+
+    const [openModal, setOpenModal] = useState(false);
+    const [currentVideo, setCurrentVideo] = useState("");
+
+    const playVideo = (videoId) => {
+        setCurrentVideo(videoId);
+        setOpenModal(true);
+    }
 
     useEffect(() => {
         // set the artists to the custom data pulled on load
@@ -38,7 +48,7 @@ const DiscoverTheArtists = ({ module, customData }) => {
                         {visibleArtists.map((artist, index) => (
                             <div key={`artist-${index}`} className={styles.artist}>
                                 {artist.artwork && (
-                                    <div className={styles.artist_image}>
+                                    <div className={styles.artist_image} onClick={() => playVideo(artist.youtubeVideoID)} >
                                         <SEOImage img={artist.artwork} sizes={[700, 500, 300]} className="w-100" />
                                     </div>
                                 )}
@@ -51,7 +61,9 @@ const DiscoverTheArtists = ({ module, customData }) => {
                                 )}
                             </div>
                         ))}
+                        <ModalVideo channel='youtube' autoplay={true} isOpen={openModal} videoId={currentVideo} onClose={() => setOpenModal(false)} />
                     </div>
+
                     {loadedArtists < artists.length && (
                         <div className="load-more">
                             <hr />
