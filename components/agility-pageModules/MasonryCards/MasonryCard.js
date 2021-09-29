@@ -2,9 +2,8 @@ import React from 'react';
 import SEOImage from 'components/SEOImage';
 import Link from 'next/link';
 import styles from 'styles/components/masonry-cards.module.scss';
-import { format } from 'date-fns';
 
-const MasonryCard = ({ index, data: { image, category, title, cTA, link, date } }) => {
+const MasonryCard = ({ index, data: { image, category, title, cTA } }) => {
 
     return (
         <div className={styles.card} key={`masonry-card-${index}`}>
