@@ -1,0 +1,23 @@
+@import '../base/variables.scss';
+
+.three_sixty_slider {
+    h2 {
+        max-width: 400px;
+    }
+
+    .slider {
+        .slide {
+            width: 100%;
+
+            @media screen and (min-width: 1200px) {
+                width: 25%;
+            }
+        }
+
+        :global(.slick-active) {
+            button:before {
+                color: $blue;
+            }
+        }
+    }
+}

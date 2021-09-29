@@ -13,7 +13,6 @@ const ImageMasonry = ({ module }) => {
 
     const [gallery, setGallery] = useState([]);
 
-
     useEffect(() => {
         getGallery(images.galleryid);
     }, [images.galleryid]);

@@ -27,6 +27,7 @@ import SplitGridText from "./SplitGridText";
 import ImageInfoVideo from "./ImageInfoVideo";
 import TestimonialSlider from "./TestimonialSlider";
 import MasonryCardsVideo from "./MasonryCardsVideo";
+import ThreeSixtySlider from "./ThreeSixtySlider";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
@@ -60,7 +61,8 @@ const allModules = [
   { name: "NewsList", module: NewsList },
   { name: "FeaturedArticleHero", module: FeaturedArticleHero },
   { name: "SplitGridText", module: SplitGridText },
-  { name: "TestimonialSlider", module: TestimonialSlider }
+  { name: "TestimonialSlider", module: TestimonialSlider },
+  { name: "ThreeSixtySlider", module: ThreeSixtySlider }
 ];
 
 export const getModule = (moduleName) => {
