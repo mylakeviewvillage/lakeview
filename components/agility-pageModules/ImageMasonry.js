@@ -6,6 +6,7 @@ import styles from 'styles/components/image-masonry.module.scss';
 
 import axios from 'axios';
 import Masonry from 'react-masonry-css'
+import Modal from 'components/Modal';
 
 const ImageMasonry = ({ module }) => {
 
@@ -33,6 +34,7 @@ const ImageMasonry = ({ module }) => {
     };
 
     const [currentImage, setcurrentImage] = useState(null);
+
     const [modal, setModal] = useState(false);
 
     const openModal = (image) => {
@@ -58,14 +60,9 @@ const ImageMasonry = ({ module }) => {
                         ))}
                     </Masonry>
                     {modal && (
-                        <div className={styles.modal}>
-                            <div className={styles.modal_box}>
-                                <button className={styles.close_modal} onClick={closeModal}>
-                                    <img src="/img/close.svg" alt="Close modal" />
-                                </button>
-                                <SEOImage img={currentImage} sizes={[1000, 700, 400]} className="w-100" />
-                            </div>
-                        </div>
+                        <Modal closeModal={closeModal}>
+                            <SEOImage img={currentImage} sizes={[1000, 700, 400]} className="w-100" />
+                        </Modal>
                     )}
                 </div>
             </div>
