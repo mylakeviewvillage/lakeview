@@ -27,6 +27,7 @@ const ThreeSixtySlider = ({ module, customData }) => {
         }
     }
 
+
     const settings = {
         dots: false,
         infinite: false,
