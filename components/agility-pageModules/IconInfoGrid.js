@@ -20,7 +20,7 @@ const IconInfoGrid = ({ module, customData }) => {
                         <div className={styles.paneRight}>
                             <div className={styles.tiles}>
                                 {tiles.map((item, index) => (
-                                    <div className={styles.tile}>
+                                    <div className={styles.tile} key={`info-grid-item-${index}`}>
                                         <SEOImage img={item.icon} sizes={[100]} className="icon" />
                                         <RichTextArea html={item.copy} />
                                     </div>
