@@ -4,7 +4,7 @@ import styles from 'styles/components/masonry-cards.module.scss';
 
 import ModalVideo from 'react-modal-video';
 
-const MasonryCardVideo = ({ index, data: { image, category, title, videoID, date } }) => {
+const MasonryCardVideo = ({ index, data: { image, category, title, videoID } }) => {
 
     const [openModal, setOpenModal] = useState(false);
 
@@ -12,15 +12,21 @@ const MasonryCardVideo = ({ index, data: { image, category, title, videoID, date
         <div className={styles.card} key={`masonry-card-${index}`}>
             {image && (
                 <div className={styles.card_image}>
-                    <SEOImage img={image} sizes={[500, 400]} className="w-100" />
+                    <button onClick={() => setOpenModal(videoID ? true : false)}>
+                        <SEOImage img={image} sizes={[500, 400]} className="w-100" />
+                    </button>
                 </div>
             )}
             <div className={styles.card_copy}>
                 {category && <p>{category}</p>}
-                {title && <h3>{title}</h3>}
+                {title && (
+                    <button onClick={() => setOpenModal(videoID ? true : false)}>
+                        <h3>{title}</h3>
+                    </button>
+                )}
                 {videoID && (
                     <div>
-                        <button className="btn" onClick={() => setOpenModal(true)}>Watch Video</button>
+                        <button className={`btn ${styles.cta}`} onClick={() => setOpenModal(true)}>Watch Video</button>
                         <ModalVideo channel='youtube' autoplay={true} isOpen={openModal} videoId={videoID} onClose={() => setOpenModal(false)} />
                     </div>
                 )}
