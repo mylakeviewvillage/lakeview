@@ -1,9 +1,9 @@
 import { getContentList } from 'helpers/getContentList';
 import Link from 'next/link';
 import React from 'react';
-import Marquee from "react-fast-marquee";
-
 import styles from '../../styles/components/ticker.module.scss';
+
+import Marquee from "react-fast-marquee";
 
 const Ticker = ({ module, customData }) => {
 
@@ -21,18 +21,37 @@ const Ticker = ({ module, customData }) => {
                 </div>
                 <div>
                     {tickerSections.map((tickerSection, index) => {
-                        return (
-                            <div className={styles.ticker} key={`ticker-section-${index}`}>
-                                <Marquee direction={index % 2 === 0 ? 'left' : 'right'} speed={60}>
-                                    <div className={styles.ticker_image}>
-                                        <img src={tickerSection.image.url} style={{ width: tickerSection.image.width }} />
-                                    </div>
-                                    <div className={styles.ticker_text}>
-                                        <p>{tickerSection.text}</p>
-                                    </div>
-                                </Marquee>
-                            </div>
-                        )
+                        if (tickerSection.cTA) {
+                            return (
+                                <Link href={tickerSection.cTA.href} key={`ticker-section-${index}`}>
+                                    <a>
+                                        <div className={styles.ticker} >
+                                            <Marquee direction={index % 2 === 0 ? 'left' : 'right'} speed={60}>
+                                                <div className={styles.ticker_image}>
+                                                    <img src={tickerSection.image.url} style={{ width: tickerSection.image.width }} />
+                                                </div>
+                                                <div className={styles.ticker_text}>
+                                                    <p>{tickerSection.text}</p>
+                                                </div>
+                                            </Marquee>
+                                        </div>
+                                    </a>
+                                </Link>
+                            )
+                        } else {
+                            return (
+                                <div className={styles.ticker} key={`ticker-section-${index}`}>
+                                    <Marquee direction={index % 2 === 0 ? 'left' : 'right'} speed={60}>
+                                        <div className={styles.ticker_image}>
+                                            <img src={tickerSection.image.url} style={{ width: tickerSection.image.width }} />
+                                        </div>
+                                        <div className={styles.ticker_text}>
+                                            <p>{tickerSection.text}</p>
+                                        </div>
+                                    </Marquee>
+                                </div>
+                            )
+                        }
                     })}
                 </div>
             </div>
