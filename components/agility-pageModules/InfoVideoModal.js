@@ -2,9 +2,9 @@ import RichTextArea from 'components/RichTextArea';
 import SEOImage from 'components/SEOImage';
 import ModalVideo from 'react-modal-video';
 import React, { useState } from 'react';
-import styles from '../../styles/components/info-section-video-modal.module.scss';
+import styles from '../../styles/components/info-video-modal.module.scss';
 
-const InfoSectionVideoModal = (props) => {
+const InfoVideoModal = (props) => {
 
 
     const { title, description, youtubeVideoThumbnail, youtubeVideoID } = props.module.fields;
@@ -35,4 +35,4 @@ const InfoSectionVideoModal = (props) => {
     );
 };
 
-export default InfoSectionVideoModal;
+export default InfoVideoModal;

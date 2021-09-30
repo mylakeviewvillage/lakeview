@@ -3,7 +3,7 @@ import AlternatingInfoTiles from "./AlternatingInfoTiles";
 import ArtistPage from "./ArtistPage";
 import ArticleList from "./ArticleList";
 import FullWidthSlider from "./FullWidthSlider";
-import InfoSectionVideoModal from "./InfoSectionVideoModal";
+import InfoVideoModal from "./InfoVideoModal";
 import IconInfoGrid from "./IconInfoGrid";
 import ImageBanner from "./ImageBanner";
 import ImageInfo from "./ImageInfo";
@@ -35,7 +35,7 @@ import ThreeSixtySlider from "./ThreeSixtySlider";
 const allModules = [
   { name: "ImageBanner", module: ImageBanner },
   { name: "InfoSection", module: InfoSection },
-  { name: "InfoSectionVideoModal", module: InfoSectionVideoModal },
+  { name: "InfoVideoModal", module: InfoVideoModal },
   { name: "LinkedSlider", module: LinkedSlider },
   { name: "ImageInfo", module: ImageInfo },
   { name: "ImageInfoVideo", module: ImageInfoVideo },

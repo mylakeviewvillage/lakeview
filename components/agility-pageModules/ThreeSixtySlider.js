@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styles from 'styles/components/three-sixty-slider.module.scss';
 
 import axios from 'axios';
-import { useMediaQuery } from 'react-responsive'
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const ThreeSixtySlider = ({ module, customData }) => {
+const ThreeSixtySlider = ({ module }) => {
 
     const { title, images } = module.fields;
 
