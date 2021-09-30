@@ -9,22 +9,12 @@ const Banner = ({ module }) => {
 
     const { image, titleOne, titleTwo, titleThree } = module.fields;
 
-    const imageRef = useRef(null);
     const bannerRef = useRef(null);
-
     const [bannerHeight, setBannerHeight] = useState(0);
-    const [movement, setMovement] = useState(0);
 
     useEffect(() => {
-        let imageHeightCurrent = imageRef.current.offsetHeight;
-        let bannerHeightCurrent = bannerRef.current.offsetHeight;
-        if (imageHeightCurrent > bannerHeightCurrent) {
-            setMovement(bannerHeightCurrent - imageHeightCurrent);
-        } else {
-            setMovement(0);
-        }
-        setBannerHeight(bannerHeightCurrent);
-    }, [imageRef, bannerRef]);
+        setBannerHeight(bannerRef.current.offsetHeight);
+    }, [bannerRef])
 
     const parallaxData = [
         {
@@ -33,8 +23,9 @@ const Banner = ({ module }) => {
             properties: [
                 {
                     startValue: 0,
-                    endValue: movement,
+                    endValue: -23.07,
                     property: 'translateY',
+                    unit: '%'
                 },
             ],
         },
@@ -48,11 +39,9 @@ const Banner = ({ module }) => {
                 </div>
                 <div className="container full-width">
                     <div className={styles.banner} ref={bannerRef}>
-                        <div ref={imageRef}>
-                            <Plx className={styles.banner_image} parallaxData={parallaxData}>
-                                <SEOImage img={image} sizes={[500, 1024, 1920]} className="w-100" />
-                            </Plx>
-                        </div>
+                        <Plx className={styles.banner_image} parallaxData={parallaxData}>
+                            <SEOImage img={image} sizes={[500, 1024, 1920]} className="w-100" />
+                        </Plx>
                     </div>
                 </div>
             </div>
