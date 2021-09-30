@@ -94,10 +94,12 @@ const InfoSection = ({ module }) => {
                             >
                                 <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
                             </Plx> */}
-                            <div className={styles.panningImage}>
-                                <img src={image.url} alt={image.label} className="w-100" ref={imageEl} onClick={openModal} />
-                            </div>
-                            {modal && (
+                            {image && (
+                                <div className={styles.panningImage}>
+                                    <img src={image.url} alt={image.label} className="w-100" ref={imageEl} onClick={openModal} />
+                                </div>
+                            )}
+                            {modal && image && (
                                 <Modal closeModal={closeModal}>
                                     <SEOImage img={image} sizes={[900, 500, 300]} className="w-100" />
                                 </Modal>

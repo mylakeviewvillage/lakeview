@@ -92,9 +92,11 @@ const InfoSectionVideo = ({ module }) => {
                             >
                                 <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
                             </Plx> */}
-                            <div className={styles.panningImage}>
-                                <img src={image.url} alt={image.label} className="w-100" ref={imageEl} onClick={openModal} />
-                            </div>
+                            {image && (
+                                <div className={styles.panningImage}>
+                                    <img src={image.url} alt={image.label} className="w-100" ref={imageEl} onClick={openModal} />
+                                </div>
+                            )}
                             <ModalVideo channel='youtube' autoplay={true} isOpen={modal} videoId={videoID} onClose={closeModal} />
                         </div>
                     </div>
