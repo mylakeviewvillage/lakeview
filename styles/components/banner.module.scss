@@ -1,5 +1,10 @@
-.banner {
+.image_banner {
     h2 {
         padding-top: 60px;
+    }
+
+    .banner {
+        max-height: 800px;
+        overflow: hidden;
     }
 }
