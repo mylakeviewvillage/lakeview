@@ -22,7 +22,7 @@ const Showcase = ({ module }) => {
                             </div>
                         </div>
                         <div className={styles.grid_right}>
-                            <SEOImage img={image} className="w-100" sizes={[1200, 800, 400]} />
+                            {image && <SEOImage img={image} className="w-100" sizes={[1200, 800, 400]} />}
                         </div>
                     </div>
                 </div>
