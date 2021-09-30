@@ -28,6 +28,7 @@ import ImageInfoVideo from "./ImageInfoVideo";
 import TestimonialSlider from "./TestimonialSlider";
 import MasonryCardsVideo from "./MasonryCardsVideo";
 import ThreeSixtySlider from "./ThreeSixtySlider";
+import InfoSectionVideo from "./InfoSectionVideo";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
@@ -35,6 +36,7 @@ import ThreeSixtySlider from "./ThreeSixtySlider";
 const allModules = [
   { name: "ImageBanner", module: ImageBanner },
   { name: "InfoSection", module: InfoSection },
+  { name: "InfoSectionVideo", module: InfoSectionVideo },
   { name: "InfoVideoModal", module: InfoVideoModal },
   { name: "LinkedSlider", module: LinkedSlider },
   { name: "ImageInfo", module: ImageInfo },

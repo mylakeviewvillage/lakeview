@@ -8,7 +8,7 @@ import Plx from 'react-plx';
 import { useMediaQuery } from 'react-responsive';
 import ModalVideo from 'react-modal-video';
 
-const InfoSection = ({ module }) => {
+const InfoSectionVideo = ({ module }) => {
 
     const { videoID, image, infoLeft, infoRight, infoTitle, subtitle, titleOne, titleTwo, titleThree } = module.fields;
 
@@ -104,4 +104,4 @@ const InfoSection = ({ module }) => {
     );
 };
 
-export default InfoSection;
+export default InfoSectionVideo;
