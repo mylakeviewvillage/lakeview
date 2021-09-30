@@ -1,5 +1,7 @@
+import Modal from 'components/Modal';
 import RichTextArea from 'components/RichTextArea';
 import SectionTitle from 'components/SectionTitle';
+import SEOImage from 'components/SEOImage';
 import Link from 'next/link';
 import React, { useRef } from 'react';
 import { useEffect } from 'react';
@@ -53,6 +55,12 @@ const InfoSection = ({ module }) => {
         setSmallWindow(isMobileOrTablet);
     }, [isMobileOrTablet]);
 
+    const [modal, setModal] = useState(false);
+
+    const closeModal = () => setModal(false);
+
+    const openModal = () => setModal(true);
+
     return (
         <section className={styles.infoSection} id="info-section">
             <div className="container">
@@ -87,8 +95,13 @@ const InfoSection = ({ module }) => {
                                 <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
                             </Plx> */}
                             <div className={styles.panningImage}>
-                                <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
+                                <img src={image.url} alt={image.label} className="w-100" ref={imageEl} onClick={openModal} />
                             </div>
+                            {modal && (
+                                <Modal closeModal={closeModal}>
+                                    <SEOImage img={image} sizes={[900, 500, 300]} className="w-100" />
+                                </Modal>
+                            )}
                         </div>
                     </div>
                 </div>
