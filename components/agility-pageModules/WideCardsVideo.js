@@ -1,5 +1,6 @@
 import SEOImage from 'components/SEOImage';
 import React, { useState } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import styles from '../../styles/components/wide-cards.module.scss';
 
 const WideCards = ({ customData }) => {
@@ -18,31 +19,33 @@ const WideCards = ({ customData }) => {
                     <div className={styles.wide_cards}>
                         {cards.map((card, index) => {
                             return (
-                                <div className={styles.wide_card} key={`wide-card-${index}`}>
-                                    {card.image && !card.videoID(
-                                        <div className={styles.wide_card_image}>
-                                            <SEOImage img={card.image} className="w-100" sizes={[700, 400]} />
-                                        </div>
-                                    )}
-                                    {card.image && card.videoID(
-                                        <div className={styles.wide_card_image} onClick={openModal}>
-                                            <SEOImage img={card.image} className="w-100" sizes={[700, 400]} />
-                                        </div>
-                                    )}
-                                    <div className={styles.wide_card_content}>
-                                        {card.category && <p className={styles.category}>{card.category}</p>}
-
-                                        {card.videoID && card.title && <h2 className="minor" onClick={openModal}>{card.title}</h2>}
-                                        {!card.videoID && card.title && <h2 className="minor">{card.title}</h2>}
-
-                                        {card.videoID && (
-                                            <div>
-                                                <button className={`btn ${styles.cta}`} onClick={openModal}>Watch Video</button>
-                                                <ModalVideo channel='youtube' autoplay={true} isOpen={modal} videoId={videoID} onClose={closeModal} />
+                                <Fade direction="left" delay={index * 100} key={`wide-card-video-${index}`}>
+                                    <div className={styles.wide_card}>
+                                        {card.image && !card.videoID(
+                                            <div className={styles.wide_card_image}>
+                                                <SEOImage img={card.image} className="w-100" sizes={[700, 400]} />
                                             </div>
                                         )}
+                                        {card.image && card.videoID(
+                                            <div className={styles.wide_card_image} onClick={openModal}>
+                                                <SEOImage img={card.image} className="w-100" sizes={[700, 400]} />
+                                            </div>
+                                        )}
+                                        <div className={styles.wide_card_content}>
+                                            {card.category && <p className={styles.category}>{card.category}</p>}
+
+                                            {card.videoID && card.title && <h2 className="minor" onClick={openModal}>{card.title}</h2>}
+                                            {!card.videoID && card.title && <h2 className="minor">{card.title}</h2>}
+
+                                            {card.videoID && (
+                                                <div>
+                                                    <button className={`btn ${styles.cta}`} onClick={openModal}>Watch Video</button>
+                                                    <ModalVideo channel='youtube' autoplay={true} isOpen={modal} videoId={videoID} onClose={closeModal} />
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
-                                </div>
+                                </Fade>
                             )
                         })}
                     </div>

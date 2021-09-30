@@ -14,7 +14,7 @@ const MasonryCardsVideo = ({ module, customData }) => {
         768: 1
     };
 
-    const cards = customData.cards.map((card, index) => <MasonryCardVideo index={index} key={`masonry-card-video-${index}`} data={card} />)
+    const cards = customData.cards.map((card, index) => <Fade direction="left" delay={index * 50} key={`masonry-card-video-${index}`}><MasonryCardVideo index={index} data={card} /></Fade>)
 
     return (
         <section>
