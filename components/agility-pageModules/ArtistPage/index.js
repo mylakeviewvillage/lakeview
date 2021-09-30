@@ -51,8 +51,10 @@ const ArtistPage = ({ dynamicPageItem }) => {
             <section className={stylesTestimonial.testimonial}>
                 <div className="container">
                     <div className="content">
-                        <h3>{quote}</h3>
-                        <h4>{title}</h4>
+                        <div className={stylesTestimonial.testimonial_copy}>
+                            <h3>{quote}</h3>
+                            <h4>{title}</h4>
+                        </div>
                     </div>
                 </div>
             </section>
