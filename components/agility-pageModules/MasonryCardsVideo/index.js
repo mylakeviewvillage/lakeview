@@ -3,6 +3,7 @@ import SectionTitle from 'components/SectionTitle';
 import MasonryCardVideo from 'components/agility-pageModules/MasonryCardsVideo/MasonryCardVideo';
 
 import Masonry from 'react-masonry-css'
+import { Fade } from 'react-awesome-reveal';
 
 const MasonryCardsVideo = ({ module, customData }) => {
 
@@ -14,7 +15,7 @@ const MasonryCardsVideo = ({ module, customData }) => {
         768: 1
     };
 
-    const cards = customData.cards.map((card, index) => <Fade direction="left" delay={index * 50} key={`masonry-card-video-${index}`}><MasonryCardVideo index={index} data={card} /></Fade>)
+    const cards = customData.cards.map((card, index) => <Fade direction="left" delay={index * 50} key={`masonry-card-video-${index}`}><MasonryCardVideo index={index} data={card} /></Fade>);
 
     return (
         <section>
