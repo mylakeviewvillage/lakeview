@@ -1,11 +1,12 @@
 import React from 'react';
+import { Fade } from "react-awesome-reveal";
 
 const SectionTitle = ({ titleOne, titleTwo, titleThree }) => {
     return (
         <h2 className="stacked-title">
-            {titleOne && <span>{titleOne}</span>}
-            {titleTwo && <span>{titleTwo}</span>}
-            {titleThree && <span>{titleThree}</span>}
+            {titleOne && <Fade direction="up"><span>{titleOne}</span></Fade>}
+            {titleTwo && <Fade direction="up" delay={150}><span>{titleTwo}</span></Fade>}
+            {titleThree && <Fade direction="up" delay={300}><span>{titleThree}</span></Fade>}
         </h2>
     );
 };
