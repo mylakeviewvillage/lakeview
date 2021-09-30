@@ -7,6 +7,7 @@ import styles from 'styles/components/image-masonry.module.scss';
 import axios from 'axios';
 import Masonry from 'react-masonry-css'
 import Modal from 'components/Modal';
+import RichTextArea from 'components/RichTextArea';
 
 const ImageMasonry = ({ module }) => {
 
