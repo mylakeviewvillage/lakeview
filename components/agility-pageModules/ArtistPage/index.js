@@ -3,8 +3,7 @@ import SectionTitle from 'components/SectionTitle';
 import SEOImage from 'components/SEOImage';
 import React, { useState } from 'react';
 import ModalVideo from 'react-modal-video';
-import InfoSectionVideoModal from '/components/agility-pageModules/InfoSectionVideoModal';
-import stylesInfoSectionVideoModal from 'styles/components/info-section-video-modal.module.scss';
+import stylesInfoSectionVideoModal from 'styles/components/info-video-modal.module.scss';
 import stylesBanner from 'styles/components/banner.module.scss';
 import stylesTestimonial from 'styles/components/testimonial.module.scss';
 import stylesInfoTiles from 'styles/components/alternating-info-tiles.module.scss';
@@ -31,7 +30,7 @@ const ArtistPage = ({ dynamicPageItem }) => {
             <section className={stylesInfoSectionVideoModal.infoSectionVideoModal}>
                 <div className="container">
                     <div className="content">
-                        {artworkTitle && <h4>{artworkTitle}</h4>}
+                        {artworkTitle && <h2 className="minor">{artworkTitle}</h2>}
                         <div className={stylesInfoSectionVideoModal.panes}>
                             <div className={stylesInfoSectionVideoModal.left}>
                                 <hr />
