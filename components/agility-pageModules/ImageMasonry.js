@@ -6,10 +6,11 @@ import styles from 'styles/components/image-masonry.module.scss';
 
 import axios from 'axios';
 import Masonry from 'react-masonry-css'
+import RichTextArea from 'components/RichTextArea';
 
 const ImageMasonry = ({ module }) => {
 
-    const { title, images } = module.fields;
+    const { title, images, description } = module.fields;
 
     const [gallery, setGallery] = useState([]);
 
@@ -47,6 +48,7 @@ const ImageMasonry = ({ module }) => {
             <div className="container">
                 <div className="content">
                     {title && <h2 className={`minor ${styles.title}`}>{title}</h2>}
+                    {description && <RichTextArea html={description} />}
                     <Masonry
                         breakpointCols={breakpointColumnsObj}
                         className="my-masonry-grid"
