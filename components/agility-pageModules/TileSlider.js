@@ -59,7 +59,7 @@ const TileSlider = ({ customData }) => {
                                 return (
                                     <div className={styles.slide} key={`tile-slide-${index}`}>
                                         {tile.cTA && (
-                                            <Link href={tile.cTA}>
+                                            <Link href={tile.cTA.href}>
                                                 <a target={tile.cTA.target}>
                                                     <div className={styles.slide_content}>
                                                         {tile.image && (
