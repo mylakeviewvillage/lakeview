@@ -9,12 +9,14 @@ const FeaturedArticleHero = ({ module }) => {
         <section>
             <div className="content override-top">
                 <div className="container">
-                    <p className="small-blue-title">{category}</p>
-                    <h1>{title}</h1>
+                    {category && <p className="small-blue-title">{category}</p>}
+                    {title && <h1>{title}</h1>}
                 </div>
-                <div className="container full-width">
-                    <SEOImage img={image} sizes={[1920, 1000, 700, 400]} className="w-100" />
-                </div>
+                {image && (
+                    <div className="container full-width">
+                        <SEOImage img={image} sizes={[1920, 1000, 700, 400]} className="w-100" />
+                    </div>
+                )}
             </div>
         </section>
     );
