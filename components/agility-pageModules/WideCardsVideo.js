@@ -3,14 +3,21 @@ import React, { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import styles from '../../styles/components/wide-cards.module.scss';
 
+import ModalVideo from 'react-modal-video';
+
 const WideCardsVideo = ({ customData }) => {
 
     const { cards } = customData;
 
     const [modal, setModal] = useState(false);
 
-    const openModal = () => setModal(true);
+    const openModal = (videoID) => {
+        setVideoID(videoID)
+        setModal(true)
+    };
     const closeModal = () => setModal(false);
+
+    const [videoID, setVideoID] = useState('');
 
     return (
         <section>
@@ -21,12 +28,12 @@ const WideCardsVideo = ({ customData }) => {
                             return (
                                 <Fade direction="left" delay={index * 100} key={`wide-card-video-${index}`}>
                                     <div className={styles.wide_card}>
-                                        {card.image && !card.videoID(
+                                        {card.image && !card.videoID && (
                                             <div className={styles.wide_card_image}>
                                                 <SEOImage img={card.image} className="w-100" sizes={[700, 400]} />
                                             </div>
                                         )}
-                                        {card.image && card.videoID(
+                                        {card.image && card.videoID && (
                                             <div className={styles.wide_card_image} onClick={openModal}>
                                                 <SEOImage img={card.image} className="w-100" sizes={[700, 400]} />
                                             </div>
@@ -39,8 +46,7 @@ const WideCardsVideo = ({ customData }) => {
 
                                             {card.videoID && (
                                                 <div>
-                                                    <button className={`btn ${styles.cta}`} onClick={openModal}>Watch Video</button>
-                                                    <ModalVideo channel='youtube' autoplay={true} isOpen={modal} videoId={videoID} onClose={closeModal} />
+                                                    <button className={`btn ${styles.cta}`} onClick={() => openModal(card.videoID)}>Watch Video</button>
                                                 </div>
                                             )}
                                         </div>
@@ -48,6 +54,7 @@ const WideCardsVideo = ({ customData }) => {
                                 </Fade>
                             )
                         })}
+                        <ModalVideo channel='youtube' autoplay={true} isOpen={modal} videoId={videoID} onClose={closeModal} />
                     </div>
                 </div>
             </div>
