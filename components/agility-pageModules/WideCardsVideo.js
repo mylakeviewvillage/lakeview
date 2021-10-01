@@ -6,7 +6,7 @@ import styles from '../../styles/components/wide-cards.module.scss';
 import ModalVideo from 'react-modal-video';
 import SectionTitle from 'components/SectionTitle';
 
-const WideCardsVideo = ({ customData }) => {
+const WideCardsVideo = ({ module, customData }) => {
 
     const { titleOne, titleTwo, titleThree } = module.fields;
     const { cards } = customData;
