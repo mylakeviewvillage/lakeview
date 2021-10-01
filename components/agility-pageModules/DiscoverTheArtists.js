@@ -6,6 +6,7 @@ import Link from 'next/link';
 import styles from 'styles/components/discover-the-artist.module.scss';
 
 import ModalVideo from 'react-modal-video';
+import { Fade } from 'react-awesome-reveal';
 
 const DiscoverTheArtists = ({ module, customData }) => {
 
@@ -46,20 +47,22 @@ const DiscoverTheArtists = ({ module, customData }) => {
                     <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />
                     <div className={styles.artists}>
                         {visibleArtists.map((artist, index) => (
-                            <div key={`artist-${index}`} className={styles.artist}>
-                                {artist.artwork && (
-                                    <div className={styles.artist_image} onClick={() => playVideo(artist.youtubeVideoID)} >
-                                        <SEOImage img={artist.artwork} sizes={[700, 500, 300]} className="w-100" />
-                                    </div>
-                                )}
-                                {artist.artworkTitle && <h3>{artist.artworkTitle}</h3>}
-                                {artist.title && <h4>{artist.title}</h4>}
-                                {artist.website && (
-                                    <Link href={'/artists/[...slug]'} as={`artists/${artist.slug}`}>
-                                        <a className="btn">Learn More</a>
-                                    </Link>
-                                )}
-                            </div>
+                            <Fade direction="left" delay={index % 3 * 50}>
+                                <div key={`artist-${index}`} className={styles.artist}>
+                                    {artist.artwork && (
+                                        <div className={styles.artist_image} onClick={() => playVideo(artist.youtubeVideoID)} >
+                                            <SEOImage img={artist.artwork} sizes={[700, 500, 300]} className="w-100" />
+                                        </div>
+                                    )}
+                                    {artist.artworkTitle && <h3>{artist.artworkTitle}</h3>}
+                                    {artist.title && <h4>{artist.title}</h4>}
+                                    {artist.website && (
+                                        <Link href={'/artists/[...slug]'} as={`artists/${artist.slug}`}>
+                                            <a className="btn">Learn More</a>
+                                        </Link>
+                                    )}
+                                </div>
+                            </Fade>
                         ))}
                         <ModalVideo channel='youtube' autoplay={true} isOpen={openModal} videoId={currentVideo} onClose={() => setOpenModal(false)} />
                     </div>
