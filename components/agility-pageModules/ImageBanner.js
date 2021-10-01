@@ -27,6 +27,11 @@ const Banner = ({ module }) => {
                     property: 'translateY',
                     unit: '%'
                 },
+                {
+                    startValue: 1,
+                    endValue: 1.05,
+                    property: 'scale'
+                }
             ],
         },
     ];
