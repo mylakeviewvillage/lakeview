@@ -1,57 +1,13 @@
 import RichTextArea from 'components/RichTextArea';
 import SectionTitle from 'components/SectionTitle';
-import Link from 'next/link';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from '../../styles/components/info-section.module.scss';
 
-import Plx from 'react-plx';
-import { useMediaQuery } from 'react-responsive';
 import ModalVideo from 'react-modal-video';
 
 const InfoSectionVideo = ({ module }) => {
 
     const { videoID, image, infoLeft, infoRight, infoTitle, subtitle, titleOne, titleTwo, titleThree } = module.fields;
-
-    const [imageContainerHeight, setImageContainerHeight] = useState(0);
-    const imageContainerEl = useRef(null);
-
-    const [imageHeight, setImageHeight] = useState(0);
-    const imageEl = useRef(null);
-
-    const [parallaxData, setParallaxData] = useState([]);
-
-    useEffect(() => {
-        setImageContainerHeight(imageContainerEl.current.clientHeight);
-        setImageHeight(imageEl.current.clientHeight);
-    }, [imageEl, imageContainerEl]);
-
-    useEffect(() => {
-        if (imageContainerHeight && imageHeight) {
-            setParallaxData([
-                {
-                    start: '#info-section',
-                    duration: imageContainerHeight * 2,
-                    properties: [
-                        {
-                            startValue: 800,
-                            endValue: imageHeight - imageContainerHeight - 400,
-                            property: 'translateY',
-                        },
-                    ],
-                },
-            ]);
-        }
-    }, [imageContainerHeight, imageHeight])
-
-    const isMobileOrTablet = useMediaQuery({
-        maxWidth: 1024
-    });
-
-    const [smallWindow, setSmallWindow] = useState(true);
-
-    useEffect(() => {
-        setSmallWindow(isMobileOrTablet);
-    }, [isMobileOrTablet]);
 
     const [modal, setModal] = useState(false);
 
@@ -80,14 +36,7 @@ const InfoSectionVideo = ({ module }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.panesRight} ref={imageContainerEl}>
-                            {/* <Plx
-                                className={styles.panningImage}
-                                parallaxData={parallaxData}
-                                disabled={smallWindow}
-                            >
-                                <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
-                            </Plx> */}
+                        <div className={styles.panesRight}>
                             {image && (
                                 <div className={styles.panningImage}>
                                     <img src={image.url} alt={image.label} className="w-100" ref={imageEl} onClick={openModal} />
