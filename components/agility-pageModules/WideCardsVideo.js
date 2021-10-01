@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import styles from '../../styles/components/wide-cards.module.scss';
 
-const WideCards = ({ customData }) => {
+const WideCardsVideo = ({ customData }) => {
 
     const { cards } = customData;
 
@@ -55,7 +55,7 @@ const WideCards = ({ customData }) => {
     );
 };
 
-WideCards.getCustomInitialProps = async ({
+WideCardsVideo.getCustomInitialProps = async ({
     agility,
     languageCode,
     channelName,
@@ -77,4 +77,4 @@ WideCards.getCustomInitialProps = async ({
     }
 }
 
-export default WideCards;
+export default WideCardsVideo;
