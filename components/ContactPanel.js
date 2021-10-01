@@ -3,6 +3,8 @@ import { useForm } from '@formspree/react';
 import styles from 'styles/components/contact-panel.module.scss';
 import Link from 'next/link';
 
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+
 const ContactPanel = () => {
 
     // const { title, description, formID } = module.fields;
