@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SEOImage from 'components/SEOImage';
+import Link from 'next/link';
 
 const TileSlider = ({ customData }) => {
 
@@ -57,15 +58,36 @@ const TileSlider = ({ customData }) => {
                             {tiles.map((tile, index) => {
                                 return (
                                     <div className={styles.slide} key={`tile-slide-${index}`}>
-                                        <div className={styles.slide_content}>
-                                            <div className={styles.slide_content_image}>
-                                                <SEOImage img={tile.image} sizes={[200]} className="w-100" />
+                                        {tile.cTA && (
+                                            <Link href={tile.cTA}>
+                                                <a target={tile.cTA.target}>
+                                                    <div className={styles.slide_content}>
+                                                        {tile.image && (
+                                                            <div className={styles.slide_content_image}>
+                                                                <SEOImage img={tile.image} sizes={[200]} className="w-100" />
+                                                            </div>
+                                                        )}
+                                                        <div className={styles.slide_content_copy}>
+                                                            {tile.title && <h3>{tile.title}</h3>}
+                                                            {tile.subtitle && <h4>{tile.subtitle}</h4>}
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </Link>
+                                        )}
+                                        {!tile.cTA && (
+                                            <div className={styles.slide_content}>
+                                                {tile.image && (
+                                                    <div className={styles.slide_content_image}>
+                                                        <SEOImage img={tile.image} sizes={[200]} className="w-100" />
+                                                    </div>
+                                                )}
+                                                <div className={styles.slide_content_copy}>
+                                                    {tile.title && <h3>{tile.title}</h3>}
+                                                    {tile.subtitle && <h4>{tile.subtitle}</h4>}
+                                                </div>
                                             </div>
-                                            <div className={styles.slide_content_copy}>
-                                                <h3>{tile.title}</h3>
-                                                <h4>{tile.subtitle}</h4>
-                                            </div>
-                                        </div>
+                                        )}
                                     </div>
                                 )
                             })}
