@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from 'styles/components/three-sixty-slider.module.scss';
+import Link from 'next/link';
 
 import axios from 'axios';
 
@@ -9,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const ThreeSixtySlider = ({ module }) => {
 
-    const { title, images } = module.fields;
+    const { title, images, cTA } = module.fields;
 
     const [gallery, setGallery] = useState([]);
 
@@ -50,7 +51,16 @@ const ThreeSixtySlider = ({ module }) => {
         <section className={styles.three_sixty_slider}>
             <div className="container">
                 <div className="content">
-                    <h2 className="minor">{title}</h2>
+                    <div className={styles.top}>
+                        {title && <h2 className="minor">{title}</h2>}
+                        {cTA && (
+                            <div className={styles.cta}>
+                                <Link href={cTA.href}>
+                                    <a target={cTA.target} className="btn">{cTA.text}</a>
+                                </Link>
+                            </div>
+                        )}
+                    </div>
                     <Slider {...settings}>
                         {gallery.map((image, index) => (
                             <div className={styles.slide} key={`three-sixty-slide-${index}`}>

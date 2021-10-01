@@ -1,8 +1,30 @@
 @import '../base/variables.scss';
 
 .three_sixty_slider {
-    h2 {
-        max-width: 400px;
+
+    .top {
+        margin-bottom: 50px;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+
+        h2 {
+            max-width: 350px;
+
+            @media screen and (min-width: 768px) {
+                margin-bottom: 0;
+            }
+        }
+
+        .cta {
+
+            @media screen and (min-width: 768px) {
+                margin-left: 70px;
+            }
+        }
     }
 
     .slider {
