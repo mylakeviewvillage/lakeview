@@ -17,9 +17,6 @@ const MasonryCards = ({ module, customData }) => {
 
     const cards = customData.cards.map((card, index) => <Fade direction="left" delay={index * 50} key={`masonry-card-${index}`}><MasonryCard index={index} data={card} /></Fade>);
 
-    console.log(cards);
-
-
     return (
         <section>
             <div className="container">
