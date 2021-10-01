@@ -4,9 +4,11 @@ import { Fade } from 'react-awesome-reveal';
 import styles from '../../styles/components/wide-cards.module.scss';
 
 import ModalVideo from 'react-modal-video';
+import SectionTitle from 'components/SectionTitle';
 
 const WideCardsVideo = ({ customData }) => {
 
+    const { titleOne, titleTwo, titleThree } = module.fields;
     const { cards } = customData;
 
     const [modal, setModal] = useState(false);
@@ -23,6 +25,7 @@ const WideCardsVideo = ({ customData }) => {
         <section>
             <div className="container">
                 <div className="content">
+                    {titleOne && <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />}
                     <div className={styles.wide_cards}>
                         {cards.map((card, index) => {
                             return (

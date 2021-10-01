@@ -1,18 +1,20 @@
 import SEOImage from 'components/SEOImage';
 import Link from 'next/link';
 import React from 'react';
-import { format } from 'date-fns'
 import styles from '../../styles/components/wide-cards.module.scss';
 import { Fade } from 'react-awesome-reveal';
+import SectionTitle from 'components/SectionTitle';
 
 const WideCards = ({ module, customData }) => {
 
+    const { titleOne, titleTwo, titleThree } = module.fields;
     const { cards } = customData;
 
     return (
         <section>
             <div className="container">
                 <div className="content">
+                    {titleOne && <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />}
                     <div className={styles.wide_cards}>
                         {cards.map((card, index) => {
                             return (
