@@ -40,8 +40,7 @@ h2.minor {
 }
 
 h2.stacked-title {
-    span {
-        display: block;
+    >div {
 
         &:nth-child(1) {
             color: $lightBlue;
@@ -54,6 +53,10 @@ h2.stacked-title {
 
         &:nth-child(3) {
             color: $blue;
+        }
+
+        span {
+            display: block;
         }
     }
 }
