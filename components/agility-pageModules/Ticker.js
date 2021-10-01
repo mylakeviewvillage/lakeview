@@ -24,7 +24,7 @@ const Ticker = ({ module, customData }) => {
                         if (tickerSection.cTA) {
                             return (
                                 <Link href={tickerSection.cTA.href} key={`ticker-section-${index}`}>
-                                    <a>
+                                    <a target="_blank">
                                         <div className={styles.ticker} >
                                             <Marquee direction={index % 2 === 0 ? 'left' : 'right'} speed={60}>
                                                 <div className={styles.ticker_image}>
