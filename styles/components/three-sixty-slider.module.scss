@@ -36,9 +36,31 @@
             }
         }
 
-        :global(.slick-active) {
-            button:before {
-                color: $blue;
+        :global(.slick-dots) {
+            li {
+                width: auto;
+                height: auto;
+                margin: 0 7px;
+
+                button {
+                    width: 16px;
+                    height: 16px;
+                    background-color: $lightGray;
+                    border-radius: 8px;
+                    transform: scale(1);
+                    transition: all 200ms;
+
+                    &:before {
+                        content: '';
+                    }
+                }
+            }
+
+            :global(.slick-active) {
+                button {
+                    background-color: $blue;
+                    transform: scale(1.2);
+                }
             }
         }
     }
