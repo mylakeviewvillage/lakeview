@@ -11,7 +11,9 @@
 
     .wide_card {
         &_image {
+            position: relative;
             margin-bottom: 40px;
+            cursor: pointer;
         }
 
         &_content {

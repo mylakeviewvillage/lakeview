@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from 'components/SectionTitle';
 import MasonryCardVideo from 'components/agility-pageModules/MasonryCardsVideo/MasonryCardVideo';
 
 import Masonry from 'react-masonry-css'
 import { Fade } from 'react-awesome-reveal';
 
+import ModalVideo from 'react-modal-video';
+
 const MasonryCardsVideo = ({ module, customData }) => {
 
     const { titleOne, titleTwo, titleThree } = module.fields;
+
+    const [modal, setModal] = useState(false);
+    const [videoID, setVideoID] = useState('');
 
     const breakpointColumnsObj = {
         default: 3,
@@ -15,7 +20,12 @@ const MasonryCardsVideo = ({ module, customData }) => {
         768: 1
     };
 
-    const cards = customData.cards.map((card, index) => <Fade direction="left" delay={index * 50} key={`masonry-card-video-${index}`}><MasonryCardVideo index={index} data={card} /></Fade>);
+    const openModal = (videoID) => {
+        setModal(true);
+        setVideoID(videoID);
+    }
+
+    const cards = customData.cards.map((card, index) => <Fade direction="left" delay={index * 50} key={`masonry-card-video-${index}`}><MasonryCardVideo index={index} data={card} openModal={openModal} /></Fade>);
 
     return (
         <section>
@@ -28,6 +38,7 @@ const MasonryCardsVideo = ({ module, customData }) => {
                         columnClassName="my-masonry-grid_column">
                         {cards}
                     </Masonry>
+                    <ModalVideo channel='youtube' autoplay={true} isOpen={modal} videoId={videoID} onClose={() => setModal(false)} />
                 </div>
             </div>
         </section>
