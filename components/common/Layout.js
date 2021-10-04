@@ -6,6 +6,7 @@ import SEO from "./SEO";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import LoadingWidget from "./LoadingWidget";
+import Favicon from "./Favicon";
 
 // set up handle preview
 const isPreview = handlePreview();
@@ -39,6 +40,7 @@ function Layout(props) {
 
   return (
     <>
+      <Favicon />
       <SEO
         title={sitemapNode?.title}
         description={page.seo.metaDescription}
