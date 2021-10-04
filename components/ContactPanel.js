@@ -3,44 +3,101 @@ import { useForm } from '@formspree/react';
 import styles from 'styles/components/contact-panel.module.scss';
 import Link from 'next/link';
 
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+
 const ContactPanel = () => {
 
-    // const { title, description, formID } = module.fields;
+    const CustomForm = ({ status, message, onValidated }) => {
 
-    const [state, handleSubmit] = useForm('aaa');
+        const [firstName, setFirstName] = useState('');
+        const [lastName, setLastName] = useState('');
+        const [phoneNumber, setPhoneNumber] = useState('');
+        const [email, setEmail] = useState('');
+        const [agreement, setAgreement] = useState(false);
+        const [agreementWarning, setAgreementWarning] = useState(false);
 
-    const [formValid, setFormValid] = useState(false);
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [email, setEmail] = useState('');
-    const [agreement, setAgreement] = useState(false);
+        const handleSubmit = (e) => {
 
-    useEffect(() => {
-        // Check the form for validation on every update of the input fields
-        if (firstName.length && lastName.length && phoneNumber.length && email.length && agreement) {
-            setFormValid(true);
-        } else {
-            setFormValid(false);
+            e.preventDefault();
+
+            if (!agreement) setAgreementWarning(true);
+            if (agreement) setAgreementWarning(false);
+
+            agreement &&
+                email &&
+                firstName &&
+                lastName &&
+                phoneNumber &&
+                email.indexOf("@") > -1 &&
+                onValidated({
+                    EMAIL: email,
+                    MERGE1: firstName,
+                    MERGE2: lastName,
+                    MERGE4: phoneNumber
+                });
+
         }
-    }, [firstName, lastName, phoneNumber, email, agreement]);
 
-    // Check for valid form before submitting
-    const validateForm = (e) => {
-        console.log('test');
-        e.preventDefault();
-        // If formValid state is true, submit the form
-        if (formValid) {
-            handleSubmit(e);
+        return (
+            <form onSubmit={(e) => handleSubmit(e)}>
+                <div className={styles.form_grid}>
+                    <div>
+                        <label htmlFor="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" value={firstName} required onChange={(e) => setFirstName(e.target.value)} />
+                    </div>
+                    <div>
+                        <label htmlFor="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" value={lastName} required onChange={(e) => setLastName(e.target.value)} />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" name="email" value={email} required onChange={(e) => setEmail(e.target.value)} />
+                    </div>
+                    <div>
+                        <label htmlFor="tel">Phone</label>
+                        <input type="tel" id="tel" name="tel" value={phoneNumber} required onChange={(e) => setPhoneNumber(e.target.value)} />
+                    </div>
+                </div>
+                <div className={styles.agreement}>
+                    <input type="checkbox" name="agreement" id="agreement" value={agreement} onChange={() => setAgreement(!agreement)} />
+                    <label htmlFor="agreement">
+                        <p>I agree to the <Link href="/privacy-statement"><a>privacy statement</a></Link></p>
+                    </label>
+                </div>
+                <div>
+                    <button type="submit" className="btn">Submit</button>
+                </div>
+                <div className={styles.status}>
+                    {status === "sending" && (
+                        <div className={styles.sending}>
+                            sending...
+                        </div>
+                    )}
+                    {status === "error" && (
+                        <div
+                            className={styles.error}
+                            dangerouslySetInnerHTML={{ __html: message }}
+                        />
+                    )}
+                    {status === "success" && (
+                        <div
+                            className={styles.success}
+                            dangerouslySetInnerHTML={{ __html: message }}
+                        />
+                    )}
+                    {agreementWarning && !agreement && (
+                        <div className={styles.error}>
+                            <p>You must agree with the privacy statment to complete your subscription.</p>
+                        </div>
+                    )}
+                </div>
+            </form>
+        );
+    };
 
-            const section = document.querySelector('#contact');
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        } else {
-            // If it's not log the error in the console
-            console.log('Form values are invalid.');
-        }
-    }
+    const u = '2172e3cbd0c78a3830a1f6484';
+    const id = 'fdfa602594';
+    const postURL = `https://lakeviewcommunitypartners.us19.list-manage.com/subscribe/post?u=${u}&id=${id}`;
 
     return (
         <div className={styles.contact_panel}>
@@ -52,35 +109,17 @@ const ContactPanel = () => {
                             <p>Subscribe to our newsletter and get the latest on importtant project updates, community events and more.</p>
                         </div>
                         <div className={styles.grid_right}>
-                            <form onSubmit={validateForm} data-aos="fade-up">
-                                <div className={styles.form_grid}>
-                                    <div>
-                                        <label htmlFor="first-name">First Name</label>
-                                        <input type="text" id="first-name" name="first-name" value={firstName} required onChange={(e) => setFirstName(e.target.value)} />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="last-name">Last Name</label>
-                                        <input type="text" id="last-name" name="last-name" value={lastName} required onChange={(e) => setLastName(e.target.value)} />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="email">Email</label>
-                                        <input type="email" id="email" name="email" value={email} required onChange={(e) => setEmail(e.target.value)} />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="tel">Phone</label>
-                                        <input type="tel" id="tel" name="tel" value={phoneNumber} required onChange={(e) => setPhoneNumber(e.target.value)} />
-                                    </div>
-                                </div>
-                                <div className={styles.agreement}>
-                                    <input type="checkbox" name="agreement" id="agreement" value={agreement} onChange={() => setAgreement(!agreement)} />
-                                    <label htmlFor="agreement">
-                                        <p>I agree to the <Link href="/privacy-statement"><a>privacy statement</a></Link></p>
-                                    </label>
-                                </div>
-                                <div>
-                                    <button type="submit" disabled={state.submitting} className="btn">Submit</button>
-                                </div>
-                            </form>
+                            <MailchimpSubscribe
+                                url={postURL}
+                                render={({ subscribe, status, message }) => (
+                                    <CustomForm
+                                        status={status}
+                                        message={message}
+                                        onValidated={formData => subscribe(formData)}
+                                    />
+                                )}
+                            />
+
                         </div>
                     </div>
                 </div>
