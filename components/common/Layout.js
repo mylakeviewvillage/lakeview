@@ -7,6 +7,7 @@ import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import LoadingWidget from "./LoadingWidget";
 import Favicon from "./Favicon";
+import Trackers from "./Trackers";
 
 // set up handle preview
 const isPreview = handlePreview();
@@ -41,6 +42,7 @@ function Layout(props) {
   return (
     <>
       <Favicon />
+      <Trackers google="UA-117378406-1" />
       <SEO
         title={sitemapNode?.title}
         description={page.seo.metaDescription}
