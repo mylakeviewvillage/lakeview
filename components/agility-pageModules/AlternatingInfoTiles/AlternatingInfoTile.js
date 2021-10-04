@@ -2,6 +2,7 @@ import RichTextArea from 'components/RichTextArea';
 import SEOImage from 'components/SEOImage';
 import Link from 'next/link';
 import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 import styles from 'styles/components/alternating-info-tiles.module.scss';
 
 const AlternatingInfoTile = ({ tile }) => {
@@ -16,17 +17,19 @@ const AlternatingInfoTile = ({ tile }) => {
                 <h3>{tile.subtitle}</h3>
                 <hr />
                 <ul>
-                    {tile.iconList.items.map((item, index) => (
-                        <li key={`info-tile-list-item=${index}`}
-                            style={item.fields.icon && (
-                                {
-                                    paddingLeft: '70px',
-                                    backgroundImage: `url('${item.fields.icon.url}')`
-                                }
-                            )}>
-                            <RichTextArea html={item.fields.copy} />
-                        </li>
-                    ))}
+                    <Fade direction="up" duration={1000} damping={0.1} cascade>
+                        {tile.iconList.items.map((item, index) => (
+                            <li key={`info-tile-list-item=${index}`}
+                                style={item.fields.icon && (
+                                    {
+                                        paddingLeft: '70px',
+                                        backgroundImage: `url('${item.fields.icon.url}')`
+                                    }
+                                )}>
+                                <RichTextArea html={item.fields.copy} />
+                            </li>
+                        ))}
+                    </Fade>
                 </ul>
 
                 {tile.cTA && (
