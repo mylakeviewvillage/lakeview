@@ -22,7 +22,7 @@ const ImageMasonry = ({ module }) => {
 
     const getGallery = async (id) => {
         try {
-            const res = await axios.get(`/api/${id}`);
+            const res = await axios.get(`/api/gallery/${id}`);
             setGallery(res.data.gallery);
         } catch (err) {
             console.log("Gallery API request error: ", err);
