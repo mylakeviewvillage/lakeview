@@ -39,6 +39,7 @@ const PartnerList = ({ customData }) => {
                                     )}
                                     <div className={styles.card_copy}>
                                         {partner.company && <h3>{partner.company}</h3>}
+                                        {partner.bio && <p>{partner.bio}</p>}
                                         {partner.website && (
                                             <Link href={partner.website.href}>
                                                 <a className={`btn ${styles.cta}`} target={partner.website.target}>{partner.website.text}</a>
