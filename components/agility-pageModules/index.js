@@ -31,6 +31,7 @@ import ThreeSixtySlider from "./ThreeSixtySlider";
 import InfoSectionVideo from "./InfoSectionVideo";
 import WideCardsVideo from "./WideCardsVideo";
 import ShowcaseArticle from "./ShowcaseArticle";
+import WideCardsArticles from "./WideCardsArticles";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
@@ -52,6 +53,7 @@ const allModules = [
   { name: "ShowcaseArticle", module: ShowcaseArticle },
   { name: "WideCards", module: WideCards },
   { name: "WideCardsVideo", module: WideCardsVideo },
+  { name: "WideCardsArticles", module: WideCardsArticles },
   { name: "Ticker", module: Ticker },
   { name: "Testimonial", module: Testimonial },
   { name: "ShowcaseText", module: ShowcaseText },
