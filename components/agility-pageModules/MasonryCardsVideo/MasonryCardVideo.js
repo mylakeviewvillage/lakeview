@@ -15,7 +15,7 @@ const MasonryCardVideo = ({ index, data: { image, category, title, videoID }, op
                 </div>
             )}
             <div className={styles.card_copy}>
-                {category && <p>{category}</p>}
+                {category && <p className={styles.category}>{category}</p>}
                 {title && (
                     <button onClick={() => openModal(videoID)}>
                         <h3>{title}</h3>

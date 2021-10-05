@@ -11,7 +11,7 @@
     &_copy {
         padding: 30px 20px 60px 20px;
 
-        p {
+        p.category {
             text-transform: uppercase;
             color: $lightBlue;
             margin-bottom: 0;
@@ -23,6 +23,10 @@
             line-height: calc(35/40);
             font-weight: 400;
             margin-bottom: 0;
+        }
+
+        .bio {
+            padding-top: 20px;
         }
 
         a {

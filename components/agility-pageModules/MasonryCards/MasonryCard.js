@@ -20,7 +20,7 @@ const MasonryCard = ({ index, data: { image, category, title, cTA } }) => {
                 </div>
             )}
             <div className={styles.card_copy}>
-                {category && <p>{category}</p>}
+                {category && <p className={styles.category}>{category}</p>}
                 {cTA && title && (
                     <Link href={cTA.href}>
                         <a target={cTA.target}><h3>{title}</h3></a>
