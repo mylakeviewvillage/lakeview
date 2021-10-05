@@ -68,8 +68,8 @@ const SiteHeader = ({ globalData, sitemapNode, page }) => {
                                                                     )
                                                                 })}
                                                                 <li>
-                                                                    <Link href="/contact">
-                                                                        <a>Contact</a>
+                                                                    <Link href="[...slug]" as="/contact-us">
+                                                                        <a onClick={closeMenu}>Contact</a>
                                                                     </Link>
                                                                 </li>
                                                             </ul>
