@@ -7,6 +7,8 @@ import SectionTitle from 'components/SectionTitle';
 
 const WideCardsArticles = ({ module }) => {
 
+    const { titleOne, titleTwo, titleThree } = module.fields;
+
     const cards = module.fields.articles.map(article => article.fields);
 
     return (
