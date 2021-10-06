@@ -39,8 +39,6 @@ const NewsList = ({ customData }) => {
 
     const cardsRender = renderedCards.map((card, index) => <MasonryCard index={index} data={card} key={`article-card-${index}`} />);
 
-    console.log(cards);
-
     return (
         <section>
             <div className="container">

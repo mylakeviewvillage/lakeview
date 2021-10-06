@@ -6,11 +6,11 @@ import styles from '../../styles/components/footer.module.scss';
 
 const SiteFooter = ({ globalData }) => {
 
-    const { nextUpLinks, logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks } = globalData.footer;
+    const { nextUpLinks, logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks, contactIntro, contactCompliance, contactThankYou, contactHeading } = globalData.footer;
 
     return (
         <footer className={styles.footer}>
-            <ContactPanel />
+            <ContactPanel copy={{ contactIntro, contactCompliance, contactThankYou, contactHeading }} />
             <NextPanel menu={nextUpLinks} />
             <div className={styles.bottom}>
                 <div className="container">
@@ -69,6 +69,10 @@ SiteFooter.getCustomInitialProps = async function ({
     let socialMenu;
     let secondaryLinks;
     let tertiaryLinks;
+    let contactIntro;
+    let contactCompliance;
+    let contactThankYou;
+    let contactHeading;
 
     try {
 
@@ -99,6 +103,10 @@ SiteFooter.getCustomInitialProps = async function ({
             tertiaryLinks = footer.tertiaryLinks.items;
             tertiaryLinks.sort((a, b) => (a.properties.itemOrder > b.properties.itemOrder) ? 1 : -1);
             tertiaryLinks = tertiaryLinks.map(link => link.fields);
+            contactIntro = footer.contactIntro;
+            contactCompliance = footer.contactCompliance;
+            contactThankYou = footer.contactThankYou;
+            contactHeading = footer.contactHeading;
         }
 
     } catch (err) {
@@ -106,7 +114,7 @@ SiteFooter.getCustomInitialProps = async function ({
 
     }
 
-    return { nextUpLinks, logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks }
+    return { nextUpLinks, logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks, contactIntro, contactCompliance, contactThankYou, contactHeading };
 
 }
 

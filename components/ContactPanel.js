@@ -4,8 +4,9 @@ import styles from 'styles/components/contact-panel.module.scss';
 import Link from 'next/link';
 
 import MailchimpSubscribe from "react-mailchimp-subscribe";
+import RichTextArea from './RichTextArea';
 
-const ContactPanel = () => {
+const ContactPanel = ({ copy }) => {
 
     const CustomForm = ({ status, message, onValidated }) => {
 
@@ -61,7 +62,7 @@ const ContactPanel = () => {
                 <div className={styles.agreement}>
                     <input type="checkbox" name="agreement" id="agreement" value={agreement} onChange={() => setAgreement(!agreement)} />
                     <label htmlFor="agreement">
-                        <p>I agree to the <Link href="/privacy-statement"><a>privacy statement</a></Link></p>
+                        <p>{copy.contactCompliance}</p>
                     </label>
                 </div>
                 <div>
@@ -80,14 +81,11 @@ const ContactPanel = () => {
                         />
                     )}
                     {status === "success" && (
-                        <div
-                            className={styles.success}
-                            dangerouslySetInnerHTML={{ __html: message }}
-                        />
+                        <p className={styles.success}>{copy.contactThankYou}</p>
                     )}
                     {agreementWarning && !agreement && (
                         <div className={styles.error}>
-                            <p>You must agree with the privacy statment to complete your subscription.</p>
+                            <p>You must agree to receive email communications from Lakeview Community Partners Limited and their partners to complete your subscription.</p>
                         </div>
                     )}
                 </div>
@@ -103,10 +101,10 @@ const ContactPanel = () => {
         <div className={styles.contact_panel}>
             <div className="container">
                 <div className="content">
-                    <h2 className="minor">Stay in the know on all things Lakview Village</h2>
+                    <h2 className="minor">{copy.contactHeading}</h2>
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
-                            <p>Subscribe to our newsletter and get the latest on importtant project updates, community events and more.</p>
+                            <RichTextArea html={copy.contactIntro} />
                         </div>
                         <div className={styles.grid_right}>
                             <MailchimpSubscribe
