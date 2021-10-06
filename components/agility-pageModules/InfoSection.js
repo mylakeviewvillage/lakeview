@@ -44,7 +44,9 @@ const InfoSection = ({ module }) => {
                         <div className={styles.panesRight}>
                             {image && (
                                 <div className={styles.panningImage}>
-                                    <img src={image.url} alt={image.label} className="w-100" onClick={openModal} />
+                                    <button onClick={openModal}>
+                                        <SEOImage img={image} sizes={[700, 300]} className="w-100" />
+                                    </button>
                                 </div>
                             )}
                             {modal && image && (
