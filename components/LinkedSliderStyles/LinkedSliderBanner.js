@@ -27,7 +27,7 @@ const LinkedSliderBanner = ({ slides, backgroundColor, copyColor, layout }) => {
                 aria-label="previous slide"
                 onClick={onClick}
             >
-                <img src={copyColor === 'dark' ? '/img/arrow-left-dark.svg' : '/img/arrow-left.svg'} alt="left arrow" className="w-100" />
+                <img src={copyColor === 'dark' ? '/img/arrow-left-dark.svg' : '/img/arrow-left.svg'} alt="left arrow" className="w-100" width={16} height={16} />
             </button>
         )
     }
@@ -39,7 +39,7 @@ const LinkedSliderBanner = ({ slides, backgroundColor, copyColor, layout }) => {
                 aria-label="next slide"
                 onClick={onClick}
             >
-                <img src={copyColor === 'dark' ? '/img/arrow-right-dark.svg' : '/img/arrow-right.svg'} alt="right arrow" className="w-100" />
+                <img src={copyColor === 'dark' ? '/img/arrow-right-dark.svg' : '/img/arrow-right.svg'} alt="right arrow" className="w-100" width={16} height={16} />
             </button>
         )
     }
