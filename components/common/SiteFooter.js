@@ -1,5 +1,6 @@
 import ContactPanel from "components/ContactPanel";
 import NextPanel from "components/NextPanel";
+import SEOImage from "components/SEOImage";
 import Link from "next/link";
 import React from "react";
 import styles from '../../styles/components/footer.module.scss';
@@ -32,7 +33,7 @@ const SiteFooter = ({ globalData }) => {
                             </div>
                             <div className={styles.legal_panel}>
                                 <div className={styles.logo}>
-                                    <img src={logo.url} alt={logo.label} className="w-100" />
+                                    <SEOImage img={logo} className="w-100" sizes={[450, 300, 100]} />
                                 </div>
                                 <div className={styles.copyright}>
                                     <p>{copyright}</p>
@@ -44,7 +45,17 @@ const SiteFooter = ({ globalData }) => {
                                 </div>
                                 <div className={styles.social_menu}>
                                     <ul>
-                                        {socialMenu.map((item, index) => <li key={`social-link-${index}`}><Link href={item.link.href}><a target={item.link.target}><div className={styles.social_menu_icon}><img src={item.image.url} alt={item.image.label} className="w-100" /></div></a></Link></li>)}
+                                        {socialMenu.map((item, index) => (
+                                            <li key={`social-link-${index}`}>
+                                                <Link href={item.link.href}>
+                                                    <a target={item.link.target}>
+                                                        <div className={styles.social_menu_icon}>
+                                                            <img src={item.image.url} width={item.image.width} height={item.image.height} alt={item.image.label} className="w-100" />
+                                                        </div>
+                                                    </a>
+                                                </Link>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>

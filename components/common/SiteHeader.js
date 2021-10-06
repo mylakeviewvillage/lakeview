@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from "react";
 
 import styles from '../../styles/components/header.module.scss';
+import SEOImage from "components/SEOImage";
 
 const SiteHeader = ({ globalData, sitemapNode, page }) => {
     // get header data
@@ -25,7 +26,9 @@ const SiteHeader = ({ globalData, sitemapNode, page }) => {
                 <div className={styles.content}>
                     <div className={styles.logo}>
                         <Link href={'/'}>
-                            <a><img src={logo.url} alt={logo.label} className="w-100" /></a>
+                            <a>
+                                <SEOImage img={logo} className="w-100" sizes={[100, 200, 450]} />
+                            </a>
                         </Link>
                     </div>
                     <button className="hamburger" onClick={() => setOpenNav(true)}>
