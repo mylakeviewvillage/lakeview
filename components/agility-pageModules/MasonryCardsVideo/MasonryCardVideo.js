@@ -10,7 +10,7 @@ const MasonryCardVideo = ({ index, data: { image, category, title, videoID }, op
                 <div className={styles.card_image}>
                     <button onClick={() => openModal(videoID)}>
                         <img className="play-circle" src="/img/play-circle.svg" alt="Play Button" />
-                        <SEOImage img={image} sizes={[500, 400]} className="w-100" />
+                        <SEOImage img={image} sizes={[473, 300]} className="w-100" />
                     </button>
                 </div>
             )}

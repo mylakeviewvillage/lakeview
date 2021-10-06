@@ -10,13 +10,13 @@ const MasonryCard = ({ index, data: { image, category, title, cTA } }) => {
             {cTA && image && (
                 <div className={styles.card_image}>
                     <Link href={cTA.href}>
-                        <a target={cTA.target}><SEOImage img={image} sizes={[500, 400]} className="w-100" /></a>
+                        <a target={cTA.target}><SEOImage img={image} sizes={[473, 300]} className="w-100" /></a>
                     </Link>
                 </div>
             )}
             {!cTA && image && (
                 <div className={styles.card_image}>
-                    <SEOImage img={image} sizes={[500, 400]} className="w-100" />
+                    <SEOImage img={image} sizes={[473, 300]} className="w-100" />
                 </div>
             )}
             <div className={styles.card_copy}>

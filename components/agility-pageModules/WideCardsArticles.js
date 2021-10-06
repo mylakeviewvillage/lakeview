@@ -25,7 +25,7 @@ const WideCardsArticles = ({ module }) => {
                                             <div className={styles.wide_card_image}>
                                                 <Link href={card.cTA.href}>
                                                     <a target={card.cTA.target}>
-                                                        <SEOImage img={card.image} className="w-100" sizes={[700, 400]} />
+                                                        <SEOImage img={card.image} className="w-100" sizes={[725, 400, 300]} />
                                                     </a>
                                                 </Link>
                                             </div>
