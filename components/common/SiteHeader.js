@@ -27,7 +27,7 @@ const SiteHeader = ({ globalData, sitemapNode, page }) => {
                     <div className={styles.logo}>
                         <Link href={'/'}>
                             <a>
-                                <SEOImage img={logo} className="w-100" sizes={[100, 200, 450]} />
+                                <img src={logo.url} className="w-100" width={450} height={60} alt={logo.label ? logo.label : ''} />
                             </a>
                         </Link>
                     </div>

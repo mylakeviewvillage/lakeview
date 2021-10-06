@@ -33,7 +33,7 @@ const SiteFooter = ({ globalData }) => {
                             </div>
                             <div className={styles.legal_panel}>
                                 <div className={styles.logo}>
-                                    <SEOImage img={logo} className="w-100" sizes={[450, 300, 100]} />
+                                    <img src={logo.url} className="w-100" width={450} height={60} alt={logo.label ? logo.label : ''} />
                                 </div>
                                 <div className={styles.copyright}>
                                     <p>{copyright}</p>
@@ -45,17 +45,19 @@ const SiteFooter = ({ globalData }) => {
                                 </div>
                                 <div className={styles.social_menu}>
                                     <ul>
-                                        {socialMenu.map((item, index) => (
-                                            <li key={`social-link-${index}`}>
-                                                <Link href={item.link.href}>
-                                                    <a target={item.link.target}>
-                                                        <div className={styles.social_menu_icon}>
-                                                            <img src={item.image.url} width={item.image.width} height={item.image.height} alt={item.image.label} className="w-100" />
-                                                        </div>
-                                                    </a>
-                                                </Link>
-                                            </li>
-                                        ))}
+                                        {socialMenu.map((item, index) => {
+                                            return (
+                                                <li key={`social-link-${index}`}>
+                                                    <Link href={item.link.href}>
+                                                        <a target={item.link.target}>
+                                                            <div className={styles.social_menu_icon}>
+                                                                <img src={item.image.url} width={20} height={20} alt={item.image.label} className="w-100" />
+                                                            </div>
+                                                        </a>
+                                                    </Link>
+                                                </li>
+                                            )
+                                        })}
                                     </ul>
                                 </div>
                             </div>
