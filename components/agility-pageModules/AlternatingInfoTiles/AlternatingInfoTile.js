@@ -13,8 +13,8 @@ const AlternatingInfoTile = ({ tile }) => {
                 <SEOImage img={tile.image} sizes={[300, 600]} className="w-100" />
             </div>
             <div className={styles.copy}>
-                <h2 className="minor">{tile.title}</h2>
-                <h3>{tile.subtitle}</h3>
+                <p className={styles.minor}>{tile.subtitle}</p>
+                <h3>{tile.title}</h3>
                 <hr />
                 <ul>
                     <Fade direction="up" duration={1000} damping={0.1} cascade>

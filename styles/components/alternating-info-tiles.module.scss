@@ -51,12 +51,13 @@
                 width: 40%;
             }
 
-            h2 {
+            p.minor {
                 font-size: 1.125rem;
                 text-transform: uppercase;
                 margin-bottom: 0;
                 line-height: calc(28/18);
                 color: $blue;
+                font-weight: 400;
             }
 
             h3 {
