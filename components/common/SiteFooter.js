@@ -1,17 +1,14 @@
-import ContactPanel from "components/ContactPanel";
 import NextPanel from "components/NextPanel";
-import SEOImage from "components/SEOImage";
 import Link from "next/link";
 import React from "react";
 import styles from '../../styles/components/footer.module.scss';
 
 const SiteFooter = ({ globalData }) => {
 
-    const { nextUpLinks, logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks, contactIntro, contactCompliance, contactThankYou, contactHeading } = globalData.footer;
+    const { nextUpLinks, logo, copyright, legalMenu, socialMenu, secondaryLinks, tertiaryLinks } = globalData.footer;
 
     return (
         <footer className={styles.footer}>
-            <ContactPanel copy={{ contactIntro, contactCompliance, contactThankYou, contactHeading }} />
             <NextPanel menu={nextUpLinks} />
             <div className={styles.bottom}>
                 <div className="container">
