@@ -14,17 +14,12 @@ const ContactForm = () => {
         const [inquiryType, setInquiryType] = useState('General Info');
         const [messageSub, setMessageSub] = useState('');
         const [agreement, setAgreement] = useState(false);
-        const [agreementWarning, setAgreementWarning] = useState(false);
 
         const handleSubmit = (e) => {
 
             e.preventDefault();
 
-            if (!agreement) setAgreementWarning(true);
-            if (agreement) setAgreementWarning(false);
-
-            agreement &&
-                email &&
+            email &&
                 firstName &&
                 lastName &&
                 phoneNumber &&
@@ -35,7 +30,8 @@ const ContactForm = () => {
                     MERGE2: lastName,
                     MERGE4: phoneNumber,
                     MERGE6: inquiryType,
-                    MERGE5: messageSub
+                    MERGE5: messageSub,
+                    MERGE3: agreement
                 });
 
         }
@@ -97,11 +93,6 @@ const ContactForm = () => {
                     )}
                     {status === "success" && (
                         <p className={styles.success}>Thank you for your inquiry.</p>
-                    )}
-                    {agreementWarning && !agreement && (
-                        <div className={styles.error}>
-                            <p>You must agree to receive email communications from Lakeview Community Partners Limited and their partners to complete your subscription.</p>
-                        </div>
                     )}
                 </div>
             </form>
