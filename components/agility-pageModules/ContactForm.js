@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from 'styles/components/contact-panel.module.scss';
-import RichTextArea from './RichTextArea';
 
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
-const ContactPanel = ({ copy }) => {
+const ContactForm = () => {
 
     const CustomForm = ({ status, message, onValidated }) => {
 
@@ -12,6 +11,8 @@ const ContactPanel = ({ copy }) => {
         const [lastName, setLastName] = useState('');
         const [phoneNumber, setPhoneNumber] = useState('');
         const [email, setEmail] = useState('');
+        const [inquiryType, setInquiryType] = useState('General Info');
+        const [messageSub, setMessageSub] = useState('');
         const [agreement, setAgreement] = useState(false);
         const [agreementWarning, setAgreementWarning] = useState(false);
 
@@ -32,7 +33,9 @@ const ContactPanel = ({ copy }) => {
                     EMAIL: email,
                     MERGE1: firstName,
                     MERGE2: lastName,
-                    MERGE4: phoneNumber
+                    MERGE4: phoneNumber,
+                    MERGE6: inquiryType,
+                    MERGE5: messageSub
                 });
 
         }
@@ -56,11 +59,25 @@ const ContactPanel = ({ copy }) => {
                         <label htmlFor="tel">Phone</label>
                         <input type="tel" id="tel" name="tel" value={phoneNumber} required onChange={(e) => setPhoneNumber(e.target.value)} />
                     </div>
+                    <div>
+                        <label htmlFor="tel">Inquiry Type</label>
+                        <select name="inqiryType" id="inqiryType" name="inqiryType" value={inquiryType} onChange={(e) => setInquiryType(e.target.value)}>
+                            <option value="General Info">General Info</option>
+                            <option value="Sales Opportunities">Sales Opportunities</option>
+                            <option value="Community Events & Discovery Centre">Community Events & Discovery Centre</option>
+                            <option value="Media/PR">Media/PR</option>
+                            <option value="Retail & New Business Opportunities">Retail & New Business Opportunities</option>
+                        </select>
+                    </div>
+                    <div className={styles.messageSub}>
+                        <label htmlFor="messageSub">Message</label>
+                        <textarea name="messageSub" id="messageSub" name="messageSub" value={messageSub} onChange={(e) => setMessageSub(e.target.value)} />
+                    </div>
                 </div>
                 <div className={styles.agreement}>
                     <input type="checkbox" name="agreement" id="agreement" value={agreement} onChange={() => setAgreement(!agreement)} />
                     <label htmlFor="agreement">
-                        <p>{copy.contactCompliance}</p>
+                        <p>Yes, I would like to receive email communications from Lakeview Community Partners Limited and their</p>
                     </label>
                 </div>
                 <div>
@@ -79,7 +96,7 @@ const ContactPanel = ({ copy }) => {
                         />
                     )}
                     {status === "success" && (
-                        <p className={styles.success}>{copy.contactThankYou}</p>
+                        <p className={styles.success}>Thank you for your inquiry.</p>
                     )}
                     {agreementWarning && !agreement && (
                         <div className={styles.error}>
@@ -99,10 +116,8 @@ const ContactPanel = ({ copy }) => {
         <div className={styles.contact_panel}>
             <div className="container">
                 <div className="content">
-                    <h2 className="minor">{copy.contactHeading}</h2>
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
-                            <RichTextArea html={copy.contactIntro} />
                         </div>
                         <div className={styles.grid_right}>
                             <MailchimpSubscribe
@@ -124,4 +139,4 @@ const ContactPanel = ({ copy }) => {
     );
 };
 
-export default ContactPanel;
+export default ContactForm;

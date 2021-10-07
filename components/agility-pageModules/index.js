@@ -35,6 +35,7 @@ import WideCardsArticles from "./WideCardsArticles";
 import PartnerList from "./PartnerList";
 import RecentNews from "./RecentNews";
 import BasicCopy from "./BasicCopy";
+import ContactForm from "./ContactForm";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
@@ -76,7 +77,8 @@ const allModules = [
   { name: "ThreeSixtySlider", module: ThreeSixtySlider },
   { name: "PartnerList", module: PartnerList },
   { name: "RecentNews", module: RecentNews },
-  { name: "RichTextArea", module: BasicCopy }
+  { name: "RichTextArea", module: BasicCopy },
+  { name: "ContactForm", module: ContactForm }
 ];
 
 export const getModule = (moduleName) => {
