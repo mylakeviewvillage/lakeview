@@ -15,14 +15,14 @@ const SiteFooter = ({ globalData }) => {
                     <div className="content fat">
                         <div className={styles.grid}>
                             <div className={styles.secondary_links_panel}>
-                                <h2>Secondary<br />Site Links</h2>
+                                <h2>See &<br />Experience</h2>
                                 <hr />
                                 <ul>
                                     {secondaryLinks.map((item, index) => <li key={`secondary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
                                 </ul>
                             </div>
                             <div className={styles.tertiary_links_panel}>
-                                <h2>Tertiary<br />Site Links</h2>
+                                <h2>Learn &<br />Connect</h2>
                                 <hr />
                                 <ul>
                                     {tertiaryLinks.map((item, index) => <li key={`tertiary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
