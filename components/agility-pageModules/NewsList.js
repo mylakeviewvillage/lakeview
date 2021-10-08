@@ -3,11 +3,14 @@ import React, { useState, useEffect } from 'react';
 import MasonryCard from 'components/agility-pageModules/MasonryCards/MasonryCard';
 import Masonry from 'react-masonry-css';
 
-const NewsList = ({ customData }) => {
+const NewsList = ({ customData, module }) => {
+
+    const { initialLoad } = module.fields;
 
     const [cards, setCards] = useState([]);
     const [renderedCards, setRenderedCards] = useState([]);
-    const [loadedInt, setLoadedInt] = useState(6);
+    const [loadedInt, setLoadedInt] = useState(initialLoad ? initialLoad : 12);
+    const loadIncrease = 6;
 
     useEffect(() => {
         setCards(customData.contentList)
@@ -18,7 +21,7 @@ const NewsList = ({ customData }) => {
     }, [cards, loadedInt]);
 
     const filterCards = (filter) => {
-        setLoadedInt(6)
+        setLoadedInt(initialLoad ? initialLoad : 12)
         if (filter === 'All') {
             setCards(customData.contentList);
         } else {
@@ -28,7 +31,7 @@ const NewsList = ({ customData }) => {
     }
 
     const loadMore = () => {
-        setLoadedInt(loadedInt + 6);
+        setLoadedInt(loadedInt + loadIncrease);
     }
 
     const breakpointColumnsObj = {
