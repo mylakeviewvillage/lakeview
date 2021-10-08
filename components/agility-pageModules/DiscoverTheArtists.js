@@ -14,7 +14,9 @@ const DiscoverTheArtists = ({ module, customData }) => {
 
     const [artists, setArtists] = useState([]);
     const [visibleArtists, setVisibleArtists] = useState([]);
-    const [loadedArtists, setLoadedArtists] = useState(6);
+    const [loadedArtists, setLoadedArtists] = useState(12);
+    const loadIncrease = 6;
+
 
     const [openModal, setOpenModal] = useState(false);
     const [currentVideo, setCurrentVideo] = useState("");
@@ -35,9 +37,7 @@ const DiscoverTheArtists = ({ module, customData }) => {
     }, [artists, loadedArtists])
 
     const loadMore = () => {
-        // load n number of new artists on each load more click
-        const loadInt = 6;
-        setLoadedArtists(loadedArtists + loadInt);
+        setLoadedArtists(loadedArtists + loadIncrease);
     }
 
     return (
