@@ -9,7 +9,8 @@ const ArticleList = ({ module, customData }) => {
 
     const [cards, setCards] = useState([]);
     const [renderedCards, setRenderedCards] = useState([]);
-    const [loadedInt, setLoadedInt] = useState(6);
+    const [loadedInt, setLoadedInt] = useState(12);
+    const loadIncrease = 6;
 
     useEffect(() => {
         setCards(customData.contentList)
@@ -20,7 +21,7 @@ const ArticleList = ({ module, customData }) => {
     }, [cards, loadedInt]);
 
     const filterCards = (filter) => {
-        setLoadedInt(6)
+        setLoadedInt(12)
         if (filter === 'All') {
             setCards(customData.contentList);
         } else {
@@ -30,7 +31,7 @@ const ArticleList = ({ module, customData }) => {
     }
 
     const loadMore = () => {
-        setLoadedInt(loadedInt + 6);
+        setLoadedInt(loadedInt + loadIncrease);
     }
 
     const breakpointColumnsObj = {
