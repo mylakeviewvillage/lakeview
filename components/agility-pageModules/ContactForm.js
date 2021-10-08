@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import styles from 'styles/components/contact-panel.module.scss';
 
 import MailchimpSubscribe from "react-mailchimp-subscribe";
+import RichTextArea from 'components/RichTextArea';
 
-const ContactForm = () => {
+const ContactForm = ({ module }) => {
+
+    const { title, description } = module.fields;
 
     const CustomForm = ({ status, message, onValidated }) => {
 
@@ -107,8 +110,10 @@ const ContactForm = () => {
         <div className={styles.contact_panel}>
             <div className="container">
                 <div className="content">
+                    {title && <h2 className="minor">{title}</h2>}
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
+                            {description && <RichTextArea html={description} />}
                         </div>
                         <div className={styles.grid_right}>
                             <MailchimpSubscribe
@@ -121,7 +126,6 @@ const ContactForm = () => {
                                     />
                                 )}
                             />
-
                         </div>
                     </div>
                 </div>
