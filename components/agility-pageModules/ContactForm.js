@@ -55,7 +55,7 @@ const ContactForm = () => {
                         <label htmlFor="tel">Phone</label>
                         <input type="tel" id="tel" name="tel" value={phoneNumber} required onChange={(e) => setPhoneNumber(e.target.value)} />
                     </div>
-                    <div>
+                    <div className={styles.full_width}>
                         <label htmlFor="tel">Inquiry Type</label>
                         <select name="inqiryType" id="inqiryType" name="inqiryType" value={inquiryType} onChange={(e) => setInquiryType(e.target.value)}>
                             <option value="General Info">General Info</option>
@@ -65,7 +65,7 @@ const ContactForm = () => {
                             <option value="Retail & New Business Opportunities">Retail & New Business Opportunities</option>
                         </select>
                     </div>
-                    <div className={styles.messageSub}>
+                    <div className={styles.full_width}>
                         <label htmlFor="messageSub">Message</label>
                         <textarea name="messageSub" id="messageSub" name="messageSub" value={messageSub} onChange={(e) => setMessageSub(e.target.value)} />
                     </div>
