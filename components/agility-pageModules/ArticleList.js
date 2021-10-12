@@ -5,7 +5,7 @@ import Masonry from 'react-masonry-css'
 import MasonrySort from 'components/MasonrySort';
 import { Fade } from 'react-awesome-reveal';
 
-const ArticleList = ({ module, customData }) => {
+const ArticleList = ({ customData }) => {
 
     const [cards, setCards] = useState([]);
     const [renderedCards, setRenderedCards] = useState([]);
