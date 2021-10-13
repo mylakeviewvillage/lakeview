@@ -33,6 +33,7 @@ import WideCardsVideo from "./WideCardsVideo";
 import ShowcaseArticle from "./ShowcaseArticle";
 import WideCardsArticles from "./WideCardsArticles";
 import PartnerList from "./PartnerList";
+import ConsultantList from "./ConsultantList";
 import RecentNews from "./RecentNews";
 import BasicCopy from "./BasicCopy";
 import ContactForm from "./ContactForm";
@@ -76,6 +77,7 @@ const allModules = [
   { name: "TestimonialSlider", module: TestimonialSlider },
   { name: "ThreeSixtySlider", module: ThreeSixtySlider },
   { name: "PartnerList", module: PartnerList },
+  { name: "ConsultantList", module: ConsultantList },
   { name: "RecentNews", module: RecentNews },
   { name: "RichTextArea", module: BasicCopy },
   { name: "ContactForm", module: ContactForm }
