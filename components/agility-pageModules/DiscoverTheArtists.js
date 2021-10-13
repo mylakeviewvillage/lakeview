@@ -51,6 +51,7 @@ const DiscoverTheArtists = ({ module, customData }) => {
                                 <div key={`artist-${index}`} className={styles.artist}>
                                     {artist.artwork && (
                                         <div className={styles.artist_image} onClick={() => playVideo(artist.youtubeVideoID)} >
+                                            <img className="play-circle" src="/img/play-circle.svg" alt="Play Button" />
                                             <SEOImage img={artist.artwork} sizes={[700, 500, 300]} className="w-100" />
                                         </div>
                                     )}
