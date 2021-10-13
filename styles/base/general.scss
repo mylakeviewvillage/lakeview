@@ -12,10 +12,18 @@
 }
 
 .content {
-    padding: 60px 0;
+    padding: 45px 0;
+
+    @media screen and (min-width: 768px) {
+        padding: 60px 0;
+    }
 
     &.fat {
-        padding: 120px 0;
+        padding-bottom: 90px;
+
+        @media screen and (min-width: 768px) {
+            padding: 120px 0;
+        }
     }
 
     &.no-top {
@@ -31,7 +39,11 @@
     }
 
     &.override-top {
-        padding: 60px 0 !important;
+        padding-top: 45px 0 !important;
+
+        @media screen and (min-width: 768px) {
+            padding: 60px 0 !important;
+        }
     }
 }
 
