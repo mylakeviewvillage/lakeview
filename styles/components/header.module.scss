@@ -1,13 +1,5 @@
 @import '../base/variables.scss';
 
-$menuPaddingTop: 200px;
-$menuPaddingBot: 100px;
-
-@media screen and (min-width: 768px) {
-    $menuPaddingTop: 150px;
-    $menuPaddingBot: 75px;
-}
-
 header.header {
     .content {
         padding: 34px 0;
@@ -82,12 +74,14 @@ header.header {
 
                     ul.topMenuList {
                         font-size: 12vw;
-                        padding-top: $menuPaddingTop;
-                        padding-bottom: $menuPaddingBot;
+                        padding-top: 100px;
+                        padding-bottom: 100px;
                         line-height: 1;
 
                         @media screen and (min-width: 768px) {
                             font-size: 6vw;
+                            padding-top: 150px;
+                            padding-bottom: 75px;
                         }
 
                         >li {
@@ -161,8 +155,13 @@ header.header {
 
                             ul {
                                 font-size: 2rem;
-                                padding-top: $menuPaddingTop;
-                                padding-bottom: $menuPaddingBot;
+                                padding-top: 100px;
+                                padding-bottom: 75px;
+
+                                @media screen and (min-width: 768px) {
+                                    padding-top: 200px;
+                                    padding-bottom: 100px;
+                                }
 
                                 li {
                                     line-height: 1;
