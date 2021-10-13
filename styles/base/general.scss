@@ -22,6 +22,12 @@
         padding-top: 0;
     }
 
+    &.no-bottom-sm {
+        @media screen and (min-width: 768px) {
+            padding-bottom: 0;
+        }
+    }
+
     &.override-top {
         padding: 60px 0 !important;
     }

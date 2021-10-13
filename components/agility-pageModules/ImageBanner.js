@@ -38,7 +38,7 @@ const Banner = ({ module }) => {
 
     return (
         <section className={styles.image_banner}>
-            <div className="content no-top">
+            <div className="content no-top no-bottom-sm">
                 <div className="container">
                     {titleOne && <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />}
                 </div>
