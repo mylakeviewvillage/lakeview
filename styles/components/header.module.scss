@@ -20,7 +20,7 @@ header.header {
             right: 0;
             bottom: 0;
             background-color: white;
-            z-index: 1;
+            z-index: 999;
 
             &.inactive {
                 transform: translateX(100%);
@@ -203,4 +203,26 @@ header.header {
             }
         }
     }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+a.back_to_top {
+    background: none;
+    transform: rotate(-90deg);
+    width: 40px;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 888;
+    animation-name: fadeIn;
+    animation-duration: 1s;
 }

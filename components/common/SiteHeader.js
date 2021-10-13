@@ -1,16 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from 'next/link';
-import { useState } from "react";
 
 import styles from '../../styles/components/header.module.scss';
-import SEOImage from "components/SEOImage";
 
-const SiteHeader = ({ globalData, sitemapNode, page }) => {
+const SiteHeader = ({ globalData }) => {
     // get header data
     const { logo, mainMenu } = globalData.header;
-
-    // set up href for internal links
-    let href = "/pages/[...slug]";
 
     const [openNav, setOpenNav] = useState(false);
     const [openSubNav, setOpenSubNav] = useState(0);
@@ -20,8 +15,27 @@ const SiteHeader = ({ globalData, sitemapNode, page }) => {
         setOpenSubNav(0);
     }
 
+    const [scrollTop, setScrollTop] = useState(0);
+
+    useEffect(() => {
+        function onScroll() {
+            let currentPosition = window.pageYOffset;
+            setScrollTop(currentPosition);
+        }
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [scrollTop]);
+
+    console.log(scrollTop);
+
+
     return (
-        <header className={styles.header}>
+        <header className={styles.header} id="header">
+            {scrollTop > 700 && (
+                <a className={styles.back_to_top} href="#header">
+                    <img src="/img/arrow-circle-right.svg" alt="Back to Top" className="w-100" />
+                </a>
+            )}
             <div className="container">
                 <div className={styles.content}>
                     <div className={styles.logo}>

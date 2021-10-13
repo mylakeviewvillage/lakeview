@@ -1,5 +1,9 @@
 @import '../base/variables.scss';
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     width: 92%;
     max-width: 1480px;
