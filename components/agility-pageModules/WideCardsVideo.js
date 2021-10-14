@@ -29,7 +29,7 @@ const WideCardsVideo = ({ module, customData }) => {
                     <div className={styles.wide_cards}>
                         {cards.map((card, index) => {
                             return (
-                                <Fade direction="left" delay={index * 100} key={`wide-card-video-${index}`}>
+                                <Fade direction="left" delay={index * 100} key={`wide-card-video-${index}`} triggerOnce>
                                     <div className={styles.wide_card}>
                                         {card.image && !card.videoID && (
                                             <div className={styles.wide_card_image}>

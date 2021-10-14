@@ -18,7 +18,7 @@ const WideCards = ({ module, customData }) => {
                     <div className={styles.wide_cards}>
                         {cards.map((card, index) => {
                             return (
-                                <Fade direction="left" delay={index * 100} key={`wide-card-${index}`}>
+                                <Fade direction="left" delay={index * 100} key={`wide-card-${index}`} triggerOnce>
                                     <div className={styles.wide_card}>
                                         {card.image && (
                                             <div className={styles.wide_card_image}>

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import MasonryCard from 'components/agility-pageModules/MasonryCards/MasonryCard';
 import Masonry from 'react-masonry-css';
 
+import { Fade } from 'react-awesome-reveal';
+
 const NewsList = ({ customData, module }) => {
 
     const { initialLoad } = module.fields;
@@ -40,7 +42,11 @@ const NewsList = ({ customData, module }) => {
         768: 1
     };
 
-    const cardsRender = renderedCards.map((card, index) => <MasonryCard index={index} data={card} key={`article-card-${index}`} />);
+    const cardsRender = renderedCards.map((card, index) => (
+        <Fade direction="left" delay={index * 50} key={`article-card-${index}`} triggerOnce>
+            <MasonryCard index={index} data={card} />
+        </Fade>
+    ));
 
     return (
         <section>
