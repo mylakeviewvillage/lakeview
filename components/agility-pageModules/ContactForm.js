@@ -80,7 +80,7 @@ const ContactForm = ({ module }) => {
                     </label>
                 </div>
                 <div>
-                    <button type="submit" className="btn">Submit</button>
+                    <button type="submit" className="btn">Get In Touch</button>
                 </div>
                 <div className={styles.status}>
                     {status === "sending" && (

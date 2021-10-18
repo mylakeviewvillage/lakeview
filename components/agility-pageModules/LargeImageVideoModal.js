@@ -17,6 +17,7 @@ const LargeImageVideoModal = ({ module }) => {
                     {titleOne && <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />}
                     {image && (
                         <div className={styles.image} onClick={() => setOpenModal(true)} >
+                            <img className="play-circle" src="/img/play-circle.svg" alt="Play Button" />
                             <SEOImage img={image} sizes={[1400, 1024, 768, 400]} className="w-100" />
                         </div>
                     )}
