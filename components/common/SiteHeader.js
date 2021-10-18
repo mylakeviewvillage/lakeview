@@ -26,9 +26,6 @@ const SiteHeader = ({ globalData }) => {
         return () => window.removeEventListener("scroll", onScroll);
     }, [scrollTop]);
 
-    console.log(scrollTop);
-
-
     return (
         <header className={styles.header} id="header">
             {scrollTop > 700 && (
