@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from 'styles/components/contact-panel.module.scss';
 
 import MailchimpSubscribe from "react-mailchimp-subscribe";
@@ -6,7 +6,7 @@ import RichTextArea from 'components/RichTextArea';
 
 const ContactForm = ({ module }) => {
 
-    const { title, description } = module.fields;
+    const { title, description, agreement } = module.fields;
 
     const CustomForm = ({ status, message, onValidated }) => {
 
@@ -16,7 +16,7 @@ const ContactForm = ({ module }) => {
         const [email, setEmail] = useState('');
         const [inquiryType, setInquiryType] = useState('General Info');
         const [messageSub, setMessageSub] = useState('');
-        const [agreement, setAgreement] = useState(false);
+        const [agreementBool, setAgreementBool] = useState(false);
 
         const handleSubmit = (e) => {
 
@@ -34,7 +34,7 @@ const ContactForm = ({ module }) => {
                     MERGE4: phoneNumber,
                     MERGE6: inquiryType,
                     MERGE5: messageSub,
-                    MERGE3: agreement
+                    MERGE3: agreementBool
                 });
 
         }
@@ -74,9 +74,9 @@ const ContactForm = ({ module }) => {
                     </div>
                 </div>
                 <div className={styles.agreement}>
-                    <input type="checkbox" name="agreement" id="agreement" value={agreement} onChange={() => setAgreement(!agreement)} />
+                    <input type="checkbox" name="agreement" id="agreement" value={agreementBool} onChange={() => setAgreementBool(!agreementBool)} />
                     <label htmlFor="agreement">
-                        <p>Yes, I would like to receive email communications from Lakeview Community Partners Limited and their</p>
+                        {agreement && <p>{agreement}</p>}
                     </label>
                 </div>
                 <div>
