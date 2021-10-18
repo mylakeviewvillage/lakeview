@@ -58,7 +58,7 @@ MasonryCardsVideo.getCustomInitialProps = async ({
         languageCode: languageCode,
         depth: 10,
         expandAllContentLinks: true,
-        take: 10
+        take: 50
     });
     cardsContent.items.sort((a, b) => (a.properties.itemOrder > b.properties.itemOrder) ? 1 : -1);
     cards = cardsContent.items.map(cards => cards.fields);

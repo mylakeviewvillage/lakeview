@@ -29,7 +29,7 @@ const InfoSectionVideo = ({ module }) => {
                             <div className={styles.info}>
                                 <div className={styles.infoLeft}>
                                     {infoLeft && <RichTextArea html={infoLeft} />}
-                                    {videoID && <button className="btn" onClick={openModal}>Watch</button>}
+                                    {videoID && <button className="btn" onClick={openModal}>Play Video</button>}
                                 </div>
                                 <div className={styles.infoRight}>
                                     {infoRight && <RichTextArea html={infoRight} />}

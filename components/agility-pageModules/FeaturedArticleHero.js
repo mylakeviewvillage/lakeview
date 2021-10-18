@@ -7,7 +7,7 @@ const FeaturedArticleHero = ({ module }) => {
 
     return (
         <section>
-            <div className="content override-top">
+            <div className="content">
                 <div className="container">
                     {category && <p className="small-blue-title">{category}</p>}
                     {title && <h1>{title}</h1>}
