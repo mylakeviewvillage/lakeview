@@ -24,6 +24,7 @@ import DiscoverTheArtists from "./DiscoverTheArtists";
 import NewsList from "./NewsList";
 import FeaturedArticleHero from "./FeaturedArticleHero";
 import SplitGridText from "./SplitGridText";
+import SplitGridTextImage from "./SplitGridTextImage";
 import ImageInfoVideo from "./ImageInfoVideo";
 import TestimonialSlider from "./TestimonialSlider";
 import MasonryCardsVideo from "./MasonryCardsVideo";
@@ -74,6 +75,7 @@ const allModules = [
   { name: "NewsList", module: NewsList },
   { name: "FeaturedArticleHero", module: FeaturedArticleHero },
   { name: "SplitGridText", module: SplitGridText },
+  { name: "SplitGridTextImage", module: SplitGridTextImage },
   { name: "TestimonialSlider", module: TestimonialSlider },
   { name: "ThreeSixtySlider", module: ThreeSixtySlider },
   { name: "PartnerList", module: PartnerList },
