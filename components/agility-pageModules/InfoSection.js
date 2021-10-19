@@ -3,7 +3,11 @@ import RichTextArea from 'components/RichTextArea';
 import SectionTitle from 'components/SectionTitle';
 import SEOImage from 'components/SEOImage';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import Plx from 'react-plx';
+import { useMediaQuery } from 'react-responsive';
 import styles from '../../styles/components/info-section.module.scss';
 
 const InfoSection = ({ module }) => {
@@ -11,10 +15,47 @@ const InfoSection = ({ module }) => {
     const { cTA, image, infoLeft, infoRight, infoTitle, subtitle, titleOne, titleTwo, titleThree } = module.fields;
 
     const [modal, setModal] = useState(false);
-
     const closeModal = () => setModal(false);
-
     const openModal = () => setModal(true);
+
+    const [imageContainerHeight, setImageContainerHeight] = useState(0);
+    const imageContainerEl = useRef(null);
+    const [imageHeight, setImageHeight] = useState(0);
+    const imageEl = useRef(null);
+    const [parallaxData, setParallaxData] = useState([]);
+
+    useEffect(() => {
+        setImageContainerHeight(imageContainerEl.current.clientHeight);
+        setImageHeight(imageEl.current.clientHeight);
+    }, [imageEl, imageContainerEl]);
+
+    useEffect(() => {
+        if (imageContainerHeight && imageHeight) {
+            setParallaxData([
+                {
+                    start: '#info-section',
+                    duration: imageContainerHeight * 2,
+                    properties: [
+                        {
+                            startValue: 800,
+                            endValue: imageHeight - imageContainerHeight - 400,
+                            property: 'translateY',
+                        },
+                    ],
+                },
+            ]);
+        }
+    }, [imageContainerHeight, imageHeight])
+
+    const isMobileOrTablet = useMediaQuery({
+        maxWidth: 1024
+    });
+
+    const [smallWindow, setSmallWindow] = useState(true);
+
+    useEffect(() => {
+        setSmallWindow(isMobileOrTablet);
+    }, [isMobileOrTablet]);
 
     return (
         <section className={styles.infoSection} id="info-section">
@@ -41,13 +82,17 @@ const InfoSection = ({ module }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.panesRight}>
+                        <div className={styles.panesRight} ref={imageContainerEl}>
                             {image && (
-                                <div className={styles.panningImage}>
+                                <Plx
+                                    className={styles.panningImage}
+                                    parallaxData={parallaxData}
+                                    disabled={smallWindow}>
                                     <button onClick={openModal}>
-                                        <SEOImage img={image} sizes={[700, 300]} className="w-100" />
+                                        <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
+                                        {/* <SEOImage img={image} sizes={[700, 300]} className="w-100" /> */}
                                     </button>
-                                </div>
+                                </Plx>
                             )}
                             {modal && image && (
                                 <Modal closeModal={closeModal}>
