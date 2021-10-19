@@ -51,7 +51,7 @@ const WideCardsVideo = ({ module, customData }) => {
 
                                             {card.videoID && (
                                                 <div>
-                                                    <button className={`btn ${styles.cta}`} onClick={() => openModal(card.videoID)}>Watch Video</button>
+                                                    <button className={`btn ${styles.cta}`} onClick={() => openModal(card.videoID)}>Play Video</button>
                                                 </div>
                                             )}
                                         </div>

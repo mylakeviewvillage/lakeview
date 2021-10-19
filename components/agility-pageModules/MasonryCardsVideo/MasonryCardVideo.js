@@ -23,7 +23,7 @@ const MasonryCardVideo = ({ index, data: { image, category, title, videoID }, op
                 )}
                 {videoID && (
                     <div>
-                        <button className={`btn ${styles.cta}`} onClick={() => openModal(videoID)}>Watch Video</button>
+                        <button className={`btn ${styles.cta}`} onClick={() => openModal(videoID)}>Play Video</button>
                     </div>
                 )}
             </div>
