@@ -28,7 +28,7 @@ const ImageInfoVideo = ({ module }) => {
                             {copy && <RichTextArea html={copy} />}
                             {videoID && (
                                 <div>
-                                    <button className={`btn ${textColor === 'Light' ? 'white' : ''}`} onClick={() => setOpenModal(true)}>Watch Video</button>
+                                    <button className={`btn ${textColor === 'Light' ? 'white' : ''}`} onClick={() => setOpenModal(true)}>Play Video</button>
                                     <ModalVideo channel='youtube' autoplay={true} isOpen={openModal} videoId={videoID} onClose={() => setOpenModal(false)} />
                                 </div>
                             )}
