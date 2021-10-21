@@ -1,6 +1,7 @@
 import NextPanel from "components/NextPanel";
 import Link from "next/link";
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 import styles from '../../styles/components/footer.module.scss';
 
 const SiteFooter = ({ globalData }) => {
@@ -17,16 +18,20 @@ const SiteFooter = ({ globalData }) => {
                             <div className={styles.secondary_links_panel}>
                                 <h2>See &<br />Experience</h2>
                                 <hr />
-                                <ul>
-                                    {secondaryLinks.map((item, index) => <li key={`secondary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
-                                </ul>
+                                <Fade direction="up">
+                                    <ul>
+                                        {secondaryLinks.map((item, index) => <li key={`secondary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                                    </ul>
+                                </Fade>
                             </div>
                             <div className={styles.tertiary_links_panel}>
                                 <h2>Learn &<br />Connect</h2>
                                 <hr />
-                                <ul>
-                                    {tertiaryLinks.map((item, index) => <li key={`tertiary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
-                                </ul>
+                                <Fade direction="up">
+                                    <ul>
+                                        {tertiaryLinks.map((item, index) => <li key={`tertiary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                                    </ul>
+                                </Fade>
                             </div>
                             <div className={styles.legal_panel}>
                                 <div className={styles.logo}>
