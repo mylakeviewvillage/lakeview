@@ -20,7 +20,10 @@ const SiteFooter = ({ globalData }) => {
                                 <hr />
                                 <Fade direction="up">
                                     <ul>
-                                        {secondaryLinks.map((item, index) => <li key={`secondary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                                        {secondaryLinks.map((item, index) => 
+                                        
+                                            <li key={`secondary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>
+                                        )}
                                     </ul>
                                 </Fade>
                             </div>
@@ -46,21 +49,25 @@ const SiteFooter = ({ globalData }) => {
                                     </ul>
                                 </div>
                                 <div className={styles.social_menu}>
+
                                     <ul>
                                         {socialMenu.map((item, index) => {
                                             return (
                                                 <li key={`social-link-${index}`}>
-                                                    <Link href={item.link.href}>
-                                                        <a target={item.link.target}>
-                                                            <div className={styles.social_menu_icon}>
-                                                                <img src={item.image.url} width={20} height={20} alt={item.image.label} className="w-100" />
-                                                            </div>
-                                                        </a>
-                                                    </Link>
+                                                    <Fade direction="up" delay={index * 60}>
+                                                        <Link href={item.link.href}>
+                                                            <a target={item.link.target}>
+                                                                <div className={styles.social_menu_icon}>
+                                                                    <img src={item.image.url} width={20} height={20} alt={item.image.label} className="w-100" />
+                                                                </div>
+                                                            </a>
+                                                        </Link>
+                                                    </Fade>
                                                 </li>
                                             )
                                         })}
                                     </ul>
+
                                 </div>
                             </div>
                         </div>

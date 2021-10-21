@@ -1,6 +1,7 @@
 import RichTextArea from 'components/RichTextArea';
 import SEOImage from 'components/SEOImage';
 import React from 'react';
+import { Fade } from "react-awesome-reveal";
 import styles from 'styles/components/split-grid-text-image.module.scss';
 
 const SplitGridTextImage = ({ module }) => {
@@ -22,7 +23,9 @@ const SplitGridTextImage = ({ module }) => {
                         </div>
                         <div className={styles.grid_image}>
                             {image &&
-                                <SEOImage img={image} sizes={[700, 500, 300]} className="w-100" />
+                                <Fade direction="up">
+                                    <SEOImage img={image} sizes={[700, 500, 300]} className="w-100" />
+                                </Fade>
                             }
                         </div>
                     </div>
