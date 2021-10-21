@@ -26,8 +26,16 @@ const InfoSection = ({ module }) => {
 
     useEffect(() => {
         setImageContainerHeight(imageContainerEl.current.clientHeight);
-        setImageHeight(imageEl.current.clientHeight);
-    }, [imageEl, imageContainerEl]);
+    }, [imageContainerEl]);
+
+    useEffect(() => {
+        console.log('setting new heights');
+        console.log(imageEl);
+        console.log(imageEl.current.height);
+        const test = imageEl.current.currentSrc;
+        console.log(test);
+        setImageHeight(imageEl.current.height);
+    }, [imageEl.current]);
 
     useEffect(() => {
         if (imageContainerHeight && imageHeight) {
