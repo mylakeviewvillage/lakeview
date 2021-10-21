@@ -93,6 +93,7 @@ const InfoSectionVideo = ({ module }) => {
                                     parallaxData={parallaxData}
                                     disabled={smallWindow}>
                                     <button onClick={openModal}>
+                                        <img src="/img/play-circle.svg" alt="play button" className="play-circle" />
                                         <img
                                             src={image.url}
                                             alt={image.label}
