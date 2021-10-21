@@ -49,8 +49,8 @@ const InfoSection = ({ module }) => {
                     duration: imageContainerHeight * 2,
                     properties: [
                         {
-                            startValue: 800,
-                            endValue: imageHeight - imageContainerHeight - 400,
+                            startValue: 1000,
+                            endValue: imageHeight - imageContainerHeight,
                             property: 'translateY',
                         },
                     ],
