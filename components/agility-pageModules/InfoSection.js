@@ -24,19 +24,23 @@ const InfoSection = ({ module }) => {
     const imageEl = useRef(null);
     const [parallaxData, setParallaxData] = useState([]);
 
+    // Have a useEffect that updates the container height
     useEffect(() => {
         setImageContainerHeight(imageContainerEl.current.clientHeight);
     }, [imageContainerEl]);
 
-    useEffect(() => {
-        console.log('setting new heights');
-        console.log(imageEl);
-        console.log(imageEl.current.height);
-        const test = imageEl.current.currentSrc;
-        console.log(test);
-        setImageHeight(imageEl.current.height);
-    }, [imageEl.current]);
+    // Have a callback run that updates the height of the image once it has been loaded
+    const onImageLoad = () => {
+        const loadedImageHeight = imageEl.current.height;
+        setImageHeight(loadedImageHeight);
+    }
 
+    // Make sure the onLoad function runs at least once on first contact with the page in case caching renders the onLoad function unnecessary
+    useEffect(() => {
+        onImageLoad();
+    }, [])
+
+    // Every time state is updated on image/container heights, build a new options object for PLX
     useEffect(() => {
         if (imageContainerHeight && imageHeight) {
             setParallaxData([
@@ -97,8 +101,14 @@ const InfoSection = ({ module }) => {
                                     parallaxData={parallaxData}
                                     disabled={smallWindow}>
                                     <button onClick={openModal}>
-                                        <img src={image.url} alt={image.label} className="w-100" ref={imageEl} />
-                                        {/* <SEOImage img={image} sizes={[700, 300]} className="w-100" /> */}
+                                        <img
+                                            src={image.url}
+                                            alt={image.label}
+                                            width={1}
+                                            height={2}
+                                            className="w-100"
+                                            ref={imageEl}
+                                            onLoad={onImageLoad} />
                                     </button>
                                 </Plx>
                             )}
