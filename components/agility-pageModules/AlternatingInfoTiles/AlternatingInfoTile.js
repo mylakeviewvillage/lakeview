@@ -22,7 +22,7 @@ const AlternatingInfoTile = ({ tile }) => {
         <div className={styles.tile}>
             <div className={styles.image}>
                 {tile.videoID && (
-                    <button onClick={() => openModal(videoID)}>
+                    <button onClick={() => openModal(tile.videoID)}>
                         <SEOImage img={tile.image} sizes={[300, 600]} className="w-100" />
                     </button>
                 )}

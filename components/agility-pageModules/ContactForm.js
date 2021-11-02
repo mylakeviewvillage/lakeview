@@ -60,7 +60,7 @@ const ContactForm = ({ module }) => {
                     </div>
                     <div className={styles.full_width}>
                         <label htmlFor="tel">Inquiry Type</label>
-                        <select name="inqiryType" id="inqiryType" name="inqiryType" value={inquiryType} onChange={(e) => setInquiryType(e.target.value)}>
+                        <select name="inqiryType" id="inqiryType" name="inqiryType" required value={inquiryType} onChange={(e) => setInquiryType(e.target.value)}>
                             <option value="General Info">General Info</option>
                             <option value="Sales Opportunities">Sales Opportunities</option>
                             <option value="Community Events & Discovery Centre">Community Events & Discovery Centre</option>

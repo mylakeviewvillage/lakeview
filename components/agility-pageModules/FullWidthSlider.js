@@ -60,7 +60,7 @@ FullWidthSlider.getCustomInitialProps = async ({
         languageCode: languageCode,
         depth: 10,
         expandAllContentLinks: true,
-        take: 10
+        take: 20
     });
     slidesContent.items.sort((a, b) => (a.properties.itemOrder > b.properties.itemOrder) ? 1 : -1);
     slides = slidesContent.items.map(slides => slides.fields);

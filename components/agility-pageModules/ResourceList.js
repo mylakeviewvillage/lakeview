@@ -27,13 +27,14 @@ const ResourceList = ({ module, customData }) => {
                             {resourceList && (
                                 <ul className={styles.resource_list}>
                                     {resourceList.map((resource, index) => {
+                                        console.log(resource);
                                         return (
                                             <li className={styles.resource} key={`resource-item-${index}`}>
                                                 {resource.title && <h3>{resource.title}</h3>}
                                                 <div className={styles.resource_description}>
                                                     {resource.description && <RichTextArea html={resource.description} />}
                                                 </div>
-                                                {resource.resourceDocument && <Link href={resource.resourceDocument.url}><a target="_blank" className="btn">View Document</a></Link>}
+                                                {resource.resourceDocument && <Link href={resource.resourceDocument.url}><a target="_blank" className="btn">{resource.resourceDocument.label}</a></Link>}
                                             </li>
                                         )
                                     })}
