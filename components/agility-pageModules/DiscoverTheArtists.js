@@ -57,11 +57,9 @@ const DiscoverTheArtists = ({ module, customData }) => {
                                     )}
                                     {artist.artworkTitle && <h3>{artist.artworkTitle}</h3>}
                                     {artist.title && <h4>{artist.title}</h4>}
-                                    {artist.website && (
-                                        <Link href={'/artists/[...slug]'} as={`artists/${artist.slug}`}>
-                                            <a className="btn">Learn More</a>
-                                        </Link>
-                                    )}
+                                    <Link href={'/artists/[...slug]'} as={`artists/${artist.slug}`}>
+                                        <a className="btn">Learn More</a>
+                                    </Link>
                                 </div>
                             </Fade>
                         ))}
