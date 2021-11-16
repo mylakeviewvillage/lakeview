@@ -92,7 +92,7 @@ const ContactPanel = ({ copy }) => {
     };
 
     const u = '2172e3cbd0c78a3830a1f6484';
-    const id = 'fdfa602594';
+    const id = '47b8ca018a';
     const postURL = `https://lakeviewcommunitypartners.us19.list-manage.com/subscribe/post?u=${u}&id=${id}`;
 
     return (

@@ -7,6 +7,7 @@ import stylesInfoSectionVideoModal from 'styles/components/info-video-modal.modu
 import stylesBanner from 'styles/components/banner.module.scss';
 import stylesTestimonial from 'styles/components/testimonial.module.scss';
 import stylesInfoTiles from 'styles/components/alternating-info-tiles.module.scss';
+import styles from 'styles/components/large-image-video-modal.module.scss';
 
 const ArtistPage = ({ dynamicPageItem }) => {
 
@@ -23,7 +24,10 @@ const ArtistPage = ({ dynamicPageItem }) => {
                         </h2>
                     </div>
                     <div className="container full-width">
+                    <div className={styles.image} onClick={() => setOpenModal(true)}>
+                        <img src="/img/play-circle.svg" alt="play button" className="play-circle" />
                         <SEOImage img={artwork} sizes={[500, 1024, 1920]} className="w-100" />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -52,8 +56,8 @@ const ArtistPage = ({ dynamicPageItem }) => {
                 <div className="container">
                     <div className="content">
                         <div className={stylesTestimonial.testimonial_copy}>
-                            <h3>{quote}</h3>
-                            <h4>{title}</h4>
+                            <h3>"{quote}"</h3>
+                            <h4>- {title}</h4>
                         </div>
                     </div>
                 </div>

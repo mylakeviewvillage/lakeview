@@ -7,6 +7,7 @@ const Modal = ({ children, closeModal }) => {
         <div className={styles.modal}>
             <div className={styles.modal_overlay} onClick={closeModal} />
             <div className={styles.modal_box}>
+                <img src='/img/close.svg' onClick={closeModal} className={styles.modal_close} />
                 {children}
             </div>
         </div>

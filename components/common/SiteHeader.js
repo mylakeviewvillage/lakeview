@@ -82,8 +82,8 @@ const SiteHeader = ({ globalData }) => {
                                                                     )
                                                                 })}
                                                                 <li>
-                                                                    <Link href="[...slug]" as="/contact-us">
-                                                                        <a onClick={closeMenu}>Contact</a>
+                                                                    <Link href="[...slug]" as="/articles">
+                                                                        <a onClick={closeMenu}>Our Stories & Articles</a>
                                                                     </Link>
                                                                 </li>
                                                             </ul>

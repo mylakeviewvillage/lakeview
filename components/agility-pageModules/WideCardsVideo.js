@@ -38,16 +38,14 @@ const WideCardsVideo = ({ module, customData }) => {
                                             </div>
                                         )}
                                         {card.image && card.videoID && (
-                                            <div className={styles.wide_card_image} onClick={openModal}>
+                                            <div className={styles.wide_card_image} onClick={() => openModal(card.videoID)}>
                                                 <img src="/img/play-circle.svg" alt="play button" className="play-circle" />
                                                 <SEOImage img={card.image} className="w-100" sizes={[725, 400]} />
                                             </div>
                                         )}
                                         <div className={styles.wide_card_content}>
                                             {card.category && <p className={styles.category}>{card.category}</p>}
-
-                                            {card.videoID && card.title && <h2 className="minor" onClick={openModal}>{card.title}</h2>}
-                                            {!card.videoID && card.title && <h2 className="minor">{card.title}</h2>}
+                                            {card.title && <h2 className="minor">{card.title}</h2>}
 
                                             {card.videoID && (
                                                 <div>
