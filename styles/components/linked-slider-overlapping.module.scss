@@ -57,7 +57,10 @@
         .slide_image {
             display: flex;
             align-items: center;
-            padding: 1px;
+
+            @media screen and (min-width: 1024px) {
+                padding: 1px;
+            }
 
             img {
                 display: block;
