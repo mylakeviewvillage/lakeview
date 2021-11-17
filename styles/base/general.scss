@@ -169,6 +169,12 @@ hr {
     }
 }
 
+.social-icon{
+    display: inline-block;
+    width: 25px;
+    padding-right: 10px;
+}
+
 .play-circle {
     width: 39px;
     height: 39px;
@@ -177,6 +183,7 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .play-circle.offset {
     top: 44%;
 }
