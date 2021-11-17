@@ -21,11 +21,11 @@ const ArticleList = ({ customData }) => {
     }, [cards, loadedInt]);
 
     const filterCards = (filter) => {
-        setLoadedInt(12)
+        setLoadedInt(12);
         if (filter === 'All') {
             setCards(customData.contentList);
         } else {
-            const filteredCards = customData.contentList.filter(card => card.category === filter);
+            const filteredCards = customData.contentList.filter(card => card.filter_TextField === filter);
             setCards(filteredCards);
         }
     }

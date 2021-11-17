@@ -18,11 +18,10 @@ const MasonrySort = ({ filterCards }) => {
             <button className={styles.mobileSortDropdown} onClick={() => setSortDropdown(!sortDropdown)}>Sort</button>
             <div className={`${styles.buttons} ${sortDropdown ? styles.active : null}`}>
                 <button className={activeFilter === 'All' ? styles.active : null} onClick={() => onFilterChange('All')}>All</button>
-                <button className={activeFilter === 'Community Relations' ? styles.active : null} onClick={() => onFilterChange('Community Relations')}>Community Relations</button>
-                <button className={activeFilter === 'Discovery Centre' ? styles.active : null} onClick={() => onFilterChange('Discovery Centre')}>Discovery Centre</button>
-                <button className={activeFilter === 'Placemaking' ? styles.active : null} onClick={() => onFilterChange('Placemaking')}>Placemaking</button>
-                <button className={activeFilter === 'Planning & Projects' ? styles.active : null} onClick={() => onFilterChange('Planning & Projects')}>Planning & Projects</button>
-                <button className={activeFilter === 'Transit & Trails' ? styles.active : null} onClick={() => onFilterChange('Transit & Trails')}>Transit & Trails</button>
+                <button className={activeFilter === 'Community' ? styles.active : null} onClick={() => onFilterChange('Community')}>Community</button>
+                <button className={activeFilter === 'Public Art & Placemaking' ? styles.active : null} onClick={() => onFilterChange('Public Art & Placemaking')}>Public Art & Placemaking</button>
+                <button className={activeFilter === 'Innovation & Sustainability' ? styles.active : null} onClick={() => onFilterChange('Innovation & Sustainability')}>Innovation & Sustainability</button>
+                <button className={activeFilter === 'Partnerships' ? styles.active : null} onClick={() => onFilterChange('Partnerships')}>Partnerships</button>
             </div>
         </div>
     );

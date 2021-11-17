@@ -27,7 +27,7 @@ const NewsList = ({ customData, module }) => {
         if (filter === 'All') {
             setCards(customData.contentList);
         } else {
-            const filteredCards = customData.contentList.filter(card => card.category === filter);
+            const filteredCards = customData.contentList.filter(card => card.filter_TextField === filter);
             setCards(filteredCards);
         }
     }
