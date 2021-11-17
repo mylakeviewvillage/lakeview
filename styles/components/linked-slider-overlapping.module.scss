@@ -57,6 +57,7 @@
         .slide_image {
             display: flex;
             align-items: center;
+            padding: 1px;
 
             img {
                 display: block;
@@ -75,8 +76,6 @@
         align-items: center;
         position: relative;
         z-index: 1;
-
-
 
         .slide_info {
             display: flex;
