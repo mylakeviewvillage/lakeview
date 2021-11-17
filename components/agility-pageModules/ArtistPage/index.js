@@ -2,6 +2,7 @@ import RichTextArea from 'components/RichTextArea';
 import SectionTitle from 'components/SectionTitle';
 import SEOImage from 'components/SEOImage';
 import React, { useState } from 'react';
+import Link from 'next/link';
 import ModalVideo from 'react-modal-video';
 import stylesInfoSectionVideoModal from 'styles/components/info-video-modal.module.scss';
 import stylesBanner from 'styles/components/banner.module.scss';
@@ -77,9 +78,29 @@ const ArtistPage = ({ dynamicPageItem }) => {
                                     <hr />
                                     <ul>
                                         <li><RichTextArea html={bio} /></li>
-                                        {website && <li>{website.href}</li>}
-                                        {instagram && <li>{instagram.href}</li>}
-                                        {facebook && <li>{facebook.href}</li>}
+                                        {website && (
+                                            <li><Link href={website.href}>
+                                                <a target="_blank">
+                                                {website.href}
+                                                </a>
+                                          </Link></li>
+                                        )}
+                                        <li>
+                                        {instagram && (
+                                             <Link href={instagram.href}>
+                                                <a target="_blank">
+                                                    <img src="/img/icon-IG.svg" alt="Instagram" className="social-icon" />
+                                                </a>
+                                          </Link>
+                                        )}
+                                        {facebook && (
+                                             <Link href={facebook.href}>
+                                                <a target="_blank">
+                                                    <img src="/img/icon-FB.svg" alt="Facebook" className="social-icon" />
+                                                </a>
+                                          </Link>
+                                        )}
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
