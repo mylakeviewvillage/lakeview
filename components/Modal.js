@@ -7,7 +7,7 @@ const Modal = ({ children, closeModal }) => {
         <div className={styles.modal}>
             <div className={styles.modal_overlay} onClick={closeModal} />
             <div className={styles.modal_box}>
-                <img src='/img/close.svg' onClick={closeModal} className={styles.modal_close} />
+                <button aria-label="Close the modal by clicking here" onClick={closeModal} className={styles.modal_close} ></button>
                 {children}
             </div>
         </div>

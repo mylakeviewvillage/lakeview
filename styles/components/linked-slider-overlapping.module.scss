@@ -113,8 +113,10 @@
                     line-height: calc(35/40);
 
                     .top_title {
+                        display: block;
                         font-size: 1.125rem;
-                        line-height: calc(28/18);
+                        line-height: 1.2 !important;
+                        margin-bottom: 10px;
                     }
                 }
 
