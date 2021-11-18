@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { Fade } from "react-awesome-reveal";
 import styles from '../../styles/components/home-banner.module.scss';
 
 const HomeBanner = ({ module }) => {
@@ -12,14 +13,20 @@ const HomeBanner = ({ module }) => {
             <div className="container">
                 <div className="content">
                     <div className={styles.copy}>
-                        <h2>{headline}</h2>
+                        <Fade direction="up">
+                            <h2>{headline}</h2>
+                        </Fade>
+                        <Fade direction="up" delay="40">
                         <h3>{subHeadline}</h3>
+                        </Fade>
                         {cTA &&(
+                            <Fade direction="up" delay="80">
                             <Link href={cTA.href}>
                                 <a target={cTA.target}>
                                     <img src="/img/homebanner/btn-HERO.svg" />
                                 </a>
                             </Link>
+                            </Fade>
                         )}
                     </div>
                 </div>
