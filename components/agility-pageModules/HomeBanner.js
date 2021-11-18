@@ -27,7 +27,7 @@ const HomeBanner = ({ module }) => {
         </section>
         <section className={styles.home_logos}>
             <div className="container">
-                <div className="content">
+                <div className="content no-top">
                     <div className={styles.partners}>
                         <img src="/img/homebanner/logo-BH.svg" />
                         <img src="/img/homebanner/logo-CAIVAN.svg" />
