@@ -1,0 +1,52 @@
+@import '../base/variables.scss';
+
+.home_banner {
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    .copy {
+        min-height: 75vh;
+        padding-top: 100px !important;
+
+        h2{
+            max-width: 1000px;
+            font-size: 5rem;
+            color:$darkBlue;
+            font-weight: 700;
+            letter-spacing: 4px;
+            line-height: 0.9;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        h3{
+            max-width: 1000px;
+            font-size: 2.3rem;
+            color:$medBlue;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 0.9;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        img{
+            max-width: 60%;
+        }
+    }
+}
+
+.home_logos {
+
+    .partners{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; 
+
+        img{
+            height: 70px;
+        }
+    }
+}
