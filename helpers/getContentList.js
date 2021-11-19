@@ -6,7 +6,7 @@ export async function getContentList(agility, referenceName, languageCode) {
         languageCode,
         depth: 10,
         expandAllContentLinks: true,
-        take: 50
+        take: 100
     });
     contentListRes.items.sort((a, b) => (a.properties.itemOrder > b.properties.itemOrder) ? 1 : -1);
     contentList = contentListRes.items.map(item => item.fields);
