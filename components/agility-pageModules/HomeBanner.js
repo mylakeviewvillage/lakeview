@@ -5,13 +5,14 @@ import styles from '../../styles/components/home-banner.module.scss';
 
 const HomeBanner = ({ module }) => {
 
-    const { image, headline, subHeadline, cTA } = module.fields;
+    const { image, mobileImage, headline, subHeadline, cTA } = module.fields;
 
     return (
         <div>
         <section className={styles.home_banner}>
             <div className="container full-width">
                 <img src={image.url} className={styles.image} />
+                <img src={mobileImage.url} className={styles.mobile_image} />
             </div>
             <div className="container">
                 <div>
