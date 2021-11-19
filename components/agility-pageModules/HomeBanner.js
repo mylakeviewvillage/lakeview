@@ -9,9 +9,12 @@ const HomeBanner = ({ module }) => {
 
     return (
         <div>
-        <section className={styles.home_banner} style={{ backgroundImage: `url(${image.url})` }}>
+        <section className={styles.home_banner}>
+            <div className="container full-width">
+                <img src={image.url} className={styles.image} />
+            </div>
             <div className="container">
-                <div className="content">
+                <div>
                     <div className={styles.copy}>
                         <Fade direction="up">
                             <h2>{headline}</h2>
