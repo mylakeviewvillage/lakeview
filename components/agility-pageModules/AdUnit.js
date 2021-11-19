@@ -5,7 +5,7 @@ import styles from '../../styles/components/ad-unit.module.scss';
 
 const AdUnit = ({ module, customData }) => {
 
-    const { image, cTA } = module.fields;
+    const { image, tabletImage, mobileImage, cTA } = module.fields;
 
     return (
         <section className={styles.ad_unit}>
@@ -16,7 +16,9 @@ const AdUnit = ({ module, customData }) => {
                             <a target={cTA.target}>
                                 {image && (
                                     <div className={styles.image}>
-                                        <SEOImage img={image} sizes={[1400, 1024, 768, 400]} className="w-100" />
+                                        <SEOImage img={image} sizes={[1420]}  className={styles.image} />
+                                        <SEOImage img={tabletImage} sizes={[768]}  className={styles.tablet_image} />
+                                        <SEOImage img={mobileImage} sizes={[360]}  className={styles.mobile_image} />
                                     </div>
                                 )}
                             </a>
