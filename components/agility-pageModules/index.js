@@ -5,6 +5,7 @@ import ArtistPage from "./ArtistPage";
 import ArticleList from "./ArticleList";
 import FullWidthSlider from "./FullWidthSlider";
 import HomeBanner from "./HomeBanner";
+import HomePartners from "./HomePartners";
 import InfoVideoModal from "./InfoVideoModal";
 import IconInfoGrid from "./IconInfoGrid";
 import ImageBanner from "./ImageBanner";
@@ -45,6 +46,7 @@ import ContactForm from "./ContactForm";
 // Place Page Modules in allModules array below, passing in a name and the component.
 
 const allModules = [
+  { name: "HomePartners", module: HomePartners },
   { name: "HomeBanner", module: HomeBanner },
   { name: "AdUnit", module: AdUnit },
   { name: "ImageBanner", module: ImageBanner },

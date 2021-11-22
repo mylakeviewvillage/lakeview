@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import SectionTitle from './SectionTitle';
 import styles from 'styles/components/contact-panel.module.scss';
 import RichTextArea from './RichTextArea';
-
+import SEOImage from './SEOImage';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const ContactPanel = ({ copy }) => {
+
+    const titleOne = 'Register';
+    const titleTwo = 'Today';
+    const image = 'https://cdn.aglty.io/tgbxpvs6/home/register-today.jpg';
 
     const CustomForm = ({ status, message, onValidated }) => {
 
@@ -14,6 +19,8 @@ const ContactPanel = ({ copy }) => {
         const [email, setEmail] = useState('');
         const [agreement, setAgreement] = useState(false);
         const [agreementWarning, setAgreementWarning] = useState(false);
+
+        
 
         const handleSubmit = (e) => {
 
@@ -38,7 +45,7 @@ const ContactPanel = ({ copy }) => {
         }
 
         return (
-            <form onSubmit={(e) => handleSubmit(e)}>
+            <form id="register" onSubmit={(e) => handleSubmit(e)}>
                 <div className={styles.form_grid}>
                     <div>
                         <label htmlFor="first-name">First Name</label>
@@ -53,7 +60,7 @@ const ContactPanel = ({ copy }) => {
                         <input type="email" id="email" name="email" value={email} required onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div>
-                        <label htmlFor="tel">Phone</label>
+                        <label htmlFor="tel">Mobile (for SMS alerts)</label>
                         <input type="tel" id="tel" name="tel" value={phoneNumber} required onChange={(e) => setPhoneNumber(e.target.value)} />
                     </div>
                 </div>
@@ -64,7 +71,7 @@ const ContactPanel = ({ copy }) => {
                     </label>
                 </div>
                 <div>
-                    <button type="submit" className="btn">Submit</button>
+                    <button type="submit" className="btn">SIGN UP</button>
                 </div>
                 <div className={styles.status}>
                     {status === "sending" && (
@@ -99,12 +106,17 @@ const ContactPanel = ({ copy }) => {
         <div className={styles.contact_panel}>
             <div className="container">
                 <div className="content">
-                    <h2 className="minor">{copy.contactHeading}</h2>
+                    <SectionTitle titleOne={titleOne} titleTwo={titleTwo} />
+                    
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
-                            <RichTextArea html={copy.contactIntro} />
+                            { copy.contactImage && (
+                                <SEOImage img={copy.contactImage} sizes={[900, 600, 400]} className="w-100" />
+                            )}
+                            <img src={image}  className="w-100" />
                         </div>
                         <div className={styles.grid_right}>
+                            <h3>{copy.contactHeading}</h3>
                             <MailchimpSubscribe
                                 url={postURL}
                                 render={({ subscribe, status, message }) => (
