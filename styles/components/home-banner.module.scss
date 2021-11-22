@@ -44,7 +44,7 @@
         position:absolute;
         bottom:0;
         display: none;
-        width: 100%;
+        width: 98%;
 
         @media screen and (min-width: 1601px) {
             display: block;
@@ -55,7 +55,7 @@
         position:absolute;
         bottom:0;
         display: none;
-        width: 100%;
+        width: 98%;
 
         @media screen and (min-width: 1001px) and (max-width:1600px) {
             display: block;
@@ -65,7 +65,7 @@
     .copy800{
         position:absolute;
         bottom:0;
-        width: 100%;
+        width: 98%;
         display: none;
         @media screen and (min-width: 767px)  and (max-width:1000px) {
             display: block;
@@ -75,7 +75,7 @@
     .copy420{
         position:absolute;
         bottom:0;
-        width: 100%;
+        width: 98%;
 
         @media screen and (min-width: 767px) {
             display: none;
