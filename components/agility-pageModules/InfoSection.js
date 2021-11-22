@@ -12,7 +12,7 @@ import styles from '../../styles/components/info-section.module.scss';
 
 const InfoSection = ({ module }) => {
 
-    const { cTA, image, infoLeft, infoRight, infoTitle, subtitle, titleOne, titleTwo, titleThree } = module.fields;
+    const { cTA, image, zoomImage, infoLeft, infoRight, infoTitle, subtitle, titleOne, titleTwo, titleThree } = module.fields;
 
     const [modal, setModal] = useState(false);
     const closeModal = () => setModal(false);
@@ -112,9 +112,9 @@ const InfoSection = ({ module }) => {
                                     </button>
                                 </Plx>
                             )}
-                            {modal && image && (
+                            {modal && zoomImage && (
                                 <Modal closeModal={closeModal}>
-                                    <SEOImage img={image} sizes={[900, 500, 300]} className="w-100" />
+                                    <SEOImage img={zoomImage} sizes={[900, 500, 300]} className="w-100" />
                                 </Modal>
                             )}
                         </div>
