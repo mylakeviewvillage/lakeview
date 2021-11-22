@@ -15,7 +15,7 @@ const HomeBanner = ({ module }) => {
                 <img src={mobileImage.url} className={styles.mobile_image} />
             </div>
             <div className="container">
-                <div>
+                <div className="content">
                     <div className={styles.copy}>
                         <Fade direction="up">
                             <h2>{headline}</h2>
@@ -26,8 +26,8 @@ const HomeBanner = ({ module }) => {
                         {cTA &&(
                             <Fade direction="up" delay="80">
                             <Link href={cTA.href}>
-                                <a target={cTA.target}>
-                                    <img src="/img/homebanner/btn-HERO.svg" />
+                                <a target={cTA.target} className="btn register-now">
+                                    REGISTER NOW
                                 </a>
                             </Link>
                             </Fade>
