@@ -10,10 +10,18 @@ const HomeBanner = ({ module }) => {
     return (
         <section className={styles.home_banner}>
             <div className="container full-width">
-                <img src={image.url} className={styles.image} />
-                <img src={mobileImage.url} className={styles.mobile_image} />
+                <img src="/img/homebanner/hero-1900.jpg" className={styles.image1900} />
+                <img src="/img/homebanner/hero-1280.jpg" className={styles.image1280} />
+                <img src="/img/homebanner/hero-800.jpg" className={styles.image800} />
+                <img src="/img/homebanner/hero-420.jpg" className={styles.image420} />
+                <a href="#register">
+                    <img src="/img/homebanner/text-1900.svg" className={styles.copy1900} />
+                    <img src="/img/homebanner/text-1280.svg" className={styles.copy1280} />
+                    <img src="/img/homebanner/text-800.svg" className={styles.copy800} />
+                    <img src="/img/homebanner/text-420.svg" className={styles.copy420} />
+                </a>
             </div>
-            <div className="container">
+            {/* <div className="container">
                 <div className="content">
                     <div className={styles.copy}>
                         <Fade direction="up">
@@ -33,7 +41,7 @@ const HomeBanner = ({ module }) => {
                         )}
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     );
 };

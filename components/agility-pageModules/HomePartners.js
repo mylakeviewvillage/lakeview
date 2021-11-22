@@ -7,18 +7,28 @@ const HomePartners = ({ module }) => {
 
     return (
         <section className={styles.home_partners}>
-            <div className="container">
-                <div className="content no-top">
+            <div className="container full-width">
                     <div className={styles.partners}>
-                        <a href="https://www.branthaven.com/" target="_blank"><img src="/img/homebanner/logo-BH.svg" /></a>
-                        <a href="https://caivan.com/communities/greater-toronto-area/lakeview-village/" target="_blank"><img src="/img/homebanner/logo-CAIVAN.svg" /></a>
-                        <a href="https://www.greenparkgroup.ca/" target="_blank"><img src="/img/homebanner/logo-GP.svg" /></a>
-                        <a href="https://www.decohomes.ca/" target="_blank"><img src="/img/homebanner/logo-DECO.svg" /></a>
-                        <a href="https://www.opushomes.com/" target="_blank"><img src="/img/homebanner/logo-OPUS.svg" /></a>
-                        <a href="https://www.tridel.com/" target="_blank"><img src="/img/homebanner/logo-TRIDEL.svg" /></a>
+                        <div className={styles.partner}>
+                            <a href="https://www.branthaven.com/" target="_blank"><img src="/img/homebanner/logo-bh-wht.svg" /></a>
+                        </div>
+                        <div className={styles.partner}>
+                            <a href="https://caivan.com/communities/greater-toronto-area/lakeview-village/" target="_blank"><img src="/img/homebanner/logo-CAIVAN-wht.svg" /></a>
+                        </div>
+                        <div className={styles.partner}>
+                            <a href="https://www.greenparkgroup.ca/" target="_blank"><img src="/img/homebanner/logo-GP-wht.svg" /></a>
+                        </div>
+                        <div className={styles.partner}>
+                            <a href="https://www.decohomes.ca/" target="_blank"><img src="/img/homebanner/logo-deco-wht.svg" /></a>
+                        </div>
+                        <div className={styles.partner}>
+                            <a href="https://www.opushomes.com/" target="_blank"><img src="/img/homebanner/logo-opus-wht.svg" /></a>
+                        </div>
+                        <div className={styles.partner}>
+                            <a href="https://www.tridel.com/lakeviewvillagecondos" target="_blank"><img src="/img/homebanner/logo-tridel-ltBlue.svg" /></a>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    </div>
         </section>
     );
 };

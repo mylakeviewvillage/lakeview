@@ -45,7 +45,7 @@ const ContactPanel = ({ copy }) => {
         }
 
         return (
-            <form id="register" onSubmit={(e) => handleSubmit(e)}>
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <div className={styles.form_grid}>
                     <div>
                         <label htmlFor="first-name">First Name</label>
@@ -103,7 +103,7 @@ const ContactPanel = ({ copy }) => {
     const postURL = `https://lakeviewcommunitypartners.us19.list-manage.com/subscribe/post?u=${u}&id=${id}`;
 
     return (
-        <div className={styles.contact_panel}>
+        <div id="register" className={styles.contact_panel}>
             <div className="container">
                 <div className="content">
                     <SectionTitle titleOne={titleOne} titleTwo={titleTwo} />

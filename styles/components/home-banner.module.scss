@@ -1,92 +1,135 @@
 @import '../base/variables.scss';
 
 .home_banner {
-    
 
-    .image{
+    position: relative;
+
+    .image1900{
         display: none;
         width: 100%;
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 1601px) {
             display: block;
         }
     }
-    .mobile_image{
+
+    .image1280{
+        display: none;
+        width: 100%;
+
+        @media screen and (min-width: 1001px) and (max-width:1600px) {
+            display: block;
+        }
+    }
+
+    .image800{
+        display: none;
+        width: 100%;
+
+        @media screen and (min-width: 767px)  and (max-width:1000px) {
+            display: block;
+        }
+    }
+
+    .image420{
         display: block;
         width: 100%;
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 767px) {
             display: none;
         }
     }
 
-    .copy {
+    .copy1900{
         position:absolute;
-        top:30vh;
+        bottom:0;
+        display: none;
+        width: 100%;
 
-        h2{
-            max-width: 869px;
-            font-size: 2rem;
-            color:white;
-            font-weight: 300;
-            letter-spacing: 2px;
-            line-height: 0.8;
-            margin-top: 10px;
-            margin-bottom: 30px;
+        @media screen and (min-width: 1601px) {
+            display: block;
+        }
+    }
+
+    .copy1280{
+        position:absolute;
+        bottom:0;
+        display: none;
+        width: 100%;
+
+        @media screen and (min-width: 1001px) and (max-width:1600px) {
+            display: block;
+        }
+    }
+
+    .copy800{
+        position:absolute;
+        bottom:0;
+        width: 100%;
+        display: none;
+        @media screen and (min-width: 767px)  and (max-width:1000px) {
+            display: block;
+        }
+    }
+
+    .copy420{
+        position:absolute;
+        bottom:0;
+        width: 100%;
+
+        @media screen and (min-width: 767px) {
+            display: none;
+        }
+    }
+
+    // .copy {
+    //     position:absolute;
+    //     top:30vh;
+
+    //     h2{
+    //         max-width: 869px;
+    //         font-size: 2rem;
+    //         color:white;
+    //         font-weight: 300;
+    //         letter-spacing: 2px;
+    //         line-height: 0.8;
+    //         margin-top: 10px;
+    //         margin-bottom: 30px;
             
-            @media screen and (min-width: 768px) {
-                font-size: 7rem;
-                letter-spacing: 4px;
-            }
-        }
-        h3{
-            max-width: 1000px;
-            font-size: 1.4rem;
-            color:white;
-            font-weight: 500;
-            letter-spacing: 2px;
-            line-height: 0.9;
-            margin-top: 10px;
-            margin-bottom: 40px;
+    //         @media screen and (min-width: 768px) {
+    //             font-size: 7rem;
+    //             letter-spacing: 4px;
+    //         }
+    //     }
+    //     h3{
+    //         max-width: 1000px;
+    //         font-size: 1.4rem;
+    //         color:white;
+    //         font-weight: 500;
+    //         letter-spacing: 2px;
+    //         line-height: 0.9;
+    //         margin-top: 10px;
+    //         margin-bottom: 40px;
 
-            @media screen and (min-width: 768px) {
-                font-size: 2rem;
-            }
-        }
+    //         @media screen and (min-width: 768px) {
+    //             font-size: 2rem;
+    //         }
+    //     }
 
-        img{
-            max-width: 60%;
-        }
+    //     img{
+    //         max-width: 60%;
+    //     }
 
-        a, href{
-            padding: 20px 40px;
-            color: $blue;
-            background-color: white !important;
-            border-radius: 40px;
-            border:white solid 1px;
-            font-weight: 500;
-            &:hover{
-                color: $medBlue;
-            }
-        }
-    }
-}
-
-.home_logos {
-
-    .partners{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center; 
-        gap:0 24px;
-
-        @media screen and (min-width: 768px) {
-            justify-content: space-between; 
-        }
-
-        img{
-            height: 70px;
-        }
-    }
+    //     a, href{
+    //         padding: 20px 40px;
+    //         color: $blue;
+    //         background-color: white !important;
+    //         border-radius: 40px;
+    //         border:white solid 1px;
+    //         font-weight: 500;
+    //         &:hover{
+    //             color: $medBlue;
+    //         }
+    //     }
+    //}
 }
