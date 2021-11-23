@@ -13,7 +13,7 @@ const HomePartners = ({ module }) => {
                             <a href="https://www.branthaven.com/communities/lakeview-village/" target="_blank"><img src="/img/homebanner/logo-bh-wht.svg" /></a>
                         </div>
                         <div className={styles.partner}>
-                            <a href="https://caivan.com/communities/greater-toronto-area/lakeview-village/" target="_blank"><img src="/img/homebanner/logo-CAIVAN-wht.svg" /></a>
+                            <a href="https://caivan.com/greater-toronto-area/lakeview-village" target="_blank"><img src="/img/homebanner/logo-CAIVAN-wht.svg" /></a>
                         </div>
                         <div className={styles.partner}>
                             <a href="https://www.greenparkgroup.ca/" target="_blank"><img src="/img/homebanner/logo-GP-wht.svg" /></a>
