@@ -29,6 +29,10 @@
       { "source": "/artist/raquel-da-silva", "destination": "/artists/raquel-da-silva" },
       { "source": "/artist/rowell-soller", "destination": "/artists/rowell-soller" },
       { "source": "/artist/ryan-longo", "destination": "/artists/ryan-longo" },
-      { "source": "/artist/studio-f-minus", "destination": "/artists/studio-f-minus" }
+      { "source": "/artist/studio-f-minus", "destination": "/artists/studio-f-minus" },
+      { "source": "/mississauga-project-lakeview", "destination": "/project" },
+      { "source": "/in-the-community", "destination": "/articles" },
+      { "source": "/sweden-canada-smart-cities-workshop", "destination": "/sweden-canada-smart-cities" },
+      { "source": "/wp-content/uploads/2021/07/LakeviewVillage_DistrictEnergyVacuumWaste_July2021.pdf", "destination": "/tgbxpvs6/feature-articles/business-sweden/LakeviewVillage_DistrictEnergyVacuumWaste_July2021.pdf" }
     ]
 }

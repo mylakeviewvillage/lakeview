@@ -10,7 +10,7 @@ const HomePartners = ({ module }) => {
             <div className="container full-width">
                     <div className={styles.partners}>
                         <div className={styles.partner}>
-                            <a href="https://www.branthaven.com/" target="_blank"><img src="/img/homebanner/logo-bh-wht.svg" /></a>
+                            <a href="https://www.branthaven.com/communities/lakeview-village/" target="_blank"><img src="/img/homebanner/logo-bh-wht.svg" /></a>
                         </div>
                         <div className={styles.partner}>
                             <a href="https://caivan.com/communities/greater-toronto-area/lakeview-village/" target="_blank"><img src="/img/homebanner/logo-CAIVAN-wht.svg" /></a>
