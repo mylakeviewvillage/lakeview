@@ -42,7 +42,7 @@ function Layout(props) {
   return (
     <>
       <Favicon />
-      <Trackers google="UA-117378406-1" />
+      <Trackers google="UA-117378406-1" facebook="416073699992441" />
       <SEO
         title={sitemapNode?.title}
         description={page.seo.metaDescription}
