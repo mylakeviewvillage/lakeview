@@ -1,8 +1,8 @@
 {
     "redirects": [
       { "source": "/sunflowers", "destination": "/one-million-sunflowers" },
-      { "source": "/discover-sunflowers-at-lakeview-village/", "destination": "/one-million-sunflowers" },
-      { "source": "/discover-the-art-of-placemaking/", "destination": "/art-of-placemaking" },
+      { "source": "/discover-sunflowers-at-lakeview-village", "destination": "/one-million-sunflowers" },
+      { "source": "/discover-the-art-of-placemaking", "destination": "/art-of-placemaking" },
       { "source": "/discover", "destination": "/art-of-placemaking" },
       { "source": "/covid-19", "destination": "/giving-back-during-covid-19" },
       { "source": "/jim-tovey-lakeview-conservation-area", "destination": "/conservation" },
@@ -30,8 +30,13 @@
       { "source": "/artist/rowell-soller", "destination": "/artists/rowell-soller" },
       { "source": "/artist/ryan-longo", "destination": "/artists/ryan-longo" },
       { "source": "/artist/studio-f-minus", "destination": "/artists/studio-f-minus" },
+      { "source": "/artist/daniela-rocha", "destination": "/artists/daniela-rocha" },
       { "source": "/mississauga-project-lakeview", "destination": "/project" },
       { "source": "/in-the-community", "destination": "/articles" },
+      { "source": "/volvo-bus-nova-bus", "destination": "/" },
+      { "source": "/1-million-sunflowers", "destination": "/one-million-sunflowers" },
+      { "source": "/news-old", "destination": "/news" },
+      { "source": "/serson-creek-restoration", "destination": "/serson-creek" },
       { "source": "/sweden-canada-smart-cities-workshop", "destination": "/sweden-canada-smart-cities" },
       { "source": "/wp-content/uploads/2021/07/LakeviewVillage_DistrictEnergyVacuumWaste_July2021.pdf", "destination": "/tgbxpvs6/feature-articles/business-sweden/LakeviewVillage_DistrictEnergyVacuumWaste_July2021.pdf" }
     ]
