@@ -18,7 +18,7 @@ const ImageInfo = ({ module }) => {
                         <div className={styles.image}>
                             <SEOImage img={image} className="w-100" sizes={[700, 600]} />
                         </div>
-                        <div className={`${styles.info} ${textColor === 'Light' ? styles.light : styles.dark}`}>
+                        <div className={`${styles.info} ${textColor === 'Light' ? styles.light : styles.dark} `} style={backgroundColor ? { background: `${backgroundColor}` } : null}>
                             <h3>{topTitle && <span>{topTitle}<br /></span>}{mainTitle}</h3>
                             <RichTextArea html={copy} />
                             {cTA && (

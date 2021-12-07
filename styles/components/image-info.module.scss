@@ -4,7 +4,7 @@
     @media screen and (min-width: 1024px) {
         display: flex;
         align-items: center;
-        background: linear-gradient(to left, $superLightBlue 75%, transparent 75%);
+        // background: linear-gradient(to left, $superLightBlue 75%, transparent 75%);
     }
 
     .image {
@@ -17,7 +17,7 @@
     }
 
     .info {
-        background-color: $lightBlue;
+
         padding: 50px 30px;
 
         @media screen and (min-width: 1024px) {

@@ -92,8 +92,8 @@ const InfoSectionVideo = ({ module }) => {
                                     className={styles.panningImage}
                                     parallaxData={parallaxData}
                                     disabled={smallWindow}>
-                                    <button onClick={openModal}>
-                                        <img src="/img/play-circle.svg" alt="play button" className="play-circle offset" />
+                                    {/* <button onClick={openModal}> */}
+                                        <img src="/img/play-circle.svg" alt="play button" className="play-circle offset" onClick={openModal} />
                                         <img
                                             src={image.url}
                                             alt={image.label}
@@ -101,8 +101,8 @@ const InfoSectionVideo = ({ module }) => {
                                             height={2}
                                             className="w-100"
                                             ref={imageEl}
-                                            onLoad={onImageLoad} />
-                                    </button>
+                                            onLoad={onImageLoad} onClick={openModal} />
+                                    {/* </button> */}
                                 </Plx>
                             )}
                             <ModalVideo channel='youtube' autoplay={true} isOpen={modal} videoId={videoID} onClose={closeModal} />

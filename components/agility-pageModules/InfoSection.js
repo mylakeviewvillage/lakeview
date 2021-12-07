@@ -100,7 +100,6 @@ const InfoSection = ({ module }) => {
                                     className={styles.panningImage}
                                     parallaxData={parallaxData}
                                     disabled={smallWindow}>
-                                    <button onClick={openModal}>
                                         <img
                                             src={image.url}
                                             alt={image.label}
@@ -108,8 +107,7 @@ const InfoSection = ({ module }) => {
                                             height={2}
                                             className="w-100"
                                             ref={imageEl}
-                                            onLoad={onImageLoad} />
-                                    </button>
+                                            onLoad={onImageLoad} onClick={openModal} />
                                 </Plx>
                             )}
                             {modal && zoomImage && (

@@ -74,13 +74,18 @@
         }
 
         &Right {
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
 
             .panningImage {
                 width: 100%;
-                max-width: 460px;
+                cursor: pointer;
+                @media screen and (min-width: 1024px) {
+                    max-width: 460px;
+                }
+                
             }
 
             button {

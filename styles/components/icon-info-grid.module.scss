@@ -30,7 +30,6 @@ section.icon_grid {
         .paneRight {
 
             width: calc(100% - 30px);
-            padding-left: 30px;
             max-width: 920px;
 
             .tiles {
@@ -49,7 +48,7 @@ section.icon_grid {
 
                     h4 {
                         color: $blue;
-                        font-size: 1.9rem;
+                        font-size: 1.7rem;
                         line-height: 1.1;
                     }
 

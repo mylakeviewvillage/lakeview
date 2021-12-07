@@ -9,6 +9,7 @@ const FeaturedArticleHero = ({ module }) => {
         <section>
             <div className="content">
                 <div className="container">
+                    <p></p>
                     {category && <p className="small-blue-title">{category}</p>}
                     {title && <h1>{title}</h1>}
                 </div>
