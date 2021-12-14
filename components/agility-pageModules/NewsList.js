@@ -7,11 +7,11 @@ import { Fade } from 'react-awesome-reveal';
 
 const NewsList = ({ customData, module }) => {
 
-    const { initialLoad } = module.fields;
+    const initialLoad = parseInt(module.fields.initialLoad);
 
     const [cards, setCards] = useState([]);
     const [renderedCards, setRenderedCards] = useState([]);
-    const [loadedInt, setLoadedInt] = useState(initialLoad ? initialLoad : 12);
+    const [loadedInt, setLoadedInt] = useState(initialLoad ? initialLoad : 3);
     const loadIncrease = 6;
 
     useEffect(() => {
@@ -21,16 +21,6 @@ const NewsList = ({ customData, module }) => {
     useEffect(() => {
         setRenderedCards(cards.slice(0, loadedInt));
     }, [cards, loadedInt]);
-
-    const filterCards = (filter) => {
-        setLoadedInt(initialLoad ? initialLoad : 12)
-        if (filter === 'All') {
-            setCards(customData.contentList);
-        } else {
-            const filteredCards = customData.contentList.filter(card => card.filter_TextField === filter);
-            setCards(filteredCards);
-        }
-    }
 
     const loadMore = () => {
         setLoadedInt(loadedInt + loadIncrease);
