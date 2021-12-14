@@ -16,8 +16,6 @@ const AlternatingInfoTile = ({ tile }) => {
         setVideoID(videoID);
     }
 
-    console.log(tile);
-
     return (
         <div className={styles.tile}>
             <div className={styles.image}>

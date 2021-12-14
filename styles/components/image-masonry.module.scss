@@ -1,7 +1,30 @@
-h2.title {
-    max-width: 400px;
-}
+.image_masonry {
+    
+    h2.title {
+        max-width: 400px;
+    }
 
-.masonry_tile {
-    cursor: pointer;
+    .masonry_tile {
+        cursor: pointer;
+    }
+
+    .prevArrow {
+        position: fixed;
+        top: 48%;
+        left: 20px;
+        height: 25px;
+        transform: rotate(90deg);
+        z-index: 9999;
+        cursor: pointer;
+    }
+
+    .nextArrow {
+        position: fixed;
+        top: 48%;
+        right: 20px;
+        height: 25px;
+        transform: rotate(-90deg);
+        z-index: 9999;
+        cursor: pointer;
+    }
 }

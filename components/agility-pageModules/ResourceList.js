@@ -27,7 +27,6 @@ const ResourceList = ({ module, customData }) => {
                             {resourceList && (
                                 <ul className={styles.resource_list}>
                                     {resourceList.map((resource, index) => {
-                                        console.log(resource);
                                         return (
                                             <li className={styles.resource} key={`resource-item-${index}`}>
                                                 {resource.title && <h3>{resource.title}</h3>}

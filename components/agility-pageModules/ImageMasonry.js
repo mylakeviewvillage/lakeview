@@ -16,6 +16,9 @@ const ImageMasonry = ({ module }) => {
 
     const [gallery, setGallery] = useState([]);
 
+    const [currentImage, setcurrentImage] = useState(null);
+    const [currentImageIndex, setcurrentImageIndex] = useState(0);
+
     useEffect(() => {
         getGallery(images.galleryid);
     }, [images.galleryid]);
@@ -35,19 +38,30 @@ const ImageMasonry = ({ module }) => {
         768: 1
     };
 
-    const [currentImage, setcurrentImage] = useState(null);
-
     const [modal, setModal] = useState(false);
 
-    const openModal = (image) => {
+    const openModal = () => {
         setModal(true);
-        setcurrentImage(image);
+        setcurrentImageIndex(currentImageIndex);
+        setcurrentImage(gallery[currentImageIndex]);
+    }
+
+    const openNext = () => {
+        var index = currentImageIndex + 1 < gallery.length ? currentImageIndex + 1 : 0;
+        setcurrentImageIndex(index);
+        setcurrentImage(gallery[index]);
+    }
+
+    const openPrev = () => {
+        var index = currentImageIndex == 0 ? gallery.length - 1 : currentImageIndex - 1;
+        setcurrentImageIndex(index);
+        setcurrentImage(gallery[index]);
     }
 
     const closeModal = () => setModal(false);
 
     return (
-        <section>
+        <section className={styles.image_masonry}>
             <div className="container">
                 <div className="content">
                     {titleOne && <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />}
@@ -63,9 +77,15 @@ const ImageMasonry = ({ module }) => {
                         ))}
                     </Masonry>
                     {modal && (
-                        <Modal closeModal={closeModal}>
-                            <SEOImage img={currentImage} sizes={[1000, 700, 400]} className="w-100" />
-                        </Modal>
+                        <div>
+                            <Modal closeModal={closeModal}>
+                                <SEOImage img={currentImage} sizes={[1000, 700, 400]} className="w-100" />
+                            </Modal>
+                            <div className={styles.arrowNav}>                           
+                                <img src="/img/arrow-down-white.svg" alt="" className={styles.prevArrow} onClick={openPrev} />
+                                <img src="/img/arrow-down-white.svg" alt="" className={styles.nextArrow} onClick={openNext} />
+                            </div>
+                        </div>
                     )}
                 </div>
             </div>

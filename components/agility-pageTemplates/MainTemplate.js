@@ -6,7 +6,7 @@ import ContactPanel from "components/ContactPanel";
 const MainTemplate = (props) => {
 
   const { contactIntro, contactCompliance, contactThankYou, contactHeading, contactImage } = props.globalData.footer;
-  console.log(props.globalData.footer);
+
   return (
     <>
       <ContentZone name="MainContentZone" {...props} getModule={getModule} />

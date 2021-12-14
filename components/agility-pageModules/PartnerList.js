@@ -11,7 +11,7 @@ const PartnerList = ({ customData }) => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        console.log(customData);
+
         setCards(customData.contentList)
     }, [customData])
 
