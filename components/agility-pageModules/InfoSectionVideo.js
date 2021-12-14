@@ -45,8 +45,8 @@ const InfoSectionVideo = ({ module }) => {
                     duration: imageContainerHeight * 2,
                     properties: [
                         {
-                            startValue: 800,
-                            endValue: imageHeight - imageContainerHeight + 100,
+                            startValue: 1000,
+                            endValue: -200,
                             property: 'translateY',
                         },
                     ],
