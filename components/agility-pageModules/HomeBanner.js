@@ -10,15 +10,15 @@ const HomeBanner = ({ module }) => {
     return (
         <section className={styles.home_banner}>
             <div className="container full-width">
-                <img src="/img/homebanner/hero-1900.jpg" className={styles.image1900} />
-                <img src="/img/homebanner/hero-1280.jpg" className={styles.image1280} />
-                <img src="/img/homebanner/hero-800.jpg" className={styles.image800} />
-                <img src="/img/homebanner/hero-420.jpg" className={styles.image420} />
+                <img src="/img/builderbanner/hero-1900.jpg" className={styles.image1900} />
+                <img src="/img/builderbanner/hero-1280.jpg" className={styles.image1280} />
+                <img src="/img/builderbanner/hero-800.jpg" className={styles.image800} />
+                <img src="/img/builderbanner/hero-420.jpg" className={styles.image420} />
                 <a href="#register">
-                    <img src="/img/homebanner/text-1900.svg" className={styles.copy1900} />
-                    <img src="/img/homebanner/text-1280.svg" className={styles.copy1280} />
-                    <img src="/img/homebanner/text-800.svg" className={styles.copy800} />
-                    <img src="/img/homebanner/text-420.svg" className={styles.copy420} />
+                    <img src="/img/builderbanner/text-1900.svg" className={styles.copy1900} />
+                    <img src="/img/builderbanner/text-1280.svg" className={styles.copy1280} />
+                    <img src="/img/builderbanner/text-800.svg" className={styles.copy800} />
+                    <img src="/img/builderbanner/text-420.svg" className={styles.copy420} />
                 </a>
             </div>
             {/* <div className="container">
