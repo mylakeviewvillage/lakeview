@@ -89,14 +89,14 @@ const ArtistPage = ({ dynamicPageItem }) => {
                                         {instagram && (
                                              <Link href={instagram.href}>
                                                 <a target="_blank">
-                                                    <img src="/img/icon-IG.svg" alt="Instagram" className="social-icon" />
+                                                    <img src="/img/icons/icon-ig.svg" alt="Instagram" className="social-icon" />
                                                 </a>
                                           </Link>
                                         )}
                                         {facebook && (
                                              <Link href={facebook.href}>
                                                 <a target="_blank">
-                                                    <img src="/img/icon-FB.svg" alt="Facebook" className="social-icon" />
+                                                    <img src="/img/icons/icon-fb.svg" alt="Facebook" className="social-icon" />
                                                 </a>
                                           </Link>
                                         )}
