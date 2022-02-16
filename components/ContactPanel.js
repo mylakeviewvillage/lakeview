@@ -113,7 +113,7 @@ const ContactPanel = ({ copy }) => {
                             {copy.contactImage && (
                                 <SEOImage img={copy.contactImage} sizes={[900, 600, 400]} className="w-100" />
                             )}
-                            <img src={image} className="w-100" />
+                            <img src={image} className="w-100" width={1} height={1} />
                         </div>
                         <div className={styles.grid_right}>
                             <h3>{copy.contactHeading}</h3>
