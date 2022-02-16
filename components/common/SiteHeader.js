@@ -42,7 +42,7 @@ const SiteHeader = ({ globalData }) => {
                             </a>
                         </Link>
                     </div>
-                    <button className="hamburger" onClick={() => setOpenNav(true)}>
+                    <button className="hamburger" onClick={() => setOpenNav(true)} aria-label="toggle mobile menu">
                         <div className="ham-bar top-bar"></div>
                         <div className="ham-bar mid-bar"></div>
                         <div className="ham-bar bot-bar"></div>
