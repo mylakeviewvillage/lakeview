@@ -20,19 +20,19 @@
             display: block;
 
             &:nth-child(4n+1) {
-                color: $lightBlue
+                color: $lightBlue;
             }
 
             &:nth-child(4n+2) {
-                color: $medBlue
+                color: $medBlue;
             }
 
             &:nth-child(4n+3) {
-                color: $blue
+                color: $blue;
             }
 
             &:nth-child(4n+4) {
-                color: $darkBlue
+                color: $blue;
             }
         }
     }
