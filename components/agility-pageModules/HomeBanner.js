@@ -14,7 +14,7 @@ const HomeBanner = ({ module }) => {
                 <img src="/img/builderbanner/hero-1280.jpg" className={styles.image1280} />
                 <img src="/img/builderbanner/hero-800.jpg" className={styles.image800} />
                 <img src="/img/builderbanner/hero-420.jpg" className={styles.image420} />
-                <a href="#register">
+                <a href="#register" aria-label="register now">
                     <img src="/img/builderbanner/text-1900.svg" className={styles.copy1900} />
                     <img src="/img/builderbanner/text-1280.svg" className={styles.copy1280} />
                     <img src="/img/builderbanner/text-800.svg" className={styles.copy800} />
