@@ -23,7 +23,6 @@ const SEO = ({ title, description, keywords, ogImage, metaHTML }) => {
       />
       {ogImage && <meta property="og:image" content={ogImage} />}
       {additionalHeaderMarkup}
-      <html lang="en-CA" />
     </Head>
   );
 };
