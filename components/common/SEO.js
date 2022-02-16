@@ -10,7 +10,6 @@ const SEO = ({ title, description, keywords, ogImage, metaHTML }) => {
   }
   return (
     <Head>
-      <html lang="en-CA" />
       <title>{title} | My Lakeview Village</title>
       <meta name="generator" content="Agility CMS" />
       <meta name="agility_timestamp" content={new Date().toLocaleString()} />
@@ -24,6 +23,7 @@ const SEO = ({ title, description, keywords, ogImage, metaHTML }) => {
       />
       {ogImage && <meta property="og:image" content={ogImage} />}
       {additionalHeaderMarkup}
+      <html lang="en-CA" />
     </Head>
   );
 };
