@@ -91,24 +91,20 @@ header.header {
                                 padding: 8px 0;
                             }
 
-                            &:nth-child(5n+1) {
-                                color: $lightBlue
+                            &:nth-child(4n+1) {
+                                color: $medBlue;
                             }
 
-                            &:nth-child(5n+2) {
-                                color: $medBlue
+                            &:nth-child(4n+2) {
+                                color: $blue;
                             }
 
-                            &:nth-child(5n+3) {
-                                color: $blue
+                            &:nth-child(4n+3) {
+                                color: $darkBlue;
                             }
 
-                            &:nth-child(5n+4) {
-                                color: $darkBlue
-                            }
-
-                            &:nth-child(5n+5) {
-                                color: $darkGray
+                            &:nth-child(4n+4) {
+                                color: $darkGray;
                             }
 
                             button {
