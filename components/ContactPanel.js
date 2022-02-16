@@ -9,7 +9,7 @@ const ContactPanel = ({ copy }) => {
 
     const titleOne = 'Register';
     const titleTwo = 'Today';
-    const image = 'https://cdn.aglty.io/tgbxpvs6/home/register-today.jpg';
+    const image = 'https://cdn.aglty.io/tgbxpvs6/home/register-today.jpg?format=auto';
 
     const CustomForm = ({ status, message, onValidated }) => {
 
@@ -20,7 +20,7 @@ const ContactPanel = ({ copy }) => {
         const [agreement, setAgreement] = useState(false);
         const [agreementWarning, setAgreementWarning] = useState(false);
 
-        
+
 
         const handleSubmit = (e) => {
 
@@ -107,13 +107,13 @@ const ContactPanel = ({ copy }) => {
             <div className="container">
                 <div className="content">
                     <SectionTitle titleOne={titleOne} titleTwo={titleTwo} />
-                    
+
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
-                            { copy.contactImage && (
+                            {copy.contactImage && (
                                 <SEOImage img={copy.contactImage} sizes={[900, 600, 400]} className="w-100" />
                             )}
-                            <img src={image}  className="w-100" />
+                            <img src={image} className="w-100" />
                         </div>
                         <div className={styles.grid_right}>
                             <h3>{copy.contactHeading}</h3>
