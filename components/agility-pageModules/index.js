@@ -12,6 +12,7 @@ import ImageBanner from "./ImageBanner";
 import ImageInfo from "./ImageInfo";
 import ImageMasonry from "./ImageMasonry";
 import InfoSection from "./InfoSection";
+import InfoSectionHome from "./InfoSectionHome";
 import LargeImage from "./LargeImage";
 import LargeImageVideoModal from "./LargeImageVideoModal";
 import LinkedSlider from "./LinkedSlider";
@@ -51,6 +52,7 @@ const allModules = [
   { name: "AdUnit", module: AdUnit },
   { name: "ImageBanner", module: ImageBanner },
   { name: "InfoSection", module: InfoSection },
+  { name: "InfoSectionHome", module: InfoSectionHome },
   { name: "InfoSectionVideo", module: InfoSectionVideo },
   { name: "InfoVideoModal", module: InfoVideoModal },
   { name: "LinkedSlider", module: LinkedSlider },
