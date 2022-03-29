@@ -4,7 +4,8 @@
 
     position: relative;
 
-    .image1900{
+
+    .image1900 {
         display: none;
         width: 100%;
 
@@ -13,7 +14,7 @@
         }
     }
 
-    .image1280{
+    .image1280 {
         display: none;
         width: 100%;
 
@@ -22,16 +23,16 @@
         }
     }
 
-    .image800{
+    .image800 {
         display: none;
         width: 100%;
 
-        @media screen and (min-width: 767px)  and (max-width:1000px) {
+        @media screen and (min-width: 767px) and (max-width:1000px) {
             display: block;
         }
     }
 
-    .image420{
+    .image420 {
         display: block;
         width: 100%;
 
@@ -40,45 +41,75 @@
         }
     }
 
-    .copy1900{
-        position:absolute;
-        bottom:0;
+    .copy1900 {
+        position: absolute;
+        bottom: 0;
         display: none;
-        width: 98%;
+        width: 98vw;
 
         @media screen and (min-width: 1601px) {
             display: block;
         }
     }
 
-    .copy1280{
-        position:absolute;
-        bottom:0;
+    .copy1280 {
+        position: absolute;
+        bottom: 0;
         display: none;
-        width: 98%;
+        width: 98vw;
 
         @media screen and (min-width: 1001px) and (max-width:1600px) {
             display: block;
         }
     }
 
-    .copy800{
-        position:absolute;
-        bottom:0;
-        width: 98%;
+    .copy800 {
+        position: absolute;
+        bottom: 0;
+        width: 98vw;
         display: none;
-        @media screen and (min-width: 767px)  and (max-width:1000px) {
+
+        @media screen and (min-width: 767px) and (max-width:1000px) {
             display: block;
         }
     }
 
-    .copy420{
-        position:absolute;
-        bottom:0;
-        width: 98%;
+    .copy420 {
+        position: absolute;
+        bottom: 0;
+        width: 98vw;
 
         @media screen and (min-width: 767px) {
             display: none;
+        }
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: center;
+        margin-top: -90px;
+        height: 90px;
+
+        .arrow {
+            background-color: transparent;
+            width: 26px;
+        }
+
+        .next,
+        .prev {
+            margin: 0px 40px;
+            z-index: 2;
+        }
+    }
+
+    .dots {
+        position: relative;
+        margin-top: -90px;
+        height: 87px;
+
+        li button:before {
+            font-size: 14px;
+            color: white;
         }
     }
 
@@ -95,7 +126,7 @@
     //         line-height: 0.8;
     //         margin-top: 10px;
     //         margin-bottom: 30px;
-            
+
     //         @media screen and (min-width: 768px) {
     //             font-size: 7rem;
     //             letter-spacing: 4px;
