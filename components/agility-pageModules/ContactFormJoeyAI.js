@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import SectionTitle from './SectionTitle';
 import styles from 'styles/components/contact-panel.module.scss';
-import RichTextArea from './RichTextArea';
-import SEOImage from './SEOImage';
+
 import MailchimpSubscribe from "react-mailchimp-subscribe";
+import RichTextArea from 'components/RichTextArea';
 
-const ContactPanel = ({ copy }) => {
+const ContactFormJoeyAI = ({ module }) => {
 
-    const titleOne = 'Register';
-    const titleTwo = 'Today';
-    const image = 'https://cdn.aglty.io/tgbxpvs6/home/register-today.jpg?format=auto';
+    const { title, description, agreement } = module.fields;
 
-    const CustomForm = ({ status,  onValidated }) => {
+    const CustomForm = ({ status, message, onValidated }) => {
 
         const [firstName, setFirstName] = useState('');
         const [lastName, setLastName] = useState('');
@@ -20,56 +17,28 @@ const ContactPanel = ({ copy }) => {
         const [email, setEmail] = useState('');
         const [userType, setUserType] = useState('');
         const [userAge, setUserAge] = useState('');
-        const [agreement, setAgreement] = useState(false);
-        const [agreementWarning, setAgreementWarning] = useState(false);
+        const [agreementBool, setAgreementBool] = useState(false);
 
         const handleSubmit = (e) => {
+
             e.preventDefault();
 
-            if (!agreement) setAgreementWarning(true);
-            if (agreement) setAgreementWarning(false);
-
-            if (agreement &&
-                email &&
+            email &&
                 firstName &&
                 lastName &&
                 phoneNumber &&
-                postal &&
-                userType &&
-                userAge &&
-                email.indexOf("@") > -1) {
-                    registerUser();
-                }
+                email.indexOf("@") > -1 &&
+                onValidated({
+                    EMAIL: email,
+                    MERGE1: firstName,
+                    MERGE2: lastName,
+                    MERGE4: phoneNumber,
+                    MERGE6: inquiryType,
+                    MERGE5: messageSub,
+                    MERGE3: agreementBool
+                });
+
         }
-
-    const registerUser = async event => {
-
-        const res = await fetch(
-            'https://crm.joeyai.email/do/register-json.php',
-            {
-                body: JSON.stringify({
-                                    aid : 23,
-                                    cid : 1,
-                                    apiKey : 'rKApX4rUjVKqM6LPvQ$8rn6EtXmD7m3A',
-                                    Email: email,
-                                    FirstName: firstName,
-                                    LastName: lastName,
-                                    Mobile: phoneNumber,
-                                    PostalCode: postal,
-                                    IsBroker: userType,
-                                    Custom1: userAge
-                                }),
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                method: 'POST'
-            }
-        )
-
-        const result = await res.json();
-        console.log(result);
-        // result.user => 'Ada Lovelace'
-    }
 
         return (
             <form onSubmit={(e) => handleSubmit(e)}>
@@ -94,19 +63,20 @@ const ContactPanel = ({ copy }) => {
                         <label htmlFor="postal">Postal Code</label>
                         <input type="text" id="postal" name="postal" value={postal} required onChange={(e) => setPostal(e.target.value)} />
                     </div>
-                    <div>
-                        <label htmlFor="userType">I am...</label>
+                    <div className={styles.full_width}>
+                        <label htmlFor="userType">Tell us about yourself</label>
                         <select name="userType" id="userType" required value={userType} onChange={(e) => setUserType(e.target.value)}>
-                            <option value="">Please select</option>
-                            <option value="I am a broker">a broker</option>
-                            <option value="I am a working with a broker">working with a broker</option>
-                            <option value="I am an agent">an agent</option>
+                            <option>Please select</option>
+                            <option value="I am a broker">I am a broker</option>
+                            <option value="I am a working with a broker">I am a working with a broker</option>
+                            <option value="I am an agent">I am an agent</option>
+                            <option value="I am media">I am media</option>
                         </select>
                     </div>
-                   <div>
-                        <label htmlFor="userAge">Age Range</label>
+                   <div className={styles.full_width}>
+                        <label htmlFor="userAge">Tell us about yourself</label>
                         <select name="userAge" id="userAge" required value={userAge} onChange={(e) => setUserAge(e.target.value)}>
-                            <option value="">Please select</option>
+                            <option>Please select</option>
                             <option value="20-30">20-30</option>
                             <option value="31-40">31-40</option>
                             <option value="41-50">41-50</option>
@@ -117,13 +87,13 @@ const ContactPanel = ({ copy }) => {
                     </div>
                 </div>
                 <div className={styles.agreement}>
-                    <input type="checkbox" name="agreement" id="agreement" value={agreement} onChange={() => setAgreement(!agreement)} />
+                    <input type="checkbox" name="agreement" id="agreement" value={agreementBool} onChange={() => setAgreementBool(!agreementBool)} />
                     <label htmlFor="agreement">
-                        <p>{copy.contactCompliance}</p>
+                        {agreement && <p>{agreement}</p>}
                     </label>
                 </div>
                 <div>
-                    <button type="submit" className="btn">SIGN UP</button>
+                    <button type="submit" className="btn">Sign Up</button>
                 </div>
                 <div className={styles.status}>
                     {status === "sending" && (
@@ -138,34 +108,37 @@ const ContactPanel = ({ copy }) => {
                         />
                     )}
                     {status === "success" && (
-                        <p className={styles.success}>{copy.contactThankYou}</p>
-                    )}
-                    {agreementWarning && !agreement && (
-                        <div className={styles.error}>
-                            <p>You must agree to receive email communications from Lakeview Community Partners Limited and their partners to complete your subscription.</p>
-                        </div>
+                        <p className={styles.success}>Thank you for your inquiry.</p>
                     )}
                 </div>
             </form>
         );
     };
 
+    const u = '2172e3cbd0c78a3830a1f6484';
+    const id = 'fdfa602594';
+    const postURL = `https://lakeviewcommunitypartners.us19.list-manage.com/subscribe/post?u=${u}&id=${id}`;
+
     return (
-        <div id="register" className={styles.contact_panel}>
+        <div className={styles.contact_panel}>
             <div className="container">
                 <div className="content">
-                    <SectionTitle titleOne={titleOne} titleTwo={titleTwo} />
-
+                    {title && <h2 className="minor">{title}</h2>}
                     <div className={styles.grid}>
                         <div className={styles.grid_left}>
-                            {copy.contactImage && (
-                                <SEOImage img={copy.contactImage} sizes={[900, 600, 400]} className="w-100" />
-                            )}
-                            <img src={image} className="w-100" width={1} height={1} alt="" />
+                            {description && <RichTextArea html={description} />}
                         </div>
                         <div className={styles.grid_right}>
-                            <h3>{copy.contactHeading}</h3>
-                             <CustomForm />
+                            <MailchimpSubscribe
+                                url={postURL}
+                                render={({ subscribe, status, message }) => (
+                                    <CustomForm
+                                        status={status}
+                                        message={message}
+                                        onValidated={formData => subscribe(formData)}
+                                    />
+                                )}
+                            />
                         </div>
                     </div>
                 </div>
@@ -174,4 +147,4 @@ const ContactPanel = ({ copy }) => {
     );
 };
 
-export default ContactPanel;
+export default ContactFormJoeyAI;
