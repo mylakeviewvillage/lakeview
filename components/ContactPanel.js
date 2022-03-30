@@ -44,8 +44,7 @@ const ContactPanel = ({ copy }) => {
 
     const registerUser = async event => {
 
-        const res = await fetch(
-            'https://crm.joeyai.email/do/register-json.php',
+        const res = await fetch('https://crm.joeyai.email/do/register-json.php',
             {
                 body: JSON.stringify({
                                     aid : 23,
@@ -60,8 +59,9 @@ const ContactPanel = ({ copy }) => {
                                     Custom1: userAge
                                 }),
                 headers: {
-                'Content-Type': 'application/json'
+                    'Content-Type': 'application/json'
                 },
+                mode: 'no-cors',
                 method: 'POST'
             }
         )
