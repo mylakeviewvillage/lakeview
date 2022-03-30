@@ -62,15 +62,15 @@ const HomeBanner = ({ module }) => {
                             </a>
                         </div>
                         <div key='slider-slide-2'>
-                            <img src="/img/builderbanner/hero-1900.jpg" className={styles.image1900} alt="" width={1} height={1} />
-                            <img src="/img/builderbanner/hero-1280.jpg" className={styles.image1280} alt="" width={1} height={1} />
-                            <img src="/img/builderbanner/hero-800.jpg" className={styles.image800} alt="" width={1} height={1} />
-                            <img src="/img/builderbanner/hero-420.jpg" className={styles.image420} alt="" width={1} height={1} />
+                            <img src="/img/builderbanner/plan-1900.png" className={styles.image1900} alt="" width={1} height={1} />
+                            <img src="/img/builderbanner/plan-1280.png" className={styles.image1280} alt="" width={1} height={1} />
+                            <img src="/img/builderbanner/plan-800.png" className={styles.image800} alt="" width={1} height={1} />
+                            <img src="/img/builderbanner/plan-420.png" className={styles.image420} alt="" width={1} height={1} />
                             <a href="https://live.mylakeviewvillage.com/" aria-label="live at lakeview">
-                                <img src="/img/builderbanner/text-1900.svg" className={styles.copy1900} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
-                                <img src="/img/builderbanner/text-1280.svg" className={styles.copy1280} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
-                                <img src="/img/builderbanner/text-800.svg" className={styles.copy800} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
-                                <img src="/img/builderbanner/text-420.svg" className={styles.copy420} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
+                                <img src="/img/builderbanner/plan-1900.svg" className={styles.copy1900} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
+                                <img src="/img/builderbanner/plan-1280.svg" className={styles.copy1280} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
+                                <img src="/img/builderbanner/plan-800.svg" className={styles.copy800} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
+                                <img src="/img/builderbanner/plan-420.svg" className={styles.copy420} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
                             </a>
                         </div>
                 </Slider>
