@@ -87,25 +87,30 @@
     .navigation {
         display: flex;
         justify-content: center;
-        margin-top: -90px;
-        height: 90px;
+        margin-top: -70px;
+        height: 70px;
 
         .arrow {
             background-color: transparent;
-            width: 26px;
+            width: 24px;
         }
 
-        .next,
-        .prev {
-            margin: 0px 40px;
+        .next {
+            margin-left: 35px;
             z-index: 2;
         }
+
+        .prev {
+            margin-right: 35px;
+            z-index: 2;
+        }
+
     }
 
     .dots {
         position: relative;
-        margin-top: -90px;
-        height: 87px;
+        margin-top: -78px;
+        height: 75px;
 
         li button:before {
             font-size: 14px;
