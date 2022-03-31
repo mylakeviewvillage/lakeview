@@ -11,7 +11,7 @@ const ContactPanel = ({ copy }) => {
     const titleTwo = 'Today';
     const image = 'https://cdn.aglty.io/tgbxpvs6/home/register-today.jpg?format=auto';
 
-    const CustomForm = ({ status,  onValidated }) => {
+    const CustomForm = () => {
 
         const [firstName, setFirstName] = useState('');
         const [lastName, setLastName] = useState('');
@@ -22,6 +22,7 @@ const ContactPanel = ({ copy }) => {
         const [userAge, setUserAge] = useState('');
         const [agreement, setAgreement] = useState(false);
         const [agreementWarning, setAgreementWarning] = useState(false);
+        const [status, setStatus] = useState('');
 
         const handleSubmit = (e) => {
             e.preventDefault();
@@ -55,18 +56,20 @@ const ContactPanel = ({ copy }) => {
                                     LastName: lastName,
                                     Mobile: phoneNumber,
                                     PostalCode: postal,
-                                    IsBroker: "1",
-                                    Custom1: "1"
+                                    IsBroker: userType,
+                                    Custom1: userAge
                                 }),
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                mode: 'no-cors',
+                // mode: 'no-cors',
                 method: 'POST'
             }
         )
 
         const result = await res.json();
+
+        setStatus("success");
         // console.log(result);
         // result.user => 'Ada Lovelace'
     }
@@ -98,10 +101,10 @@ const ContactPanel = ({ copy }) => {
                         <label htmlFor="userType">I am...</label>
                         <select name="userType" id="userType" required value={userType} onChange={(e) => setUserType(e.target.value)}>
                             <option value="">Please select</option>
-                            <option value="1">a broker</option>
-                            <option value="0">working with a broker</option>
-                            <option value="0">an agent</option>
-                            <option value="0">a interested buyer</option>
+                            <option value="yes">a broker</option>
+                            <option value="no">working with a broker</option>
+                            <option value="no">an agent</option>
+                            <option value="no">a interested buyer</option>
                         </select>
                     </div>
                    <div>
