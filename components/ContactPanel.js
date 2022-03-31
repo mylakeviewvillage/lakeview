@@ -54,9 +54,9 @@ const ContactPanel = ({ copy }) => {
                                     FirstName: firstName,
                                     LastName: lastName,
                                     Mobile: phoneNumber,
-                                    PostalCode: postal,
-                                    IsBroker: userType,
-                                    Custom1: userAge
+                                    PostalCode: postal
+                                    // IsBroker: userType,
+                                    // Custom1: userAge
                                 }),
                 headers: {
                     'Content-Type': 'application/json'
