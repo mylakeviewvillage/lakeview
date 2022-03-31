@@ -6,6 +6,7 @@ import ArticleList from "./ArticleList";
 import FullWidthSlider from "./FullWidthSlider";
 import HomeBanner from "./HomeBanner";
 import HomePartners from "./HomePartners";
+import HomePartnersVideo from "./HomePartnersVideo";
 import InfoVideoModal from "./InfoVideoModal";
 import IconInfoGrid from "./IconInfoGrid";
 import ImageBanner from "./ImageBanner";
@@ -49,6 +50,7 @@ import ContactFormJoeyAI from "./ContactFormJoeyAI";
 
 const allModules = [
   { name: "HomePartners", module: HomePartners },
+  { name: "HomePartnersVideo", module: HomePartnersVideo },
   { name: "HomeBanner", module: HomeBanner },
   { name: "AdUnit", module: AdUnit },
   { name: "ImageBanner", module: ImageBanner },
