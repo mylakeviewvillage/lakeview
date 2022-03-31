@@ -67,7 +67,7 @@ const ContactPanel = ({ copy }) => {
         )
 
         const result = await res.json();
-        console.log(result);
+        // console.log(result);
         // result.user => 'Ada Lovelace'
     }
 

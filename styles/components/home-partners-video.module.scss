@@ -1,8 +1,8 @@
 @import '../base/variables.scss';
 
 .home_partners_video {
-    padding-bottom: 60px;
-    
+    margin: 60px 0;
+    padding-top: 60px;
     .partners_video {
         position: absolute;
         width: 55%;
@@ -22,9 +22,6 @@
                 height: 100%;
             }
         }
-
-        
-
         .video{
             position:relative;
             width: 100%;
@@ -73,7 +70,8 @@
             background-color: #04466C;
 
             img {
-                height: 14px;
+                padding-top: 2px;
+                height: 15px;
             }
         }
 
