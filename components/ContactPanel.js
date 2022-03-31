@@ -49,7 +49,7 @@ const ContactPanel = ({ copy }) => {
                 body: JSON.stringify({
                                     aid : 23,
                                     cid : 1,
-                                    apiKey : 'rKApX4rUjVKqM6LPvQ$8rn6EtXmD7m3A',
+                                    apikey : 'rKApX4rUjVKqM6LPvQ$8rn6EtXmD7m3A',
                                     Email: email,
                                     FirstName: firstName,
                                     LastName: lastName,
@@ -67,7 +67,7 @@ const ContactPanel = ({ copy }) => {
         )
 
         const result = await res.json();
-        // console.log(result);
+        console.log(result);
         // result.user => 'Ada Lovelace'
     }
 

@@ -8,6 +8,12 @@ const HomePartnersVideo = ({ module }) => {
     return (
         <section className={styles.home_partners_video}>
             <div className="container full-width">
+                <div className={styles.partners_video}>
+                    {/* <img src='/img/homebanner/hero-1280.jpg' className={styles.video} /> */}
+                    <div className={styles.embed_container}>
+                        <iframe src="https://player.vimeo.com/video/253989945?h=c6db007fe5&color=ef0800&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                </div>
                 <div className={styles.partners}>
                     <div className={styles.partner}>
                         <a href="https://www.branthaven.com/communities/lakeview-village/" aria-label='navigates to branthaven website' target="_blank"><img src="/img/builderbanner/logo-bh-wht.svg" width={2} height={1} alt="Branthaven" /></a>
