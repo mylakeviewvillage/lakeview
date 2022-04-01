@@ -84,6 +84,19 @@
         }
     }
 
+    .slide{
+        padding:1px;
+    }
+
+    .register_today{
+        position: absolute;
+        top:180px;
+        right:calc(1%);
+        z-index:9;
+        img {
+            width: 60px;
+        }
+    }
     .navigation {
         display: flex;
         justify-content: center;

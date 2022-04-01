@@ -48,7 +48,7 @@ const HomePartnersVideo = ({ module }) => {
                         <a href="https://www.opushomes.com/" target="_blank" aria-label='navigates to opus homes website'><img src="/img/arrow-right-long.svg" width={2} height={1} alt="opus homes" className={styles.arrow_right} /></a>
                     </div>
                     <div className={styles.partner}>
-                        <a href="https://www.tridel.com/lakeviewvillagecondos" target="_blank" aria-label='navigates to tridel website'><img src="/img/builderbanner/logo-tridel-ltblue.svg" width={2} height={1} alt="Tridel - Built for life" className={styles.logo_tridel} /></a>
+                        <a href="https://www.tridel.com/lakeviewvillagecondos" target="_blank" aria-label='navigates to tridel website'><img src="/img/builderbanner/logo-tridel.svg" width={2} height={1} alt="Tridel - Built for life" className={styles.logo_tridel} /></a>
                         <a href="https://www.tridel.com/lakeviewvillagecondos" target="_blank" aria-label='navigates to tridel website'><img src="/img/arrow-right-long-dark.svg" width={2} height={1} alt="Tridel - Built for life" className={styles.arrow_right} /></a>
                     </div>
                 </div>

@@ -49,7 +49,7 @@ const HomeBanner = ({ module }) => {
         <section className={styles.home_banner}>
             <div className="container full-width">
                 <Slider {...settings} ref={slider}>
-                        <div key='slider-slide-1'>
+                        <div className={styles.slide} key='slider-slide-1'>
                             <img src="/img/builderbanner/hero-1900.jpg" className={styles.image1900} alt="" width={1} height={1} />
                             <img src="/img/builderbanner/hero-1280.jpg" className={styles.image1280} alt="" width={1} height={1} />
                             <img src="/img/builderbanner/hero-800.jpg" className={styles.image800} alt="" width={1} height={1} />
@@ -61,7 +61,7 @@ const HomeBanner = ({ module }) => {
                                 <img src="/img/builderbanner/text-420.svg" className={styles.copy420} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
                             </a>
                         </div>
-                        <div key='slider-slide-2'>
+                        <div className={styles.slide} key='slider-slide-2'>
                             <img src="/img/builderbanner/plan-1900.png" className={styles.image1900} alt="" width={1} height={1} />
                             <img src="/img/builderbanner/plan-1280.png" className={styles.image1280} alt="" width={1} height={1} />
                             <img src="/img/builderbanner/plan-800.png" className={styles.image800} alt="" width={1} height={1} />
@@ -77,6 +77,11 @@ const HomeBanner = ({ module }) => {
                 <div className={styles.navigation}>
                     <ArrowLeft onClick={() => slider.current.slickPrev()} />
                     <ArrowRight onClick={() => slider.current.slickNext()}/> 
+                </div>
+                <div className={styles.register_today}>
+                    <a href="#register">
+                        <img src='/img/builderbanner/register-today.svg' />
+                    </a>
                 </div>
             </div>
 
