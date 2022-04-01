@@ -58,10 +58,10 @@ const ContactPanel = ({ copy }) => {
                                     PostalCode: postal,
                                     IsBroker: userType,
                                     Custom1: userAge
-                                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                }),
+                // headers: {
+                //     'Content-Type': 'application/json'
+                // },
                 // mode: 'no-cors',
                 method: 'POST'
             }
@@ -69,7 +69,9 @@ const ContactPanel = ({ copy }) => {
 
         const result = await res.json();
 
-        setStatus("success");
+        if(result.result === 1){
+            setStatus("success");
+        }
         // console.log(result);
         // result.user => 'Ada Lovelace'
     }

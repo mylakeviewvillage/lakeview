@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fade } from "react-awesome-reveal";
 import SectionTitle from 'components/SectionTitle';
 import styles from '../../styles/components/home-partners-video.module.scss';
 
@@ -11,9 +12,11 @@ const HomePartnersVideo = ({ module }) => {
             </div>
             <div className="container full-width">
                 <div className={styles.partners_video}>
-                    <div className={styles.embed_container}>
-                        <iframe src="https://player.vimeo.com/video/253989945?h=c6db007fe5&color=ef0800&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
+                    <Fade direction="up">
+                        <div className={styles.embed_container}>
+                            <iframe src="https://player.vimeo.com/video/655037869?h=c6db007fe5&color=ef0800&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                    </Fade>
                 </div>
                 <div className={styles.partners}>
                     <div className={styles.partner}>
