@@ -84,14 +84,14 @@
         }
     }
 
-    .slide{
-        padding-right:1px;
-    }
+    // .slide{
+    //     padding-right:1px;
+    // }
 
     .register_today{
         position: fixed;
         top:180px;
-        right:calc(1%);
+        right:0; //calc(1%);
         z-index:9;
         img {
             width: 60px;
