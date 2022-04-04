@@ -106,7 +106,7 @@ const ContactPanel = ({ copy }) => {
                             <option value="yes">a broker</option>
                             <option value="no">working with a broker</option>
                             <option value="no">an agent</option>
-                            <option value="no">non of the above</option>
+                            <option value="no">none of the above</option>
                         </select>
                     </div>
                    <div>
