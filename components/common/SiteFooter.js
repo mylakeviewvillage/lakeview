@@ -27,6 +27,15 @@ const SiteFooter = ({ globalData }) => {
                                     </ul>
                                 </Fade>
                             </div>
+                            <div className={styles.builder_links_panel}>
+                                <h2>Learn &<br />Connect</h2>
+                                <hr />
+                                <Fade direction="up">
+                                    <ul>
+                                        {tertiaryLinks.map((item, index) => <li key={`tertiary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>)}
+                                    </ul>
+                                </Fade>
+                            </div>
                             <div className={styles.tertiary_links_panel}>
                                 <h2>Learn &<br />Connect</h2>
                                 <hr />

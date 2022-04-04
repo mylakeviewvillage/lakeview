@@ -12,7 +12,7 @@ footer.footer {
             gap: 30px;
 
             @media screen and (min-width: 1024px) {
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
                 grid-template-areas: 'left center right';
             }
 
@@ -95,7 +95,8 @@ footer.footer {
             }
 
             .secondary_links_panel,
-            .tertiary_links_panel {
+            .tertiary_links_panel,
+            .builder_links_panel {
                 h2 {
                     font-size: 2rem;
                     line-height: calc(28/32);
