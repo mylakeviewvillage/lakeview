@@ -103,7 +103,7 @@ const InfoSectionHome = ({ module }) => {
                                             ref={imageEl}
                                             onLoad={onImageLoad} />
                                         <div className={styles.imageInfo}>
-                                            <h2 class="minor">{imageTitle}</h2>
+                                            <h2 className="minor">{imageTitle}</h2>
                                             {imageCTA && (
                                             <Link href={imageCTA.href}>
                                                 <a target={imageCTA.target} className="btn solid-white">{imageCTA.text}</a>
