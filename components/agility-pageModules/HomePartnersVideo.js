@@ -40,12 +40,12 @@ const HomePartnersVideo = ({ module }) => {
                         <a href="https://www.greenparkgroup.ca/" target="_blank" aria-label='navigates to greenpark group website'><img src="/img/arrow-right-long.svg" width={2} height={1} alt="greenpark group" className={styles.arrow_right} /></a>
                     </div>
                     <div className={styles.partner}>
-                        <a href="https://www.decohomes.ca/" target="_blank" aria-label='navigates to decohomes website'><img src="/img/builderbanner/logo-deco-wht.svg" width={2} height={1} alt="deco" /></a>
-                        <a href="https://www.decohomes.ca/" target="_blank" aria-label='navigates to decohomes website'><img src="/img/arrow-right-long.svg" width={2} height={1} alt="deco" className={styles.arrow_right} /></a>
+                        <a href="https://www.decohomes.ca/lakeviewvillage" target="_blank" aria-label='navigates to decohomes website'><img src="/img/builderbanner/logo-deco-wht.svg" width={2} height={1} alt="deco" /></a>
+                        <a href="https://www.decohomes.ca/lakeviewvillage" target="_blank" aria-label='navigates to decohomes website'><img src="/img/arrow-right-long.svg" width={2} height={1} alt="deco" className={styles.arrow_right} /></a>
                     </div>
                     <div className={styles.partner}>
-                        <a href="https://www.opushomes.com/" target="_blank" aria-label='navigates to opus homes website'><img src="/img/builderbanner/logo-opus-wht.svg" width={2} height={1} alt="opus homes" /></a>
-                        <a href="https://www.opushomes.com/" target="_blank" aria-label='navigates to opus homes website'><img src="/img/arrow-right-long.svg" width={2} height={1} alt="opus homes" className={styles.arrow_right} /></a>
+                        <a href="https://www.opushomes.com/communities/lakeview-village/" target="_blank" aria-label='navigates to opus homes website'><img src="/img/builderbanner/logo-opus-wht.svg" width={2} height={1} alt="opus homes" /></a>
+                        <a href="https://www.opushomes.com/communities/lakeview-village/" target="_blank" aria-label='navigates to opus homes website'><img src="/img/arrow-right-long.svg" width={2} height={1} alt="opus homes" className={styles.arrow_right} /></a>
                     </div>
                     <div className={styles.partner}>
                         <a href="https://www.tridel.com/lakeviewvillagecondos" target="_blank" aria-label='navigates to tridel website'><img src="/img/builderbanner/logo-tridel.svg" width={2} height={1} alt="Tridel - Built for life" className={styles.logo_tridel} /></a>

@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import SectionTitle from './SectionTitle';
 import styles from 'styles/components/contact-panel.module.scss';
-import RichTextArea from './RichTextArea';
 import SEOImage from './SEOImage';
-import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const ContactPanel = ({ copy }) => {
 
     const titleOne = 'Register';
     const titleTwo = 'Today';
-    const image = 'https://cdn.aglty.io/tgbxpvs6/home/register-today.jpg?format=auto';
+    const image = 'https://cdn.aglty.io/tgbxpvs6/home/register-image.jpg?format=auto';
 
     const CustomForm = () => {
 
@@ -113,12 +111,11 @@ const ContactPanel = ({ copy }) => {
                         <label htmlFor="userAge">Age Range</label>
                         <select name="userAge" id="userAge" required value={userAge} onChange={(e) => setUserAge(e.target.value)}>
                             <option value="">Please select</option>
-                            <option value="20-30">20-30</option>
-                            <option value="31-40">31-40</option>
-                            <option value="41-50">41-50</option>
-                            <option value="51-60">51-60</option>
-                            <option value="61-70">61-70</option>
-                            <option value="70+">70+</option>
+                            <option value="18-29">18-29</option>
+                            <option value="30-39">30-39</option>
+                            <option value="40-49">40-49</option>
+                            <option value="50-59">50-59</option>
+                            <option value="60+">60+</option>
                         </select>
                     </div>
                 </div>
