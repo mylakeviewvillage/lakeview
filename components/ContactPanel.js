@@ -56,7 +56,8 @@ const ContactPanel = ({ copy }) => {
                                     LastName: lastName,
                                     Mobile: phoneNumber,
                                     PostalCode: postal,
-                                    IsBroker: userType,
+                                    IsBroker: userType == "1" ? "yes" : "no",
+                                    WorksWithBroker: userType == "2" ? "yes" : "no",
                                     Custom1: userAge
                 }),
                 // headers: {
@@ -103,10 +104,9 @@ const ContactPanel = ({ copy }) => {
                         <label htmlFor="userType">I am...</label>
                         <select name="userType" id="userType" required value={userType} onChange={(e) => setUserType(e.target.value)}>
                             <option value="">Please select</option>
-                            <option value="yes">a broker</option>
-                            <option value="no">working with a broker</option>
-                            <option value="no">an agent</option>
-                            <option value="no">none of the above</option>
+                            <option value="1">a broker</option>
+                            <option value="2">working with a broker</option>
+                            <option value="3">not working with a broker</option>
                         </select>
                     </div>
                    <div>

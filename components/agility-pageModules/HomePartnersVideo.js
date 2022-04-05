@@ -14,7 +14,7 @@ const HomePartnersVideo = ({ module }) => {
                 <div className={styles.partners_video}>
                     <Fade direction="up">
                         <div className={styles.embed_container}>
-                            <iframe src="https://player.vimeo.com/video/655037869?h=c6db007fe5&color=ef0800&title=0&byline=0&portrait=0" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://player.vimeo.com/video/655037869?h=c6db007fe5&color=ef0800&title=0&byline=0&portrait=0" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                         </div>
                     </Fade>
                 </div>
