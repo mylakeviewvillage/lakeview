@@ -109,8 +109,8 @@ const ContactPanel = ({ copy }) => {
                         <label htmlFor="userType">I am...</label>
                         <select name="userType" id="userType" required value={userType} onChange={(e) => setUserType(e.target.value)}>
                             <option value="">Please select</option>
-                            <option value="2">Working with a realtor</option>
-                            <option value="3">Not working with a realtor</option>
+                            <option value="2">Working with a Realtor</option>
+                            <option value="3">Not working with a Realtor</option>
                             <option value="1">A Realtor</option>
                         </select>
                     </div>
