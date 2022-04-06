@@ -127,7 +127,7 @@ const ContactPanel = ({ copy }) => {
                         </select>
                     </div>
                     <div className={styles.full_width}>
-                        <label htmlFor="bedrooms">Number of Bedrooms</label>
+                        <label htmlFor="bedrooms">I am interested in</label>
                         <select name="bedrooms" id="bedrooms" required value={bedrooms} onChange={(e) => setBedrooms(e.target.value)}>
                             <option value="">Please select</option>
                             <option value="Bachelor">Bachelor</option>
