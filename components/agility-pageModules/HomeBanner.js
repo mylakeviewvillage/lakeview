@@ -61,7 +61,7 @@ const HomeBanner = ({ module }) => {
                                 <img src="/img/builderbanner/text-420.svg" className={styles.copy420} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
                             </a>
                         </div>
-                        <div className={styles.slide} key='slider-slide-2'>
+                        {/* <div className={styles.slide} key='slider-slide-2'>
                             <img src="/img/builderbanner/plan-1900.png" className={styles.image1900} alt="" width={1} height={1} />
                             <img src="/img/builderbanner/plan-1280.png" className={styles.image1280} alt="" width={1} height={1} />
                             <img src="/img/builderbanner/plan-800.png" className={styles.image800} alt="" width={1} height={1} />
@@ -72,7 +72,7 @@ const HomeBanner = ({ module }) => {
                                 <img src="/img/builderbanner/plan-800.svg" className={styles.copy800} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
                                 <img src="/img/builderbanner/plan-420.svg" className={styles.copy420} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
                             </a>
-                        </div>
+                        </div> */}
                 </Slider>
                 <div className={styles.navigation}>
                     <ArrowLeft onClick={() => slider.current.slickPrev()} />
