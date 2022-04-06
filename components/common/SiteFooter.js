@@ -27,6 +27,20 @@ const SiteFooter = ({ globalData }) => {
                                     </ul>
                                 </Fade>
                             </div>
+                            <div className={styles.builder_links_panel}>
+                                <h2>Live At<br />Lakeview</h2>
+                                <hr />
+                                <Fade direction="up">
+                                    <ul>
+                                        <li><a href="https://www.branthaven.com/communities/lakeview-village/" aria-label='navigates to branthaven website' target="_blank">Branthaven</a></li>
+                                        <li><a href="https://caivan.com/greater-toronto-area/lakeview-village" target="_blank" aria-label='navigates to vaivan website'>Caivan</a></li>
+                                        <li><a href="https://www.greenparkgroup.ca/" target="_blank" aria-label='navigates to greenpark group website'>Greenpark Group</a></li>
+                                        <li><a href="https://www.decohomes.ca/lakeviewvillage" target="_blank" aria-label='navigates to decohomes website'>DECO</a></li>
+                                        <li><a href="https://www.opushomes.com/communities/lakeview-village/" target="_blank" aria-label='navigates to opus homes website'>Opus Homes</a></li>
+                                        <li><a href="https://www.tridel.com/lakeviewvillagecondos" target="_blank" aria-label='navigates to tridel website'>Tridel</a></li>
+                                    </ul>
+                                </Fade>
+                            </div>
                             <div className={styles.tertiary_links_panel}>
                                 <h2>Learn &<br />Connect</h2>
                                 <hr />

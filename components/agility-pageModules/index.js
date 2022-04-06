@@ -6,6 +6,7 @@ import ArticleList from "./ArticleList";
 import FullWidthSlider from "./FullWidthSlider";
 import HomeBanner from "./HomeBanner";
 import HomePartners from "./HomePartners";
+import HomePartnersVideo from "./HomePartnersVideo";
 import InfoVideoModal from "./InfoVideoModal";
 import IconInfoGrid from "./IconInfoGrid";
 import ImageBanner from "./ImageBanner";
@@ -42,12 +43,14 @@ import ConsultantList from "./ConsultantList";
 import RecentNews from "./RecentNews";
 import BasicCopy from "./BasicCopy";
 import ContactForm from "./ContactForm";
+import ContactFormJoeyAI from "./ContactFormJoeyAI";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
 
 const allModules = [
   { name: "HomePartners", module: HomePartners },
+  { name: "HomePartnersVideo", module: HomePartnersVideo },
   { name: "HomeBanner", module: HomeBanner },
   { name: "AdUnit", module: AdUnit },
   { name: "ImageBanner", module: ImageBanner },
@@ -90,7 +93,8 @@ const allModules = [
   { name: "ConsultantList", module: ConsultantList },
   { name: "RecentNews", module: RecentNews },
   { name: "RichTextArea", module: BasicCopy },
-  { name: "ContactForm", module: ContactForm }
+  { name: "ContactForm", module: ContactForm },
+  { name: "ContactFormJoeyAI", module: ContactFormJoeyAI }
 ];
 
 export const getModule = (moduleName) => {
