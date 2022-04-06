@@ -22,6 +22,8 @@ const ContactPanel = ({ copy }) => {
         const [agreement, setAgreement] = useState(false);
         const [agreementWarning, setAgreementWarning] = useState(false);
         const [status, setStatus] = useState('');
+        const [buttonStatus, setButtonStatus] = useState('SIGN UP');
+        const [buttonActive, setButtonActive] =  useState(false);
 
         const handleSubmit = (e) => {
             e.preventDefault();
@@ -72,6 +74,8 @@ const ContactPanel = ({ copy }) => {
         const result = await res.json();
 
         if(result.result === 1){
+            setButtonActive(true);
+            setButtonStatus("success");
             setStatus("success");
         }
         // console.log(result);
@@ -144,7 +148,7 @@ const ContactPanel = ({ copy }) => {
                     </label>
                 </div>
                 <div>
-                    <button type="submit" className="btn">SIGN UP</button>
+                    <button type="submit" className="btn" disabled={buttonActive}>{buttonStatus}</button>
                 </div>
                 <div className={styles.status}>
                     {status === "sending" && (
