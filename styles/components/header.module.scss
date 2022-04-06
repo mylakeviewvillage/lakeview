@@ -106,7 +106,9 @@ header.header {
                             &:nth-child(4n+4) {
                                 color: $darkBlue;
                             }
-
+                            &:nth-child(4n+5) {
+                                color: #333333;
+                            }
                             button {
                                 font-size: inherit;
                                 font-family: inherit;
