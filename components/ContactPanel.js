@@ -18,6 +18,7 @@ const ContactPanel = ({ copy }) => {
         const [email, setEmail] = useState('');
         const [userType, setUserType] = useState('');
         const [userAge, setUserAge] = useState('');
+        const [bedrooms, setBedrooms] = useState('');
         const [agreement, setAgreement] = useState(false);
         const [agreementWarning, setAgreementWarning] = useState(false);
         const [status, setStatus] = useState('');
@@ -36,6 +37,7 @@ const ContactPanel = ({ copy }) => {
                 postal &&
                 userType &&
                 userAge &&
+                bedrooms &&
                 email.indexOf("@") > -1) {
                     registerUser();
                 }
@@ -54,6 +56,7 @@ const ContactPanel = ({ copy }) => {
                                     LastName: lastName,
                                     Mobile: phoneNumber,
                                     PostalCode: postal,
+                                    Bedrooms: bedrooms,
                                     IsBroker: userType == "1" ? "yes" : "no",
                                     WorksWithBroker: userType == "2" ? "yes" : "no",
                                     Custom1: userAge
@@ -116,6 +119,20 @@ const ContactPanel = ({ copy }) => {
                             <option value="40-49">40-49</option>
                             <option value="50-59">50-59</option>
                             <option value="60+">60+</option>
+                        </select>
+                    </div>
+                    <div className={styles.full_width}>
+                        <label htmlFor="bedrooms">Number of Bedrooms</label>
+                        <select name="bedrooms" id="bedrooms" required value={bedrooms} onChange={(e) => setBedrooms(e.target.value)}>
+                            <option value="">Please select</option>
+                            <option value="Bachelor or Studio">Bachelor or Studio</option>
+                            <option value="1 bedroom">1 bedroom</option>
+                            <option value="1 bedroom + den">1 bedroom + den</option>
+                            <option value="2 bedroom">2 bedroom</option>
+                            <option value="2 bedroom + den">2 bedroom + den</option>
+                            <option value="3 bedroom">3 bedroom</option>
+                            <option value="3 bedroom + den">3 bedroom + den</option>
+                            <option value="4 bedroom">4 bedroom</option>
                         </select>
                     </div>
                 </div>
