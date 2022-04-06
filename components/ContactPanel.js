@@ -105,9 +105,9 @@ const ContactPanel = ({ copy }) => {
                         <label htmlFor="userType">I am...</label>
                         <select name="userType" id="userType" required value={userType} onChange={(e) => setUserType(e.target.value)}>
                             <option value="">Please select</option>
-                            <option value="1">a broker</option>
-                            <option value="2">working with a broker</option>
-                            <option value="3">not working with a broker</option>
+                            <option value="2">Working with a realtor</option>
+                            <option value="3">Not working with a realtor</option>
+                            <option value="1">A Realtor</option>
                         </select>
                     </div>
                    <div>
@@ -119,13 +119,14 @@ const ContactPanel = ({ copy }) => {
                             <option value="40-49">40-49</option>
                             <option value="50-59">50-59</option>
                             <option value="60+">60+</option>
+                            <option value="Prefer Not To Answer">Prefer Not To Answer</option>
                         </select>
                     </div>
                     <div className={styles.full_width}>
                         <label htmlFor="bedrooms">Number of Bedrooms</label>
                         <select name="bedrooms" id="bedrooms" required value={bedrooms} onChange={(e) => setBedrooms(e.target.value)}>
                             <option value="">Please select</option>
-                            <option value="Bachelor or Studio">Bachelor or Studio</option>
+                            <option value="Bachelor">Bachelor</option>
                             <option value="1 bedroom">1 bedroom</option>
                             <option value="1 bedroom + den">1 bedroom + den</option>
                             <option value="2 bedroom">2 bedroom</option>
