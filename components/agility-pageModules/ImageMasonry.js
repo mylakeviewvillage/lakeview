@@ -40,10 +40,10 @@ const ImageMasonry = ({ module }) => {
 
     const [modal, setModal] = useState(false);
 
-    const openModal = () => {
+    const openModal = (imageIndex) => {
+        setcurrentImageIndex(imageIndex);
+        setcurrentImage(gallery[imageIndex]);
         setModal(true);
-        setcurrentImageIndex(currentImageIndex);
-        setcurrentImage(gallery[currentImageIndex]);
     }
 
     const openNext = () => {
@@ -71,7 +71,7 @@ const ImageMasonry = ({ module }) => {
                         className="my-masonry-grid"
                         columnClassName="my-masonry-grid_column">
                         {gallery.map((galleryItem, index) => (
-                            <div key={`image-masonry-tile-${index}`} className={`w-100 ${styles.masonry_tile}`} onClick={() => openModal(galleryItem)}>
+                            <div key={`image-masonry-tile-${index}`} className={`w-100 ${styles.masonry_tile}`} onClick={() => openModal(index)}>
                                 <SEOImage img={galleryItem} sizes={[500, 300]} className="w-100" />
                             </div>
                         ))}
