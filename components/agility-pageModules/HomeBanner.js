@@ -50,7 +50,9 @@ const HomeBanner = ({ module }) => {
             <div className="container full-width">
                 <Slider {...settings} ref={slider}>
                     <div className={styles.slide} key='slider-slide-1'>
-                        <a href="https://live.mylakeviewvillage.com/" aria-label="register now"><video src="/img/builderbanner/pierhero_hd_h264_2022-06-21.mp4" className={styles.image1280} autoPlay muted loop></video></a>}
+                        <a href="https://live.mylakeviewvillage.com/" aria-label="register now">
+                            <video src="/img/builderbanner/pierhero_hd_h264_2022-06-21.mp4" className={styles.image1280} autoPlay muted loop></video>
+                        </a>
                         <img src="/img/builderbanner/pierhero_800_2022-06-20.jpg" className={styles.image800} alt="" width={1} height={1} />
                         <img src="/img/builderbanner/pierhero_800_2022-06-20.jpg" className={styles.image420} alt="" width={1} height={1} />
                         <a href="https://live.mylakeviewvillage.com/" aria-label="register now">
