@@ -5,20 +5,20 @@
     position: relative;
 
 
-    .image1900 {
-        display: none;
-        width: 100%;
+    // .image1900 {
+    //     display: none;
+    //     width: 100%;
 
-        @media screen and (min-width: 1601px) {
-            display: block;
-        }
-    }
+    //     @media screen and (min-width: 1601px) {
+    //         display: block;
+    //     }
+    // }
 
     .image1280 {
         display: none;
         width: 100%;
 
-        @media screen and (min-width: 1001px) and (max-width:1600px) {
+        @media screen and (min-width: 1001px) {
             display: block;
         }
     }
