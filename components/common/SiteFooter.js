@@ -20,8 +20,8 @@ const SiteFooter = ({ globalData }) => {
                                 <hr />
                                 <Fade direction="up">
                                     <ul>
-                                        {secondaryLinks.map((item, index) => 
-                                        
+                                        {secondaryLinks.map((item, index) =>
+
                                             <li key={`secondary-link-${index}`}><Link href={item.link.href}><a target={item.link.target}>{item.link.text}</a></Link></li>
                                         )}
                                     </ul>
@@ -53,6 +53,9 @@ const SiteFooter = ({ globalData }) => {
                             <div className={styles.legal_panel}>
                                 <div className={styles.logo}>
                                     <img src={logo.url} className="w-100" width={450} height={60} alt={logo.label ? logo.label : ''} />
+                                </div>
+                                <div className={styles.address}>
+                                    <p><b>985 Hydro Rd. Mississauga L5E 0A8</b><br />MON-FRI 11:00am - 3:00am<br />Closed Weekends & Holidays</p>
                                 </div>
                                 <div className={styles.copyright}>
                                     <p>{copyright}</p>
