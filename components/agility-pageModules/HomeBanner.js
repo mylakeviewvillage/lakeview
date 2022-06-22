@@ -33,6 +33,7 @@ const HomeBanner = ({ module }) => {
         )
     }
 
+
     const ArrowRight = ({ onClick }) => {
         return (
             <button
