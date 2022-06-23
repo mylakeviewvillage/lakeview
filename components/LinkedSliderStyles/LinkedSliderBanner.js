@@ -57,9 +57,9 @@ const LinkedSliderBanner = ({ slides, backgroundColor, copyColor, layout }) => {
                                 <div className={styles.slide_info} style={backgroundColor ? { backgroundColor } : null}>
                                     <div className={`${styles.slide_info_content} ${copyColor === 'dark' ? styles.dark : styles.light}`}>
                                         <div className={styles.navigation}>
-                                            <ArrowLeft onClick={() => infoSlider.current.slickPrev()} />
+                                            <ArrowLeft onClick={() => slider.current.slickPrev()} />
                                             <span>{`${index + 1}/${slides.length}`}</span>
-                                            <ArrowRight onClick={() => infoSlider.current.slickNext()} />
+                                            <ArrowRight onClick={() => slider.current.slickNext()} />
                                         </div>
                                         <h3>{slide.topTitle && <span className={`${styles.top_title} ${copyColor === 'dark' ? styles.dark : styles.light}`}>{slide.topTitle}<br /></span>}{slide.slideTitle}</h3>
                                         <RichTextArea html={slide.slideCopy} />
