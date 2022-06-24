@@ -12,7 +12,7 @@ const SEOImage = ({ img, sizes, className, width, height }) => {
 
     let srcSet = svg ?
         img.url :
-        sizes.map(size => `${img?.url.replace(/ /g, '%20')}?format=auto&w=${size} ${size}w, `);
+        sizes.map(size => `${img?.url.replace(/ /g, '%20')}?format=auto&q=80&w=${size} ${size}w, `);
 
     return (
         <>
