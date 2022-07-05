@@ -33,6 +33,7 @@ const HomeBanner = ({ module }) => {
         )
     }
 
+
     const ArrowRight = ({ onClick }) => {
         return (
             <button
@@ -50,32 +51,16 @@ const HomeBanner = ({ module }) => {
             <div className="container full-width">
                 <Slider {...settings} ref={slider}>
                     <div className={styles.slide} key='slider-slide-1'>
-                        <img src="/img/builderbanner/hero-1900.jpg" className={styles.image1900} alt="" width={1} height={1} />
-                        <img src="/img/builderbanner/hero-1280.jpg" className={styles.image1280} alt="" width={1} height={1} />
-                        {/* <a href="https://live.mylakeviewvillage.com/" aria-label="register now"><video src="/img/builderbanner/pierhero_hd_h264_2022-06-21.mp4" className={styles.image1280} autoPlay muted loop></video></a>}
-                        <img src="/img/builderbanner/pierhero_800_2022-06-20.jpg" className={styles.image800} alt="" width={1} height={1} />
-                        <img src="/img/builderbanner/pierhero_800_2022-06-20.jpg" className={styles.image420} alt="" width={1} height={1} />*/}
-                        <img src="/img/builderbanner/hero-800.jpg" className={styles.image800} alt="" width={1} height={1} />
-                        <img src="/img/builderbanner/hero-420.jpg" className={styles.image420} alt="" width={1} height={1} />
                         <a href="https://live.mylakeviewvillage.com/" aria-label="register now">
-                            <img src="/img/builderbanner/text-1900.svg" className={styles.copy1900} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
-                            <img src="/img/builderbanner/text-1280.svg" className={styles.copy1280} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
+                            <video src="/img/builderbanner/pierhero_hd_h264_2022-06-21.mp4" className={styles.image1280} autoPlay muted loop></video>
+                        </a>
+                        <img src="/img/builderbanner/pierhero_800_2022-06-20.jpg" className={styles.image800} alt="" width={1} height={1} />
+                        <img src="/img/builderbanner/pierhero_800_2022-06-20.jpg" className={styles.image420} alt="" width={1} height={1} />
+                        <a href="https://live.mylakeviewvillage.com/" aria-label="register now">
                             <img src="/img/builderbanner/text-800.svg" className={styles.copy800} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
                             <img src="/img/builderbanner/text-420.svg" className={styles.copy420} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
                         </a>
                     </div>
-                    {/* <div className={styles.slide} key='slider-slide-2'>
-                            <img src="/img/builderbanner/plan-1900.png" className={styles.image1900} alt="" width={1} height={1} />
-                            <img src="/img/builderbanner/plan-1280.png" className={styles.image1280} alt="" width={1} height={1} />
-                            <img src="/img/builderbanner/plan-800.png" className={styles.image800} alt="" width={1} height={1} />
-                            <img src="/img/builderbanner/plan-420.png" className={styles.image420} alt="" width={1} height={1} />
-                            <a href="https://live.mylakeviewvillage.com/" aria-label="live at lakeview">
-                                <img src="/img/builderbanner/plan-1900.svg" className={styles.copy1900} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
-                                <img src="/img/builderbanner/plan-1280.svg" className={styles.copy1280} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
-                                <img src="/img/builderbanner/plan-800.svg" className={styles.copy800} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
-                                <img src="/img/builderbanner/plan-420.svg" className={styles.copy420} alt="Wouldn't it be nice to live together. Coming to the shores of Mississauga." width={1} height={1} />
-                            </a>
-                        </div> */}
                 </Slider>
                 <div className={styles.navigation}>
                     <ArrowLeft onClick={() => slider.current.slickPrev()} />
@@ -87,28 +72,6 @@ const HomeBanner = ({ module }) => {
                     </a>
                 </div>
             </div>
-
-            {/* <div className="container">
-                <div className="content">
-                    <div className={styles.copy}>
-                        <Fade direction="up">
-                            <h2>{headline}</h2>
-                        </Fade>
-                        <Fade direction="up" delay="40">
-                        <h3>{subHeadline}</h3>
-                        </Fade>
-                        {cTA &&(
-                            <Fade direction="up" delay="80">
-                            <Link href={cTA.href}>
-                                <a target={cTA.target} className="btn register-now">
-                                    REGISTER NOW
-                                </a>
-                            </Link>
-                            </Fade>
-                        )}
-                    </div>
-                </div>
-            </div> */}
         </section>
     );
 };
