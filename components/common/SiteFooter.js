@@ -55,7 +55,7 @@ const SiteFooter = ({ globalData }) => {
                                     <img src={logo.url} className="w-100" width={450} height={60} alt={logo.label ? logo.label : ''} />
                                 </div>
                                 <div className={styles.address}>
-                                    <p><b>985 Hydro Rd. Mississauga L5E0A8</b><br />MON-FRI 11:00am - 3:00am<br />Closed Weekends & Holidays</p>
+                                    <p><b>985 Hydro Rd. Mississauga L5E0A8</b><br />MON-FRI 11:00am - 3:00pm<br />Closed Weekends & Holidays</p>
                                 </div>
                                 <div className={styles.copyright}>
                                     <p>{copyright}</p>
