@@ -13,7 +13,6 @@ class MyDocument extends Document {
             <Html lang="en-CA">
                 <Head>
                     <Favicon />
-                    <Trackers google="UA-117378406-1" facebook="416073699992441" />
                     <link rel="preconnect" href="https://fonts.gstatic.com"></link>
                 </Head>
                 <body>
