@@ -49,7 +49,7 @@ const DiscoverTheArtists = ({ module, customData }) => {
                     <div className={styles.artists}>
                         {visibleArtists.map((artist, index) => (
                             <Fade direction="left" delay={index % 3 * 50}>
-                                <div key={`artist-${index}`} className={styles.artist} style={{ display: artist.hideFromGrid ? 'none' : 'block' }}>
+                                <div key={`artist-${index}`} className={styles.artist} style={{ display: artist.hideFromGrid && artist.hideFromGrid == "true" ? 'none' : 'block' }}>
                                     {artist.artwork && (
                                         <div className={styles.artist_image} onClick={() => playVideo(artist.youtubeVideoID)} >
                                             <img className="play-circle" src="/img/play-circle.svg" alt="Play Button" />
@@ -58,7 +58,6 @@ const DiscoverTheArtists = ({ module, customData }) => {
                                     )}
                                     {artist.artworkTitle && <h3>{artist.artworkTitle}</h3>}
                                     {artist.title && <h4>{artist.title}</h4>}
-                                    {artist.hideFromGrid && <h4>{artist.hideFromGrid}</h4>}
                                     <Link href={'/artists/[...slug]'} as={`artists/${artist.slug}`}>
                                         <a className="btn">Learn More</a>
                                     </Link>
