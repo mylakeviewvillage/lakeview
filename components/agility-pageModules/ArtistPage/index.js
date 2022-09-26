@@ -12,8 +12,10 @@ import styles from 'styles/components/large-image-video-modal.module.scss';
 
 const ArtistPage = ({ dynamicPageItem }) => {
 
-    const { title, bio, headshot, quote, website, instagram, facebook, artwork, artworkTitle, artworkDescription, youtubeThumbnail, youtubeVideoID } = dynamicPageItem.fields;
+    console.log(dynamicPageItem);
+    const { title, bio, headshot, quote, website, instagram, facebook, artwork, artworkTitle, artworkDescription, youtubeThumbnail, youtubeVideoID, hideFromGrid } = dynamicPageItem.fields;
     const [openModal, setOpenModal] = useState(false);
+
 
     return (
         <div>
@@ -25,9 +27,9 @@ const ArtistPage = ({ dynamicPageItem }) => {
                         </h2>
                     </div>
                     <div className="container full-width">
-                    <div className={styles.image} onClick={() => setOpenModal(true)}>
-                        <img src="/img/play-circle.svg" alt="play button" className="play-circle" />
-                        <SEOImage img={artwork} sizes={[500, 1024, 1920]} className="w-100" />
+                        <div className={styles.image} onClick={() => setOpenModal(true)}>
+                            <img src="/img/play-circle.svg" alt="play button" className="play-circle" />
+                            <SEOImage img={artwork} sizes={[500, 1024, 1920]} className="w-100" />
                         </div>
                     </div>
                 </div>
@@ -81,25 +83,25 @@ const ArtistPage = ({ dynamicPageItem }) => {
                                         {website && (
                                             <li><Link href={website.href}>
                                                 <a target="_blank">
-                                                {website.href}
+                                                    {website.href}
                                                 </a>
-                                          </Link></li>
+                                            </Link></li>
                                         )}
                                         <li>
-                                        {instagram && (
-                                             <Link href={instagram.href}>
-                                                <a target="_blank">
-                                                    <img src="/img/icons/icon-ig.svg" alt="Instagram" className="social-icon" />
-                                                </a>
-                                          </Link>
-                                        )}
-                                        {facebook && (
-                                             <Link href={facebook.href}>
-                                                <a target="_blank">
-                                                    <img src="/img/icons/icon-fb.svg" alt="Facebook" className="social-icon" />
-                                                </a>
-                                          </Link>
-                                        )}
+                                            {instagram && (
+                                                <Link href={instagram.href}>
+                                                    <a target="_blank">
+                                                        <img src="/img/icons/icon-ig.svg" alt="Instagram" className="social-icon" />
+                                                    </a>
+                                                </Link>
+                                            )}
+                                            {facebook && (
+                                                <Link href={facebook.href}>
+                                                    <a target="_blank">
+                                                        <img src="/img/icons/icon-fb.svg" alt="Facebook" className="social-icon" />
+                                                    </a>
+                                                </Link>
+                                            )}
                                         </li>
                                     </ul>
                                 </div>
