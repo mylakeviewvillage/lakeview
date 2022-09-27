@@ -27,8 +27,10 @@ const ArtistPage = ({ dynamicPageItem }) => {
                         </h2>
                     </div>
                     <div className="container full-width">
-                        <div className={styles.image} onClick={() => setOpenModal(true)}>
-                            <img src="/img/play-circle.svg" alt="play button" className="play-circle" />
+                        <div className={styles.image}>
+                            {youtubeVideoID && (
+                                <img src="/img/play-circle.svg" alt="play button" className="play-circle" onClick={() => setOpenModal(true)} />
+                            )}
                             <SEOImage img={artwork} sizes={[500, 1024, 1920]} className="w-100" />
                         </div>
                     </div>
@@ -45,7 +47,7 @@ const ArtistPage = ({ dynamicPageItem }) => {
                             </div>
                             <div className={stylesInfoSectionVideoModal.right}>
                                 {youtubeThumbnail && (
-                                    <div className={stylesInfoSectionVideoModal.image} onClick={() => setOpenModal(true)} >
+                                    <div className={stylesInfoSectionVideoModal.image}>
                                         <SEOImage img={youtubeThumbnail} sizes={[500, 1024, 1920]} className="w-100" />
                                     </div>
                                 )}

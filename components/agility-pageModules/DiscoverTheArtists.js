@@ -51,9 +51,17 @@ const DiscoverTheArtists = ({ module, customData }) => {
                             <Fade direction="left" delay={index % 3 * 50}>
                                 <div key={`artist-${index}`} className={styles.artist} style={{ display: artist.hideFromGrid && artist.hideFromGrid == "true" ? 'none' : 'block' }}>
                                     {artist.artwork && (
-                                        <div className={styles.artist_image} onClick={() => playVideo(artist.youtubeVideoID)} >
-                                            <img className="play-circle" src="/img/play-circle.svg" alt="Play Button" />
-                                            <SEOImage img={artist.artwork} sizes={[700, 500, 300]} className="w-100" />
+                                        <div className={styles.artist_image}>
+                                            {artist.youtubeVideoID && (
+                                                <div>
+                                                    <img className="play-circle" src="/img/play-circle.svg" alt="Play Button" onClick={() => playVideo(artist.youtubeVideoID)} />
+                                                    <SEOImage img={artist.artwork} sizes={[700, 500, 300]} className="w-100" />
+                                                </div>
+                                            ) || (
+                                                    <Link href={'/artists/[...slug]'} as={`artists/${artist.slug}`}>
+                                                        <a><SEOImage img={artist.artwork} sizes={[700, 500, 300]} className="w-100" /></a>
+                                                    </Link>
+                                                )}
                                         </div>
                                     )}
                                     {artist.artworkTitle && <h3>{artist.artworkTitle}</h3>}
