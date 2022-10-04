@@ -48,9 +48,10 @@ const DiscoverTheArtists = ({ module, customData }) => {
                     <SectionTitle titleOne={titleOne} titleTwo={titleTwo} titleThree={titleThree} />
                     <div className={styles.artists}>
                         {visibleArtists.map((artist, index) => (
-                            <Fade direction="left" delay={index % 3 * 50}>
-                                <div key={`artist-${index}`} className={styles.artist} style={{ display: artist.hideFromGrid && artist.hideFromGrid == "true" ? 'none' : 'block' }}>
-                                    {artist.artwork && (
+
+                            <div key={`artist-${index}`} className={styles.artist} style={{ display: artist.hideFromGrid && artist.hideFromGrid == "true" ? 'none' : 'block' }}>
+                                {artist.artwork && (
+                                    <Fade direction="left" delay={index % 3 * 50}>
                                         <div className={styles.artist_image}>
                                             {artist.youtubeVideoID && (
                                                 <div>
@@ -63,14 +64,15 @@ const DiscoverTheArtists = ({ module, customData }) => {
                                                     </Link>
                                                 )}
                                         </div>
-                                    )}
-                                    {artist.artworkTitle && <h3>{artist.artworkTitle}</h3>}
-                                    {artist.title && <h4>{artist.title}</h4>}
-                                    <Link href={'/artists/[...slug]'} as={`artists/${artist.slug}`}>
-                                        <a className="btn">Learn More</a>
-                                    </Link>
-                                </div>
-                            </Fade>
+                                    </Fade>
+                                )}
+                                {artist.artworkTitle && <h3>{artist.artworkTitle}</h3>}
+                                {artist.title && <h4>{artist.title}</h4>}
+                                <Link href={'/artists/[...slug]'} as={`artists/${artist.slug}`}>
+                                    <a className="btn">Learn More</a>
+                                </Link>
+                            </div>
+
                         ))}
                         <ModalVideo channel='youtube' autoplay={true} isOpen={openModal} videoId={currentVideo} onClose={() => setOpenModal(false)} />
                     </div>
