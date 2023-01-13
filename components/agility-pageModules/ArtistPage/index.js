@@ -11,7 +11,6 @@ import stylesInfoTiles from "styles/components/alternating-info-tiles.module.scs
 import styles from "styles/components/large-image-video-modal.module.scss";
 
 const ArtistPage = ({ dynamicPageItem }) => {
-  console.log(dynamicPageItem);
   const {
     title,
     bio,
