@@ -91,16 +91,18 @@ const ArtistPage = ({ dynamicPageItem }) => {
           </div>
         </div>
       </section>
-      <section className={stylesTestimonial.testimonial}>
-        <div className="container">
-          <div className="content">
-            <div className={stylesTestimonial.testimonial_copy}>
-              <h3>"{quote}"</h3>
-              <h4>- {title}</h4>
+      {quote && (
+        <section className={stylesTestimonial.testimonial}>
+          <div className="container">
+            <div className="content">
+              <div className={stylesTestimonial.testimonial_copy}>
+                <h3>"{quote}"</h3>
+                <h4>- {title}</h4>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
       <section>
         <div className="container">
           <div className="content">
