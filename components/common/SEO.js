@@ -16,7 +16,10 @@ const SEO = ({ title, description, keywords, ogImage, metaHTML }) => {
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="facebook-domain-verification" content="jsl91nobjcd5kfhiebxvue4cgdg6w1" />
+      <meta
+        name="facebook-domain-verification"
+        content="jsl91nobjcd5kfhiebxvue4cgdg6w1"
+      />
       <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
         rel="stylesheet"
@@ -26,7 +29,7 @@ const SEO = ({ title, description, keywords, ogImage, metaHTML }) => {
 
       <script
         async
-        src={`https://www.googletagmanager.com/gtag/js?id=UA-117378406-1`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-4XWQ9MCLBW`}
       />
       <script
         dangerouslySetInnerHTML={{
@@ -34,10 +37,10 @@ const SEO = ({ title, description, keywords, ogImage, metaHTML }) => {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'UA-117378406-1', {
+            gtag('config', 'G-4XWQ9MCLBW', {
               page_path: window.location.pathname,
             });
-          `
+          `,
         }}
       />
       <script
@@ -53,7 +56,7 @@ const SEO = ({ title, description, keywords, ogImage, metaHTML }) => {
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '416073699992441');
             fbq('track', 'PageView');
-          `
+          `,
         }}
       />
       <noscript>
