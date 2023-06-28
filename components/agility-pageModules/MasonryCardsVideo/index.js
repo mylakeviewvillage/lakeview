@@ -9,7 +9,7 @@ import ModalVideo from "react-modal-video";
 
 const MasonryCardsVideo = ({ module, customData }) => {
   console.log(module);
-  const { titleOne, titleTwo, titleThree } = module.fields;
+  const { titleOne, titleTwo, titleThree, cards } = module.fields;
 
   const [modal, setModal] = useState(false);
   const [videoID, setVideoID] = useState("");
@@ -25,7 +25,7 @@ const MasonryCardsVideo = ({ module, customData }) => {
     setVideoID(videoID);
   };
 
-  const cards = customData.cards.map((card, index) => (
+  const cards_data = customData.cards.map((card, index) => (
     <Fade
       direction="left"
       delay={index * 50}
@@ -52,7 +52,22 @@ const MasonryCardsVideo = ({ module, customData }) => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {cards}
+            {cards.length > 1
+              ? cards.map((card, index) => (
+                  <Fade
+                    direction="left"
+                    delay={index * 50}
+                    key={`masonry-card-video-${index}`}
+                    triggerOnce
+                  >
+                    <MasonryCardVideo
+                      index={index}
+                      data={card.fields}
+                      openModal={openModal}
+                    />
+                  </Fade>
+                ))
+              : cards_data}
           </Masonry>
           <ModalVideo
             channel="youtube"
