@@ -7,8 +7,9 @@ import { Fade } from "react-awesome-reveal";
 
 import ModalVideo from "react-modal-video";
 
-const MasonryCardsVideo = ({ module }) => {
-  const { titleOne, titleTwo, titleThree, cards } = module.fields;
+const MasonryCardsVideo = ({ module, customData }) => {
+  console.log(module);
+  const { titleOne, titleTwo, titleThree } = module.fields;
 
   const [modal, setModal] = useState(false);
   const [videoID, setVideoID] = useState("");
@@ -23,6 +24,17 @@ const MasonryCardsVideo = ({ module }) => {
     setModal(true);
     setVideoID(videoID);
   };
+
+  const cards = customData.cards.map((card, index) => (
+    <Fade
+      direction="left"
+      delay={index * 50}
+      key={`masonry-card-video-${index}`}
+      triggerOnce
+    >
+      <MasonryCardVideo index={index} data={card} openModal={openModal} />
+    </Fade>
+  ));
 
   return (
     <section>
@@ -40,20 +52,7 @@ const MasonryCardsVideo = ({ module }) => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {cards.map((card, index) => (
-              <Fade
-                direction="left"
-                delay={index * 50}
-                key={`masonry-card-video-${index}`}
-                triggerOnce
-              >
-                <MasonryCardVideo
-                  index={index}
-                  data={card.fields}
-                  openModal={openModal}
-                />
-              </Fade>
-            ))}
+            {cards}
           </Masonry>
           <ModalVideo
             channel="youtube"
@@ -68,28 +67,28 @@ const MasonryCardsVideo = ({ module }) => {
   );
 };
 
-// MasonryCardsVideo.getCustomInitialProps = async ({
-//   agility,
-//   languageCode,
-//   channelName,
-//   item,
-// }) => {
-//   let cards = null;
-//   const api = agility;
-//   let cardsContent = await api.getContentList({
-//     referenceName: item.fields.cards.referencename,
-//     languageCode: languageCode,
-//     depth: 10,
-//     expandAllContentLinks: true,
-//     take: 50,
-//   });
-//   cardsContent.items.sort((a, b) =>
-//     a.properties.itemOrder > b.properties.itemOrder ? 1 : -1
-//   );
-//   cards = cardsContent.items.map((cards) => cards.fields);
-//   return {
-//     cards,
-//   };
-// };
+MasonryCardsVideo.getCustomInitialProps = async ({
+  agility,
+  languageCode,
+  channelName,
+  item,
+}) => {
+  let cards = null;
+  const api = agility;
+  let cardsContent = await api.getContentList({
+    referenceName: item.fields.cards.referencename,
+    languageCode: languageCode,
+    depth: 10,
+    expandAllContentLinks: true,
+    take: 50,
+  });
+  cardsContent.items.sort((a, b) =>
+    a.properties.itemOrder > b.properties.itemOrder ? 1 : -1
+  );
+  cards = cardsContent.items.map((cards) => cards.fields);
+  return {
+    cards,
+  };
+};
 
 export default MasonryCardsVideo;
