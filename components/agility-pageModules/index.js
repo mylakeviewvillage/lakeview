@@ -45,6 +45,7 @@ import BasicCopy from "./BasicCopy";
 import ContactForm from "./ContactForm";
 import ContactFormJoeyAI from "./ContactFormJoeyAI";
 import HashNav from "./HashNav";
+import WhatsNew from "./WhatsNew";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
 // Place Page Modules in allModules array below, passing in a name and the component.
@@ -96,7 +97,8 @@ const allModules = [
   { name: "RichTextArea", module: BasicCopy },
   { name: "ContactForm", module: ContactForm },
   { name: "HashNav", module: HashNav },
-  { name: "ContactFormJoeyAI", module: ContactFormJoeyAI }
+  { name: "ContactFormJoeyAI", module: ContactFormJoeyAI },
+  { name: "WhatsNew", module: WhatsNew },
 ];
 
 export const getModule = (moduleName) => {
