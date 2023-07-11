@@ -7,7 +7,6 @@ const WhatsNew = ({ module }) => {
   const { titleOne, titleTwo, titleThree, image, builderImage, cTA } =
     module.fields;
 
-  console.log(module);
   return (
     <section className={styles.whats_new}>
       <div className="container">
