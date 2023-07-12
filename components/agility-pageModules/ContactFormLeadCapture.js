@@ -193,7 +193,7 @@ const ContactFormLeadCapture = ({ copy }) => {
             />
           )}
           {status === "success" && (
-            <p className={styles.success}>Thank you for your inquiry.</p>
+            <p className={styles.success}>{copy.contactThankYou}</p>
           )}
           {agreementWarning && !agreementBool && (
             <div className={styles.error}>
