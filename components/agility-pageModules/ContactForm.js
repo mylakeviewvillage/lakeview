@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "styles/components/contact-panel.module.scss";
-
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import RichTextArea from "components/RichTextArea";
 
