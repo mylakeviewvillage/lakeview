@@ -8,7 +8,6 @@ import { Fade } from "react-awesome-reveal";
 import ModalVideo from "react-modal-video";
 
 const MasonryCardsVideo = ({ module, customData }) => {
-  console.log(module);
   const { titleOne, titleTwo, titleThree, cards } = module.fields;
 
   const [modal, setModal] = useState(false);
